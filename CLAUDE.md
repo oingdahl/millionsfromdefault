@@ -15,6 +15,7 @@ Svenska i all text. Kod, filnamn och JSON-nycklar på engelska eller som de reda
 - **Dashboarden** (`site/`) ska fungera utan bygg-steg: ren HTML/CSS/JS, inga externa beroenden.
 
 ## Vid ändringar
+0. Kör `git pull --rebase origin main` först, så att vi inte skriver över varandras ändringar i `data/companies.json`.
 1. Uppdatera `data/companies.json` och/eller `docs/`.
 2. Kontrollera att JSON är giltig: `python3 -m json.tool data/companies.json > /dev/null`.
 3. Uppdatera README om strukturen ändras.

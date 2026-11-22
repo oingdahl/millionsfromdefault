@@ -1,6 +1,6 @@
 # data/companies.json
 
-Lista (JSON-array) med ett objekt per bolag. Dashboarden i `site/` läser filen direkt.
+Lista (JSON-array) med ett objekt per bolag. Dashboarden i `site/` läser filen direkt, och den publiceras om vid varje ändring här.
 
 | Fält | Typ | Beskrivning |
 |---|---|---|
