@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>millionsfromdefault – dashboard</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #fff; --text: #1b1b1a; --muted: #6b6b66; --line: #e3e3de;
+    --accent: #1f5f4a; --good: #1f7a4d; --warn: #a56a00; --bad: #a33a2f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151514; --card: #1e1e1c; --text: #ecece8; --muted: #9a9a93; --line: #343430;
+            --accent: #5fc9a4; --good: #5fc98f; --warn: #e0a640; --bad: #e07a6e; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); }
+  header, main { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  header { padding-top: 28px; padding-bottom: 8px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .tile .n { font-size: 28px; font-weight: 650; line-height: 1.1; }
+  .tile .l { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+  .card h2 { font-size: 14px; margin: 0 0 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+  .bar-row { display: grid; grid-template-columns: 110px 1fr 36px; gap: 8px; align-items: center; margin: 6px 0; font-size: 14px; }
+  .bar { background: var(--line); border-radius: 4px; height: 10px; overflow: hidden; }
+  .bar > i { display: block; height: 100%; background: var(--accent); }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  select, input[type=search] { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); }
+  input[type=search] { min-width: 220px; }
+  .tablewrap { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  td.wrap { white-space: normal; min-width: 220px; color: var(--muted); }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); cursor: pointer; user-select: none; }
+  th.sorted::after { content: " ▾"; } th.sorted.asc::after { content: " ▴"; }
+  tr:last-child td { border-bottom: 0; }
+  .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; border: 1px solid var(--line); }
+  .pill.ny { color: var(--muted); } .pill.granskas { color: var(--warn); } .pill.kontaktad { color: var(--accent); }
+  .pill.bud { color: var(--good); } .pill.avslutad { color: var(--bad); }
+  .prio { font-weight: 650; }
+  a { color: var(--accent); }
+  .empty { padding: 40px 20px; text-align: center; color: var(--muted); }
+  footer { max-width: 1200px; margin: 0 auto; padding: 16px 20px 40px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>millionsfromdefault</h1>
+  <p class="sub">Konkursbon med AI-transformationspotential – pipeline och vad vi har tagit fram</p>
+</header>
+<main>
+  <div class="tiles" id="tiles"></div>
+  <div class="grid2">
+    <div class="card"><h2>Pipeline per status</h2><div id="byStatus"></div></div>
+    <div class="card"><h2>Bolag per person (hittade)</h2><div id="byPerson"></div></div>
+    <div class="card"><h2>Bolag per bransch</h2><div id="byIndustry"></div></div>
+  </div>
+  <div class="filters">
+    <input type="search" id="q" placeholder="Sök bolag, bransch, ort, notering…">
+    <select id="fStatus"><option value="">Alla statusar</option></select>
+    <select id="fPerson"><option value="">Alla personer</option></select>
+    <select id="fIndustry"><option value="">Alla branscher</option></select>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr id="head"></tr></thead>
+      <tbody id="body"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>Inga bolag att visa än. Lägg till rader i <code>data/companies.json</code>.</div>
+  </div>
+</main>
+<footer>Källdata: <code>data/companies.json</code>. Prioritet = AI-potential − AI-adoption (högre är bättre). Uppdaterad: <span id="stamp">–</span></footer>
+
+<script>
+const COLS = [
+  { k: 'name', t: 'Bolag' },
+  { k: 'industry', t: 'Bransch' },
+  { k: 'city', t: 'Ort' },
+  { k: 'revenue_ksek', t: 'Omsättning (tkr)', num: true },
+  { k: 'employees', t: 'Anst.', num: true },
+  { k: 'ai_adoption', t: 'AI-adoption', num: true },
+  { k: 'ai_potential', t: 'AI-potential', num: true },
+  { k: 'priority', t: 'Prioritet', num: true },
+  { k: 'status', t: 'Status' },
+  { k: 'found_by', t: 'Hittad av' },
+  { k: 'assigned_to', t: 'Ansvarig' },
+  { k: 'updated', t: 'Uppdaterad' },
+  { k: 'notes', t: 'Noteringar', wrap: true }
+];
+const STATUSES = ['ny', 'granskas', 'kontaktad', 'bud', 'avslutad'];
+let data = [], sortKey = 'priority', sortAsc = false;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = v => v == null ? '–' : (typeof v === 'number' ? v.toLocaleString('sv-SE') : esc(v));
+
+async function load() {
+  for (const url of ['data/companies.json', '../data/companies.json']) {
+    try {
+      const r = await fetch(url, { cache: 'no-store' });
+      if (r.ok) return r.json();
+    } catch (e) {}
+  }
+  return [];
+}
+
+function prep(rows) {
+  return rows.map(r => ({ ...r,
+    priority: (r.ai_potential != null && r.ai_adoption != null) ? r.ai_potential - r.ai_adoption : null }));
+}
+
+function count(rows, key) {
+  const m = new Map();
+  rows.forEach(r => { const v = r[key] || '–'; m.set(v, (m.get(v) || 0) + 1); });
+  return [...m.entries()].sort((a, b) => b[1] - a[1]);
+}
+
+function bars(el, entries) {
+  const max = Math.max(1, ...entries.map(e => e[1]));
+  el.innerHTML = entries.length ? entries.map(([l, n]) =>
+    `<div class="bar-row"><span>${esc(l)}</span><div class="bar"><i style="width:${n / max * 100}%"></i></div><b>${n}</b></div>`).join('')
+    : '<span class="sub">Ingen data</span>';
+}
+
+function renderStatic() {
+  const active = data.filter(r => r.status !== 'avslutad');
+  const bought = data.filter(r => r.outcome === 'köpt').length;
+  const top = data.filter(r => (r.priority ?? -9) >= 3 && r.status !== 'avslutad').length;
+  const tiles = [
+    [data.length, 'Bolag totalt'], [active.length, 'Aktiva i pipeline'],
+    [top, 'Hög prioritet (≥3)'], [data.filter(r => r.status === 'bud').length, 'I budfas'], [bought, 'Köpta']
+  ];
+  $('tiles').innerHTML = tiles.map(([n, l]) => `<div class="tile"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+  bars($('byStatus'), STATUSES.map(s => [s, data.filter(r => r.status === s).length]));
+  bars($('byPerson'), count(data, 'found_by'));
+  bars($('byIndustry'), count(data, 'industry').slice(0, 8));
+  const dates = data.map(r => r.updated).filter(Boolean).sort();
+  $('stamp').textContent = dates.length ? dates[dates.length - 1] : '–';
+  const opts = (id, vals) => { const s = $(id); [...new Set(vals.filter(Boolean))].sort().forEach(v => s.add(new Option(v, v))); };
+  opts('fStatus', data.map(r => r.status));
+  opts('fPerson', data.flatMap(r => [r.found_by, r.assigned_to]));
+  opts('fIndustry', data.map(r => r.industry));
+  $('head').innerHTML = COLS.map(c => `<th data-k="${c.k}">${c.t}</th>`).join('');
+  $('head').addEventListener('click', e => {
+    const k = e.target.dataset.k; if (!k) return;
+    sortAsc = (sortKey === k) ? !sortAsc : false; sortKey = k; renderTable();
+  });
+}
+
+function renderTable() {
+  const q = $('q').value.toLowerCase(), fs = $('fStatus').value, fp = $('fPerson').value, fi = $('fIndustry').value;
+  let rows = data.filter(r =>
+    (!fs || r.status === fs) && (!fp || r.found_by === fp || r.assigned_to === fp) && (!fi || r.industry === fi) &&
+    (!q || JSON.stringify(r).toLowerCase().includes(q)));
+  rows.sort((a, b) => {
+    const x = a[sortKey], y = b[sortKey];
+    if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1;
+    const c = typeof x === 'number' ? x - y : String(x).localeCompare(String(y), 'sv');
+    return sortAsc ? c : -c;
+  });
+  document.querySelectorAll('#head th').forEach(th => {
+    th.className = th.dataset.k === sortKey ? 'sorted' + (sortAsc ? ' asc' : '') : '';
+  });
+  $('empty').hidden = rows.length > 0;
+  $('body').innerHTML = rows.map(r => '<tr>' + COLS.map(c => {
+    let v = r[c.k];
+    if (c.k === 'name') v = r.source_url ? `<a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.name)}</a>` : esc(r.name);
+    else if (c.k === 'status') v = `<span class="pill ${esc(r.status)}">${esc(r.status)}${r.outcome ? ' · ' + esc(r.outcome) : ''}</span>`;
+    else if (c.k === 'priority') v = `<span class="prio">${v == null ? '–' : (v > 0 ? '+' : '') + v}</span>`;
+    else v = fmt(v);
+    return `<td class="${c.wrap ? 'wrap' : ''}">${v}</td>`;
+  }).join('') + '</tr>').join('');
+}
+
+load().then(rows => {
+  data = prep(Array.isArray(rows) ? rows : []);
+  renderStatic(); renderTable();
+  ['q', 'fStatus', 'fPerson', 'fIndustry'].forEach(id => $(id).addEventListener('input', renderTable));
+});
+</script>
+</body>
+</html>
