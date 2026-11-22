@@ -12,22 +12,30 @@ Se [`docs/thesis.md`](docs/thesis.md) för kriterier och bedömningsmodell.
 
 | Sökväg | Innehåll |
 |---|---|
-| `data/companies.json` | Pipeline: alla bolag vi har tittat på, med bedömning och status |
+| `data/companies.json` | Pipeline: alla bolag vi har tittat på, med bedömning, uppsida, förvaltare och status |
+| `data/reports.json` | VD-agentens veckorapporter |
 | `data/README.md` | Fältbeskrivning för `companies.json` |
 | `docs/thesis.md` | Investeringstes, sållningskriterier, poängmodell |
 | `docs/sources.md` | Källor och hur vi använder dem |
-| `docs/companies/` | Fördjupade bolagsanalyser, en fil per bolag |
+| `docs/companies/` | Fördjupade bolagsanalyser, en fil per bolag (mall: `_mall.md`) |
+| `docs/org.md` | Agentorganisationen: roller, rytm, beslutsgränser |
+| `.claude/agents/` | Agenterna: `vd`, `researchchef`, `screening`, `analys` |
 | `site/` | Dashboarden (statisk sida, publiceras på GitHub Pages) |
 | `.github/workflows/pages.yml` | Publicerar dashboarden vid push till `main` |
 | `CLAUDE.md` | Arbetsregler för Claude i det här repot |
 
 ## Dashboard
 
-Dashboarden i `site/index.html` läser `data/companies.json` och visar pipelinen: antal bolag per status, vem som har tagit fram vad, filter på bransch och AI-poäng samt sorterbar tabell.
+Live: https://oingdahl.github.io/millionsfromdefault/
 
-Publicering sker via GitHub Actions (se `.github/workflows/pages.yml`). Slå på det en gång under **Settings → Pages → Source: GitHub Actions**. Observera att Pages för privata repon kräver en betald GitHub-plan.
+Dashboarden i `site/index.html` läser `data/*.json` och visar nyckeltal, VD:ns senaste rapport och beslut, kommande buddeadlines, störst uppsida, förvaltarkontakter och en sorterbar tabell.
+
+Publicering sker via GitHub Actions (se `.github/workflows/pages.yml`).
 
 Lokalt: `python3 -m http.server -d . 8000` och öppna `http://localhost:8000/site/`.
+
+## Agenter
+Fyra Claude-agenter gör jobbet, se [`docs/org.md`](docs/org.md). Screening körs varje vardag och VD-rapporten varje måndag som schemalagda uppgifter. Säg till exempel "kör analys på <bolag>" eller "fråga VD om läget" i en Claude-session med repot. Kontakt med förvaltare och bud görs alltid av Olle eller Fredrik.
 
 ## Arbetssätt
 

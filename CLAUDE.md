@@ -2,6 +2,9 @@
 
 Projekt: hitta konkursbon (främst via konkurslistan.se) som kan köpas ut och transformeras med AI. Två användare delar repot. Claude håller repot uppdaterat och konsekvent.
 
+## Agenter
+Roller och beslutsgränser finns i `docs/org.md`, agentfilerna i `.claude/agents/`. Agenter skickar aldrig mejl och kontaktar aldrig förvaltare eller bolag; de skriver utkast.
+
 ## Språk
 Svenska i all text. Kod, filnamn och JSON-nycklar på engelska eller som de redan är.
 

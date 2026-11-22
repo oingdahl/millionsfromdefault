@@ -24,12 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validera JSON
-        run: python3 -m json.tool data/companies.json > /dev/null
+        run: for f in data/*.json; do python3 -m json.tool "$f" > /dev/null; done
       - name: Samla sidan
         run: |
           mkdir -p _site/data
           cp -r site/* _site/
-          cp data/companies.json _site/data/companies.json
+          cp data/*.json _site/data/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

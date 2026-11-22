@@ -92,6 +92,16 @@
   .empty { padding: 56px 20px; text-align: center; color: var(--muted); font-family: var(--mono); font-size: 13px; }
   .empty code, footer code { color: var(--accent); }
   footer { padding-top: 18px; padding-bottom: 44px; color: var(--muted); font: 12px var(--mono); }
+  .report { grid-column: 1 / -1; }
+  .report .meta { font: 12px var(--mono); color: var(--muted); margin-bottom: 8px; }
+  .report h3 { font-size: 15px; margin: 14px 0 6px; } .report ul { margin: 4px 0 0 18px; padding: 0; } .report p { margin: 6px 0; }
+  .decision { display: flex; justify-content: space-between; gap: 12px; padding: 8px 12px; margin: 6px 0; border-radius: 10px; border: 1px solid rgba(255,181,71,.35); background: rgba(255,181,71,.07); }
+  .decision b { color: var(--warn); font: 600 12px var(--mono); white-space: nowrap; }
+  .list-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .list-row:last-child { border-bottom: 0; }
+  .list-row .r { font-family: var(--mono); color: var(--muted); white-space: nowrap; text-align: right; }
+  .days.urgent { color: var(--bad); } .days.soon { color: var(--warn); }
+  .muted { color: var(--muted); }
   ::-webkit-scrollbar { height: 8px; width: 8px; } ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 8px; }
 </style>
 </head>
@@ -110,6 +120,12 @@
     <div class="card"><h2>Bolag per person (hittade)</h2><div id="byPerson"></div></div>
     <div class="card"><h2>Bolag per bransch</h2><div id="byIndustry"></div></div>
   </div>
+  <div class="grid2">
+    <div class="card report"><h2>VD-rapport</h2><div id="report"></div></div>
+    <div class="card"><h2>Kommande buddeadlines</h2><div id="deadlines"></div></div>
+    <div class="card"><h2>Störst uppsida</h2><div id="upside"></div></div>
+    <div class="card"><h2>Konkursförvaltare</h2><div id="trustees"></div></div>
+  </div>
   <div class="filters">
     <input type="search" id="q" placeholder="Sök bolag, bransch, ort, notering…">
     <select id="fStatus"><option value="">Alla statusar</option></select>
@@ -124,7 +140,7 @@
     <div class="empty" id="empty" hidden>Inga bolag att visa än. Lägg till rader i <code>data/companies.json</code>.</div>
   </div>
 </main>
-<footer>Källdata: <code>data/companies.json</code>. Prioritet = AI-potential − AI-adoption (högre är bättre). Uppdaterad: <span id="stamp">–</span></footer>
+<footer>Källdata: <code>data/companies.json</code> och <code>data/reports.json</code>. Prioritet = AI-potential − AI-adoption (högre är bättre). Uppdaterad: <span id="stamp">–</span></footer>
 
 <script>
 const COLS = [
@@ -136,9 +152,12 @@ const COLS = [
   { k: 'ai_adoption', t: 'AI-adoption', num: true },
   { k: 'ai_potential', t: 'AI-potential', num: true },
   { k: 'priority', t: 'Prioritet', num: true },
+  { k: 'upside_msek', t: 'Uppsida (Mkr)', num: true },
+  { k: 'bid_deadline', t: 'Buddeadline' },
   { k: 'status', t: 'Status' },
   { k: 'found_by', t: 'Hittad av' },
   { k: 'assigned_to', t: 'Ansvarig' },
+  { k: 'trustee', t: 'Förvaltare' },
   { k: 'updated', t: 'Uppdaterad' },
   { k: 'notes', t: 'Noteringar', wrap: true }
 ];
@@ -148,8 +167,8 @@ const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt = v => v == null ? '–' : (typeof v === 'number' ? v.toLocaleString('sv-SE') : esc(v));
 
-async function load() {
-  for (const url of ['data/companies.json', '../data/companies.json']) {
+async function load(file = 'companies.json') {
+  for (const url of ['data/' + file, '../data/' + file]) {
     try {
       const r = await fetch(url, { cache: 'no-store' });
       if (r.ok) return r.json();
@@ -174,6 +193,40 @@ function bars(el, entries) {
   el.innerHTML = entries.length ? entries.map(([l, n]) =>
     `<div class="bar-row"><span>${esc(l)}</span><div class="bar"><i style="width:${n / max * 100}%"></i></div><b>${n}</b></div>`).join('')
     : '<span class="sub">Ingen data</span>';
+}
+
+const today = new Date(new Date().toISOString().slice(0, 10));
+const daysTo = d => Math.round((new Date(d) - today) / 864e5);
+const link = (r, txt) => r.analysis ? `<a href="https://github.com/oingdahl/millionsfromdefault/blob/main/${esc(r.analysis)}" target="_blank" rel="noopener">${esc(txt)}</a>` : esc(txt);
+const trusteeHtml = t => !t ? '–' : `${esc(t.name || '')}${t.firm ? ' <span class="muted">· ' + esc(t.firm) + '</span>' : ''}` +
+  (t.email ? ` <a href="mailto:${esc(t.email)}">mejl</a>` : '') + (t.phone ? ` <a href="tel:${esc(t.phone.replace(/\s/g, ''))}">${esc(t.phone)}</a>` : '');
+
+function md(src) {
+  return esc(src).split('\n').map(l => l
+    .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+    .replace(/^## (.*)$/, '<h3>$1</h3>')
+    .replace(/^- (.*)$/, '<li>$1</li>')).join('\n')
+    .replace(/(<li>.*<\/li>\n?)+/g, m => '<ul>' + m + '</ul>')
+    .replace(/^(?!<h3>|<ul>|<li>|<\/ul>)(.+)$/gm, '<p>$1</p>');
+}
+
+function renderPanels(reports) {
+  const rep = reports[0];
+  $('report').innerHTML = !rep ? '<span class="muted">Ingen rapport än. VD skriver den första på måndag.</span>' :
+    `<div class="meta">${esc(rep.date)} · ${esc(rep.author || 'vd')} · ${esc(rep.title || '')}</div>` +
+    (rep.decisions || []).map(d => `<div class="decision"><span>${esc(d.text)}</span>${d.deadline ? `<b>senast ${esc(d.deadline)}</b>` : ''}</div>`).join('') +
+    md(rep.body || '');
+  const live = data.filter(r => r.status !== 'avslutad');
+  const dl = live.filter(r => r.bid_deadline).sort((a, b) => a.bid_deadline.localeCompare(b.bid_deadline)).slice(0, 8);
+  $('deadlines').innerHTML = dl.length ? dl.map(r => { const n = daysTo(r.bid_deadline);
+    return `<div class="list-row"><span>${link(r, r.name)}</span><span class="r days ${n <= 7 ? 'urgent' : n <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)} · ${n < 0 ? 'passerad' : n + ' d'}</span></div>`; }).join('')
+    : '<span class="muted">Inga deadlines registrerade</span>';
+  const up = live.filter(r => r.upside_msek != null).sort((a, b) => b.upside_msek - a.upside_msek).slice(0, 8);
+  $('upside').innerHTML = up.length ? up.map(r => `<div class="list-row"><span>${link(r, r.name)}</span><span class="r">${r.upside_msek.toLocaleString('sv-SE')} Mkr${r.est_price_msek != null ? ' · pris ' + r.est_price_msek.toLocaleString('sv-SE') : ''}</span></div>`).join('')
+    : '<span class="muted">Inga uppsidekalkyler än</span>';
+  const tr = live.filter(r => r.trustee && r.trustee.name);
+  $('trustees').innerHTML = tr.length ? tr.map(r => `<div class="list-row"><span>${trusteeHtml(r.trustee)}</span><span class="r">${esc(r.name)}</span></div>`).join('')
+    : '<span class="muted">Inga förvaltare registrerade</span>';
 }
 
 function renderStatic() {
@@ -222,15 +275,18 @@ function renderTable() {
     else if (c.k === 'status') v = `<span class="pill ${esc(r.status)}">${esc(r.status)}${r.outcome ? ' · ' + esc(r.outcome) : ''}</span>`;
     else if (c.k === 'priority') v = `<span class="prio${v != null && v >= 3 ? ' hi' : ''}">${v == null ? '–' : (v > 0 ? '+' : '') + v}</span>`;
     else if (c.k === 'ai_adoption') v = r.ai_adoption == null ? '–' : `<span class="score s${r.ai_adoption}">${r.ai_adoption}</span>`;
+    else if (c.k === 'trustee') v = r.trustee ? esc(r.trustee.name || '') : '–';
+    else if (c.k === 'bid_deadline') v = r.bid_deadline ? `<span class="days ${daysTo(r.bid_deadline) <= 7 ? 'urgent' : daysTo(r.bid_deadline) <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)}</span>` : '–';
+    else if (c.k === 'notes' && r.analysis) v = fmt(v) + ` ${link(r, '→ analys')}`;
     else if (c.k === 'ai_potential') v = r.ai_potential == null ? '–' : `<span class="score p">${r.ai_potential}</span>`;
     else v = fmt(v);
     return `<td class="${c.wrap ? 'wrap' : ''}${c.num ? ' num' : ''}">${v}</td>`;
   }).join('') + '</tr>').join('');
 }
 
-load().then(rows => {
+Promise.all([load('companies.json'), load('reports.json')]).then(([rows, reports]) => {
   data = prep(Array.isArray(rows) ? rows : []);
-  renderStatic(); renderTable();
+  renderStatic(); renderPanels(Array.isArray(reports) ? reports : []); renderTable();
   ['q', 'fStatus', 'fPerson', 'fIndustry'].forEach(id => $(id).addEventListener('input', renderTable));
 });
 </script>
