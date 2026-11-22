@@ -35,7 +35,7 @@ Publicering sker via GitHub Actions (se `.github/workflows/pages.yml`).
 Lokalt: `python3 -m http.server -d . 8000` och öppna `http://localhost:8000/site/`.
 
 ## Agenter
-Fyra Claude-agenter gör jobbet, se [`docs/org.md`](docs/org.md). Screening körs varje vardag och VD-rapporten varje måndag som schemalagda uppgifter. Säg till exempel "kör analys på <bolag>" eller "fråga VD om läget" i en Claude-session med repot. Kontakt med förvaltare och bud görs alltid av Olle eller Fredrik.
+Fyra Claude-agenter gör jobbet, se [`docs/org.md`](docs/org.md). Screening körs varje vardag och VD-rapporten varje måndag som schemalagda uppgifter. Säg till exempel "kör analys på <bolag>" eller "fråga VD om läget" i en Claude-session med repot. Kontakt med förvaltare och bud görs alltid av Oscar eller Fredrik.
 
 ## Arbetssätt
 

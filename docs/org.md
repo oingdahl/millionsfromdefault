@@ -1,9 +1,9 @@
 # Organisation
 
-Projektet drivs av Olle och Fredrik med fyra Claude-agenter. Agenterna förbereder, ägarna beslutar.
+Projektet drivs av Oscar och Fredrik med fyra Claude-agenter. Agenterna förbereder, ägarna beslutar.
 
 ```
-            Olle & Fredrik  (beslut: kontakt, bud, köp)
+            Oscar & Fredrik  (beslut: kontakt, bud, köp)
                    │
                   VD          prioriterar, väljer fördjupningar, veckorapport
                    │
@@ -26,7 +26,7 @@ Projektet drivs av Olle och Fredrik med fyra Claude-agenter. Agenterna förbered
 - **Vid behov:** be Claude "kör analys på <bolag>" eller "fråga VD om läget".
 
 ## Mänskliga beslut
-Kontakt med förvaltare, bud, köp och allt som kostar pengar görs av Olle eller Fredrik. Agenterna skriver utkast men skickar aldrig något.
+Kontakt med förvaltare, bud, köp och allt som kostar pengar görs av Oscar eller Fredrik. Agenterna skriver utkast men skickar aldrig något.
 
 ## Data
 Allt sparas i repot (`data/*.json`, `docs/companies/`). Dashboarden läser filerna och publiceras vid varje push.
