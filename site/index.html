@@ -6,52 +6,102 @@
 <title>millionsfromdefault – dashboard</title>
 <style>
   :root {
-    --bg: #f7f7f5; --card: #fff; --text: #1b1b1a; --muted: #6b6b66; --line: #e3e3de;
-    --accent: #1f5f4a; --good: #1f7a4d; --warn: #a56a00; --bad: #a33a2f;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #151514; --card: #1e1e1c; --text: #ecece8; --muted: #9a9a93; --line: #343430;
-            --accent: #5fc9a4; --good: #5fc98f; --warn: #e0a640; --bad: #e07a6e; }
+    --bg: #07090d; --bg2: #0b0f16; --card: rgba(16,21,31,.72); --card-solid: #10151f;
+    --text: #e6edf6; --muted: #7d8aa0; --line: rgba(120,150,200,.14); --line-strong: rgba(120,150,200,.28);
+    --accent: #00e0b8; --accent2: #7c5cff; --good: #2ee6a0; --warn: #ffb547; --bad: #ff5d73; --cool: #4cc9ff;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); }
-  header, main { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-  header { padding-top: 28px; padding-bottom: 8px; }
-  h1 { font-size: 22px; margin: 0 0 4px; }
-  .sub { color: var(--muted); margin: 0; }
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
-  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
-  .tile .n { font-size: 28px; font-weight: 650; line-height: 1.1; }
-  .tile .l { color: var(--muted); font-size: 13px; margin-top: 4px; }
-  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-bottom: 20px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
-  .card h2 { font-size: 14px; margin: 0 0 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
-  .bar-row { display: grid; grid-template-columns: 110px 1fr 36px; gap: 8px; align-items: center; margin: 6px 0; font-size: 14px; }
-  .bar { background: var(--line); border-radius: 4px; height: 10px; overflow: hidden; }
-  .bar > i { display: block; height: 100%; background: var(--accent); }
-  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-  select, input[type=search] { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); }
-  input[type=search] { min-width: 220px; }
-  .tablewrap { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
+  html { color-scheme: dark; }
+  body {
+    margin: 0; font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--text);
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(124,92,255,.18), transparent 60%),
+      radial-gradient(700px 480px at -5% 0%, rgba(0,224,184,.12), transparent 60%),
+      linear-gradient(var(--bg), var(--bg2)) fixed;
+    min-height: 100vh;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px; opacity: .35;
+    mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+  }
+  header, main, footer { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  header { padding-top: 36px; padding-bottom: 6px; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  h1 { font: 700 26px/1.1 var(--mono); letter-spacing: -.02em; margin: 0; }
+  h1 span { background: linear-gradient(90deg, var(--accent), var(--cool) 50%, var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { color: var(--muted); margin: 6px 0 0; font-size: 13px; }
+  .live { font: 12px var(--mono); color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .35; } }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 26px 0 18px; }
+  .tile, .card, .tablewrap {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
+  .tile { padding: 16px 18px; position: relative; overflow: hidden; transition: border-color .2s, transform .2s; }
+  .tile::after { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); opacity: .7; }
+  .tile:nth-child(3)::after { background: linear-gradient(90deg, var(--accent2), transparent); }
+  .tile:nth-child(5)::after { background: linear-gradient(90deg, var(--good), transparent); }
+  .tile:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+  .tile .n { font: 700 34px/1.1 var(--mono); letter-spacing: -.03em; }
+  .tile .l { color: var(--muted); font-size: 12px; margin-top: 6px; text-transform: uppercase; letter-spacing: .08em; }
+
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 14px; margin-bottom: 22px; }
+  .card { padding: 18px; }
+  .card h2 { font: 600 11px var(--mono); margin: 0 0 14px; color: var(--muted); text-transform: uppercase; letter-spacing: .14em; }
+  .bar-row { display: grid; grid-template-columns: 110px 1fr 32px; gap: 10px; align-items: center; margin: 9px 0; font-size: 13px; }
+  .bar-row b { font: 600 13px var(--mono); text-align: right; }
+  .bar { background: rgba(120,150,200,.1); border-radius: 99px; height: 8px; overflow: hidden; }
+  .bar > i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--accent), var(--cool)); box-shadow: 0 0 12px rgba(0,224,184,.45); transition: width .6s cubic-bezier(.2,.8,.2,1); }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  select, input[type=search] {
+    font: inherit; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px;
+    background: var(--card-solid); color: var(--text); outline: none; transition: border-color .15s, box-shadow .15s;
+  }
+  select:focus, input[type=search]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,224,184,.15); }
+  input[type=search] { min-width: 260px; flex: 1; max-width: 380px; }
+
+  .tablewrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; }
-  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  td.wrap { white-space: normal; min-width: 220px; color: var(--muted); }
-  th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); cursor: pointer; user-select: none; }
-  th.sorted::after { content: " ▾"; } th.sorted.asc::after { content: " ▴"; }
+  th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  td.wrap { white-space: normal; min-width: 240px; color: var(--muted); font-size: 13px; }
+  td.num { font-family: var(--mono); text-align: right; }
+  th { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); cursor: pointer; user-select: none; background: rgba(8,11,17,.6); position: sticky; top: 0; }
+  th:hover { color: var(--text); }
+  th.sorted { color: var(--accent); }
+  th.sorted::after { content: " \25BE"; } th.sorted.asc::after { content: " \25B4"; }
+  tbody tr { transition: background .15s; }
+  tbody tr:hover { background: rgba(0,224,184,.05); }
   tr:last-child td { border-bottom: 0; }
-  .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; border: 1px solid var(--line); }
-  .pill.ny { color: var(--muted); } .pill.granskas { color: var(--warn); } .pill.kontaktad { color: var(--accent); }
+
+  .pill { display: inline-block; padding: 3px 10px; border-radius: 99px; font: 600 11px var(--mono); letter-spacing: .04em; border: 1px solid currentColor; background: color-mix(in srgb, currentColor 10%, transparent); }
+  .pill.ny { color: var(--muted); } .pill.granskas { color: var(--warn); } .pill.kontaktad { color: var(--cool); }
   .pill.bud { color: var(--good); } .pill.avslutad { color: var(--bad); }
-  .prio { font-weight: 650; }
-  a { color: var(--accent); }
-  .empty { padding: 40px 20px; text-align: center; color: var(--muted); }
-  footer { max-width: 1200px; margin: 0 auto; padding: 16px 20px 40px; color: var(--muted); font-size: 13px; }
+  .score { display: inline-block; min-width: 26px; text-align: center; padding: 2px 0; border-radius: 6px; font: 700 12px var(--mono); background: rgba(120,150,200,.12); }
+  .score.s1 { color: var(--good); } .score.s2 { color: #8bf0c0; } .score.s3 { color: var(--warn); } .score.s4 { color: #ff9a5c; } .score.s5 { color: var(--bad); }
+  .score.p { color: var(--accent2); background: rgba(124,92,255,.14); }
+  .prio { font: 700 14px var(--mono); }
+  .prio.hi { color: var(--accent); text-shadow: 0 0 14px rgba(0,224,184,.6); }
+  a { color: var(--cool); text-decoration: none; } a:hover { text-decoration: underline; }
+  td a { font-weight: 600; }
+  .empty { padding: 56px 20px; text-align: center; color: var(--muted); font-family: var(--mono); font-size: 13px; }
+  .empty code, footer code { color: var(--accent); }
+  footer { padding-top: 18px; padding-bottom: 44px; color: var(--muted); font: 12px var(--mono); }
+  ::-webkit-scrollbar { height: 8px; width: 8px; } ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 8px; }
 </style>
 </head>
 <body>
 <header>
-  <h1>millionsfromdefault</h1>
-  <p class="sub">Konkursbon med AI-transformationspotential – pipeline och vad vi har tagit fram</p>
+  <div>
+    <h1><span>millionsfromdefault</span></h1>
+    <p class="sub">Konkursbon med AI-transformationspotential – pipeline och vad vi har tagit fram</p>
+  </div>
+  <div class="live" id="live">pipeline online</div>
 </header>
 <main>
   <div class="tiles" id="tiles"></div>
@@ -170,9 +220,11 @@ function renderTable() {
     let v = r[c.k];
     if (c.k === 'name') v = r.source_url ? `<a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.name)}</a>` : esc(r.name);
     else if (c.k === 'status') v = `<span class="pill ${esc(r.status)}">${esc(r.status)}${r.outcome ? ' · ' + esc(r.outcome) : ''}</span>`;
-    else if (c.k === 'priority') v = `<span class="prio">${v == null ? '–' : (v > 0 ? '+' : '') + v}</span>`;
+    else if (c.k === 'priority') v = `<span class="prio${v != null && v >= 3 ? ' hi' : ''}">${v == null ? '–' : (v > 0 ? '+' : '') + v}</span>`;
+    else if (c.k === 'ai_adoption') v = r.ai_adoption == null ? '–' : `<span class="score s${r.ai_adoption}">${r.ai_adoption}</span>`;
+    else if (c.k === 'ai_potential') v = r.ai_potential == null ? '–' : `<span class="score p">${r.ai_potential}</span>`;
     else v = fmt(v);
-    return `<td class="${c.wrap ? 'wrap' : ''}">${v}</td>`;
+    return `<td class="${c.wrap ? 'wrap' : ''}${c.num ? ' num' : ''}">${v}</td>`;
   }).join('') + '</tr>').join('');
 }
 
