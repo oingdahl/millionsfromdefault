@@ -588,33 +588,35 @@
     "employees": 47,
     "bankruptcy_date": "2026-11-11",
     "source_url": "https://www.konkurslistan.se/konkurser/5561076257",
-    "ai_adoption": 2,
+    "ai_adoption": 3,
     "ai_potential": 3,
     "ai_levers": [
-      "Ruttoptimering",
-      "Order- och trafikledning",
-      "Fraktsedel/dokumenthantering",
-      "Fakturering"
+      "Rutt- och lastplanering per temperaturzon",
+      "Automatiskt orderintag till TMS",
+      "ETA-besked och avvikelsehantering",
+      "Fakturaavstämning mot avtalspris",
+      "Förarschemaläggning mot kör- och vilotider",
+      "Uppdragskalkyl och prissättning"
     ],
-    "upside_msek": null,
-    "est_price_msek": null,
+    "upside_msek": -5,
+    "est_price_msek": 15,
     "trustee": {
       "name": "Jonas Vandér",
       "firm": "Advokatfirman Abersten Gävle AB",
-      "phone": null,
-      "email": null,
-      "source": "konkurslistan.se (förvaltare enligt konkursbeslut); telefon/e-post ej hämtade, verifieras mot konkursbeslut eller byrån"
+      "phone": "026-12 26 22",
+      "email": "jonas.vander@abersten.com",
+      "source": "https://www.abersten.com/kontor/gavle/ (hämtad 2026-11-23); förvaltaruppdrag enligt https://www.konkurslistan.se/konkurser/5561076257"
     },
     "bid_deadline": null,
-    "analysis": null,
-    "status": "ny",
+    "analysis": "docs/companies/5561076257.md",
+    "status": "granskas",
     "outcome": null,
     "found_by": "screening",
-    "assigned_to": null,
+    "assigned_to": "analys",
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Preliminärt: åkerier har ofta enkla transportledningssystem men mycket manuell trafikledning (adoption 2); planering, orderhantering och fakturering är tydliga AI-delar men kärnan är körning (potential 3). Störst omsättning och flest anställda i urvalet; vinst efter finansiella poster −6 899 tkr. Röd flagga: trafiktillstånd följer inte med inkråmet, och tung fordonspark (cirka 40 fordon registrerade i boet enligt konkurslistan.se) kan driva köppriset. Konkurs Sundsvalls tingsrätt. Bolagsprofil: https://upplysningar.syna.se/foretag/5561076257/aktiebolaget-valbo-transport Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
+    "notes": "Livsmedelsåkeri i Gävle (kyl, frys, torrt), grundat 1966. Nettoomsättning 82 922/76 806/78 078 tkr och rörelseresultat 982/−1 795/−4 845 tkr för 2023/2024/2025 (Allabolag bokslut, hämtad 2026-11-23); 47 anställda (konkurslistan.se). Årsredovisnings-PDF:er ej lästa (automatisk nedladdning blockerad). Konkurs 2026-11-11, Sundsvalls tingsrätt, egen ansökan; orsak: förlorat stort Frigoscandia-uppdrag och flera års förluster (Carup.se och Ekonomibladet 2026-11-12, med GD som källa). Anmärkning 2024: skatter/avgifter ej korrekt skötta (Allabolag). 36–40 fordon, bokfört 30 Mkr, troligen belånade (ej verifierat). Trafiktillstånd följer inte med. Systerbolaget Metab inte i konkurs. Ingen annonserad försäljning per 2026-11-23 (abersten.com, konkurslistan.se). Adoption 3: Opter TMS infört 2024 (opter.com). Potential 3: planering, order och fakturering, men kostnaderna är främst förare, diesel och fordon. Uppsida −5 Mkr = 4 % EBIT på 60 Mkr bas × 4 − köppris 15 Mkr (spann −5 till +9 Mkr); estimated: true. Rekommendation: avvakta, lutar åt avför. Se docs/companies/5561076257.md."
   },
   {
     "id": "5565815346",
@@ -664,30 +666,31 @@
     "ai_adoption": 3,
     "ai_potential": 4,
     "ai_levers": [
-      "Automatisk bokning och fraktmatchning",
-      "Dokument- och tullhantering",
-      "Prissättning/offerter",
-      "Kundtjänst och spårning"
+      "AI-offert och prissättning",
+      "Lastmatchning mot åkerier och samlastning",
+      "Dokument- och tullhantering (CMR, ADR, Turkiet)",
+      "Kundtjänst och spårning",
+      "Fakturering och avstämning av leverantörsfakturor"
     ],
-    "upside_msek": null,
-    "est_price_msek": null,
+    "upside_msek": 5.8,
+    "est_price_msek": 2,
     "trustee": {
       "name": "Johan Klåvus",
       "firm": "Trägårdh Advokatbyrå AB",
-      "phone": null,
-      "email": null,
-      "source": "konkurslistan.se (förvaltare enligt konkursbeslut); telefon/e-post ej hämtade, verifieras mot konkursbeslut eller byrån"
+      "phone": "040-665 56 17",
+      "email": "johan.klavus@tragardh.se",
+      "source": "Förvaltare: konkurslistan.se (hämtad 2026-11-23). Telefon och mejl: https://www.tragardh.se/medarbetare/johan-klavus/ (hämtad 2026-11-23). Växel 040-665 56 00."
     },
     "bid_deadline": null,
-    "analysis": null,
-    "status": "ny",
+    "analysis": "docs/companies/5564333416.md",
+    "status": "granskas",
     "outcome": null,
     "found_by": "screening",
-    "assigned_to": null,
+    "assigned_to": "analys",
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "Oscar",
-    "notes": "Preliminärt: spedition är till stor del informationsarbete (bokning, matchning av last, dokument, prissättning) – potential 4; bolaget ingår i Rhenus-koncernen och har sannolikt koncernens TMS (adoption 3). Förvärvat av Rhenus Group, se https://rhenus.group/news-media/detail/the-rhenus-groups-portfolio-grows-in-northern-europe-through-mts-malmoe-transport-spedition-ab . Konkurs samma dag och med samma förvaltare som Rhenus Logistics AB (5564297322), vilket tyder på en koncernavveckling i Sverige. Röd flagga: kundavtal kan ligga kvar hos koncernen; kundbas och system följer kanske inte med. Omkring 48 fordon/släp registrerade i boet enligt konkurslistan.se. Vinst efter finansiella poster −3 850 tkr. Konkurs Malmö tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket). Ägarbeslut 2026-11-23 (Oscar): behåll i pipelinen, större bon än 30 Mkr är aktuella."
+    "updated_by": "researchchef",
+    "notes": "Speditör i Malmö/Arlöv sedan 1991, trafik till Central- och Östeuropa och Turkiet. Bokslut (Allabolag/UC, https://www.allabolag.se/5564333416/bokslut, hämtad 2026-11-23): 2024 oms 118 326 tkr, rörelseresultat −4 020 (−3,4 %), 14 anst; 2022/23 (14 mån) 158 762/3 285; 2021/22 144 408/11 840 (8,2 %). Årsredovisnings-PDF:er ej lästa. Ägare Rhenus Beteiligungen International GmbH sedan dec 2022. Konkurs 2026-11-05 vid Malmö tingsrätt, samma dag och förvaltare som Rhenus Logistics AB; verksamheten avvecklas (nu.se 2026-11-06). Inget annat aktivt svenskt Rhenus-bolag hittat; Rhenus har sålt DK (2024) och NO Air & Ocean (2025); om kunderna förts över är okänt. AEO, tullager och trafiktillstånd följer inte med. Fordonen (44 enligt konkurslistan.se) troligen leasade. Adoption 3 (koncernens EDI/spårning), potential 4 (personalens arbete är informationsarbete, men ca 90 % av kostnaden är inköpt transport). Uppsida 5,8 Mkr = 30 % av omsättningen kvar × 5,5 % marginal efter AI × 4 − köppris 2 Mkr; estimated: true. Ingen buddeadline (tragardh.se/arende, 2026-11-23). Ägarbeslut 2026-11-23 (Oscar): behåll i pipelinen. Rekommendation: avvakta, samlad förfrågan med Rhenus Logistics. Se docs/companies/5564333416.md."
   },
   {
     "id": "5564297322",
@@ -701,30 +704,32 @@
     "ai_adoption": 3,
     "ai_potential": 4,
     "ai_levers": [
-      "Automatisk bokning och fraktmatchning",
-      "Dokument- och tullhantering",
-      "Prissättning/offerter",
-      "Kundtjänst och spårning"
+      "Offert och prissättning",
+      "Orderintag och bokning från mejl, PDF och EDI",
+      "Fraktinköp, lastmatchning och samlastning",
+      "Dokument och tull (CMR, Norge/UK/Turkiet)",
+      "Spårning och kundtjänst",
+      "Fakturaavstämning och tilläggsavgifter"
     ],
-    "upside_msek": null,
-    "est_price_msek": null,
+    "upside_msek": 3,
+    "est_price_msek": 1,
     "trustee": {
       "name": "Johan Klåvus",
       "firm": "Trägårdh Advokatbyrå AB",
-      "phone": null,
-      "email": null,
-      "source": "konkurslistan.se (förvaltare enligt konkursbeslut); telefon/e-post ej hämtade, verifieras mot konkursbeslut eller byrån"
+      "phone": "040-665 56 17",
+      "email": "johan.klavus@tragardh.se",
+      "source": "Förvaltare: konkurslistan.se (hämtad 2026-11-23), nu.se och Carup.se 2026-11-06. Telefon och mejl: https://www.tragardh.se/medarbetare/johan-klavus/ (hämtad 2026-11-23). Växel 040-665 56 00."
     },
     "bid_deadline": null,
-    "analysis": null,
-    "status": "ny",
+    "analysis": "docs/companies/5564297322.md",
+    "status": "granskas",
     "outcome": null,
     "found_by": "screening",
-    "assigned_to": null,
+    "assigned_to": "analys",
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "Oscar",
-    "notes": "Preliminärt: samma bedömning som MTS Malmö Transport & Spedition AB (5564333416): speditionens kärna är informationsarbete (potential 4), koncernsystem finns sannolikt (adoption 3). Svenska Rhenus-bolaget, tidigare Swedlink, se https://rhenus.group/news-media/swedish-company-swedlink-becomes-rhenus . Samma konkursdag och förvaltare som MTS. Röd flagga: varumärket Rhenus följer inte med, och kundrelationer kan flyttas till andra koncernbolag. Vinst efter finansiella poster −9 098 tkr. Konkurs Malmö tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket). Ägarbeslut 2026-11-23 (Oscar): behåll i pipelinen, större bon än 30 Mkr är aktuella."
+    "updated_by": "researchchef",
+    "notes": "Speditör för europeiska landtransporter (tidigare Swedlink), främst Sverige–Tyskland/Italien. Bokslut (Allabolag/UC, https://www.allabolag.se/5564297322/bokslut, hämtad 2026-11-23): nettoomsättning 102 873/102 931/69 841 tkr och rörelseresultat 770/1 212/−9 148 tkr för 2022/2023/2024; 16 anställda 2024. Årsredovisnings-PDF:er ej lästa. Ingen årsredovisning för 2025 inlämnad (Carup.se 2026-11-06). Konkurs Malmö tingsrätt 2026-11-05, samma dag och förvaltare som MTS (nu.se 2026-11-06). Pressen anger prispress och olönsamma uppdrag. Hypotes: Rhenus drar sig ur Norden. Ingen annonserad försäljning (tragardh.se/arende, konkurslistan.se, 2026-11-23). Inga fordon eller varumärken registrerade. Adoption 3 (koncernens TMS och EDI, som inte följer med), potential 4 (tillgångslätt spedition). Röda flaggor: Rhenus nätverk och varumärke följer inte med, omsättningen föll 32 %, kunderna har sannolikt flyttat. Uppsida 3 Mkr = 35 % av omsättningen kvar × 4 % marginal efter AI × 4 − köppris 1 Mkr; estimated: true. Ägarbeslut 2026-11-23 (Oscar): behåll i pipelinen. Rekommendation: avvakta, låg prioritet. Se docs/companies/5564297322.md."
   },
   {
     "id": "5563462315",
