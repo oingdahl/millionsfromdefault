@@ -189,14 +189,14 @@
     },
     "bid_deadline": null,
     "analysis": "docs/companies/5592293988.md",
-    "status": "granskas",
-    "outcome": null,
+    "status": "avslutad",
+    "outcome": "avfört",
     "found_by": "screening",
     "assigned_to": null,
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "analys",
-    "notes": "AI-poäng 8,8/20 efter analys 2026-11-23 (docs/companies/5592293988.md); preliminärt 11,8. Rekommendation från analys: avför, men bevaka om förvaltaren säljer kundregistret separat till symboliskt pris (högst ca 0,1 Mkr). Beslut OI/FW. Återförsäljare av företagstelefoni; kunderna tecknar ramavtal hos Tele2 och Tre via GR8 (Trustpilot), så kundavtal och provisionsrätt följer inte med vid inkråm. Omsättning 2024 20 220 tkr, res. e. fin. 54 tkr, EBITDA 315 tkr, soliditet 4,8 % (Allabolag); 2020–2023 från Ratsit. Årsredovisningen ej läst; intäktsmix (cirka 60–80 % operatörsprovision) är en hypotes, estimated: true. Adoption 3: vanliga säljsystem, ingen AI. Effektivisering 3: order, utköp och kundtjänst, men kostnaden är mest genomflöde och säljlön. Nya intäkter 3: kundbasen passar för AI-receptionist men förtroendet är svagt (Trustpilot 2,6, klagomål om utebliven cashback och vilseledande försäljning) och kanalen följer inte med. Snabbhet 2: telefoni väljs på pris och erbjudande. Köpbarhet 2: bara kundregister (GDPR-villkor), varumärke GR8 SOLUTIONS och domän; personalen borta. Uppsida 0,5 Mkr (realistiskt fall; teoretiskt 2,9 Mkr), estimated: true. Säte Vellinge, verksamhetsadress Malmö. Ingen försäljning annonserad per 2026-11-23."
+    "updated_by": "OI",
+    "notes": "Avfört 2026-11-23 (beslut OI): kundavtalen är ramavtal direkt med Tele2 och Tre och provisionsrätten hänger på GR8:s återförsäljaravtal, så det som bär omsättningen går inte att köpa ur boet; kvar är bara kundregister (GDPR-villkor), varumärke och domän. Varumärket är skadat (Trustpilot 2,6, klagomål om utebliven cashback, uteblivna utköp och vilseledande försäljning), vilket undergräver idén med AI-tjänster till kundbasen. Resultat nära noll och soliditet ca 5 %; realistisk uppsida ca 0,5 Mkr (estimated: true). AI-poäng 8,8/20 efter analys 2026-11-23 (docs/companies/5592293988.md); preliminärt 11,8. Återförsäljare av företagstelefoni; kunderna tecknar ramavtal hos Tele2 och Tre via GR8 (Trustpilot), så kundavtal och provisionsrätt följer inte med vid inkråm. Omsättning 2024 20 220 tkr, res. e. fin. 54 tkr, EBITDA 315 tkr, soliditet 4,8 % (Allabolag); 2020–2023 från Ratsit. Årsredovisningen ej läst; intäktsmix (cirka 60–80 % operatörsprovision) är en hypotes, estimated: true. Adoption 3: vanliga säljsystem, ingen AI. Effektivisering 3: order, utköp och kundtjänst, men kostnaden är mest genomflöde och säljlön. Nya intäkter 3: kundbasen passar för AI-receptionist men förtroendet är svagt (Trustpilot 2,6, klagomål om utebliven cashback och vilseledande försäljning) och kanalen följer inte med. Snabbhet 2: telefoni väljs på pris och erbjudande. Köpbarhet 2: bara kundregister (GDPR-villkor), varumärke GR8 SOLUTIONS och domän; personalen borta. Uppsida 0,5 Mkr (realistiskt fall; teoretiskt 2,9 Mkr), estimated: true. Säte Vellinge, verksamhetsadress Malmö. Ingen försäljning annonserad per 2026-11-23."
   },
   {
     "id": "5592443559",
