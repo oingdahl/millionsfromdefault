@@ -37,7 +37,7 @@
   .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); animation: pulse 2.4s ease-in-out infinite; }
   @keyframes pulse { 50% { opacity: .35; } }
 
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 26px 0 18px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin: 26px 0 18px; }
   .tile, .card, .tablewrap {
     background: var(--card); border: 1px solid var(--line); border-radius: 14px;
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
@@ -50,7 +50,7 @@
   .tile .n { font: 700 34px/1.1 var(--mono); letter-spacing: -.03em; }
   .tile .l { color: var(--muted); font-size: 12px; margin-top: 6px; text-transform: uppercase; letter-spacing: .08em; }
 
-  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 14px; margin-bottom: 22px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr)); gap: 14px; margin-bottom: 22px; }
   .card { padding: 18px; }
   .card h2 { font: 600 11px var(--mono); margin: 0 0 14px; color: var(--muted); text-transform: uppercase; letter-spacing: .14em; }
   .bar-row { display: grid; grid-template-columns: 110px 1fr 32px; gap: 10px; align-items: center; margin: 9px 0; font-size: 13px; }
@@ -99,9 +99,43 @@
   .decision b { color: var(--warn); font: 600 12px var(--mono); white-space: nowrap; }
   .list-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
   .list-row:last-child { border-bottom: 0; }
-  .list-row .r { font-family: var(--mono); color: var(--muted); white-space: nowrap; text-align: right; }
+  .list-row > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+  .list-row .r { font-family: var(--mono); color: var(--muted); text-align: right; flex-shrink: 0; max-width: 50%; }
   .days.urgent { color: var(--bad); } .days.soon { color: var(--warn); }
   .muted { color: var(--muted); }
+  select { max-width: 100%; text-overflow: ellipsis; }
+  @media (max-width: 700px) {
+    header, main, footer { padding-left: 14px; padding-right: 14px; }
+    header { padding-top: 22px; }
+    h1 { font-size: 21px; }
+    .tiles { gap: 10px; margin: 18px 0 14px; }
+    .tile { padding: 12px 14px; } .tile .n { font-size: 26px; } .tile .l { font-size: 10px; }
+    .grid2 { gap: 10px; }
+    .card { padding: 14px; }
+    .bar-row { grid-template-columns: 96px 1fr 28px; }
+    .filters select { flex: 1 1 140px; }
+    input[type=search] { min-width: 0; max-width: none; width: 100%; flex-basis: 100%; }
+    .tablewrap { background: none; border: 0; backdrop-filter: none; -webkit-backdrop-filter: none; overflow: visible; }
+    table, tbody { display: block; }
+    thead { display: none; }
+    tbody tr { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; padding: 14px; margin-bottom: 10px;
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+    td { display: block; padding: 0; border: 0; white-space: normal; text-align: left; font-size: 13px; }
+    td.num { text-align: left; }
+    td::before { content: attr(data-l); display: block; font: 600 9px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+    td[data-k=name] { grid-column: 1 / -1; font-size: 15px; } td[data-k=name]::before { display: none; }
+    td[data-k=notes] { grid-column: 1 / -1; min-width: 0; }
+    td.empty-cell { display: none; }
+    .sortbar.sortbar { display: flex; }
+  }
+  html, body { overflow-x: hidden; }
+  .clamp { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; cursor: pointer; }
+  .clamp.open { -webkit-line-clamp: unset; display: block; }
+  .report-body { max-height: 220px; overflow: hidden; position: relative; }
+  .report-body::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 60px; background: linear-gradient(transparent, var(--card-solid)); }
+  .report-body.open { max-height: none; } .report-body.open::after { display: none; }
+  .more { margin-top: 8px; background: none; border: 1px solid var(--line); color: var(--accent); font: 12px var(--mono); padding: 6px 12px; border-radius: 8px; cursor: pointer; }
+  .sortbar { display: none; gap: 8px; align-items: center; margin-bottom: 10px; font: 12px var(--mono); color: var(--muted); }
   ::-webkit-scrollbar { height: 8px; width: 8px; } ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 8px; }
 </style>
 </head>
@@ -132,6 +166,7 @@
     <select id="fPerson"><option value="">Alla personer</option></select>
     <select id="fIndustry"><option value="">Alla branscher</option></select>
   </div>
+  <div class="sortbar">Sortera <select id="fSort"></select></div>
   <div class="tablewrap">
     <table>
       <thead><tr id="head"></tr></thead>
@@ -215,7 +250,12 @@ function renderPanels(reports) {
   $('report').innerHTML = !rep ? '<span class="muted">Ingen rapport än. VD skriver den första på måndag.</span>' :
     `<div class="meta">${esc(rep.date)} · ${esc(rep.author || 'vd')} · ${esc(rep.title || '')}</div>` +
     (rep.decisions || []).map(d => `<div class="decision"><span>${esc(d.text)}</span>${d.deadline ? `<b>senast ${esc(d.deadline)}</b>` : ''}</div>`).join('') +
-    md(rep.body || '');
+    `<div class="report-body" id="rb">${md(rep.body || '')}</div><button class="more" id="rbm" type="button">Visa hela rapporten</button>`;
+  const rb = $('rb'), rbm = $('rbm');
+  if (rb) {
+    if (rb.scrollHeight <= 240) { rb.classList.add('open'); rbm.remove(); }
+    else rbm.addEventListener('click', () => { const o = rb.classList.toggle('open'); rbm.textContent = o ? 'Visa mindre' : 'Visa hela rapporten'; });
+  }
   const live = data.filter(r => r.status !== 'avslutad');
   const dl = live.filter(r => r.bid_deadline).sort((a, b) => a.bid_deadline.localeCompare(b.bid_deadline)).slice(0, 8);
   $('deadlines').innerHTML = dl.length ? dl.map(r => { const n = daysTo(r.bid_deadline);
@@ -247,6 +287,10 @@ function renderStatic() {
   opts('fStatus', data.map(r => r.status));
   opts('fPerson', data.flatMap(r => [r.found_by, r.assigned_to]));
   opts('fIndustry', data.map(r => r.industry));
+  const fs = $('fSort');
+  COLS.filter(c => c.k !== 'notes').forEach(c => fs.add(new Option(c.t, c.k)));
+  fs.value = sortKey;
+  fs.addEventListener('input', () => { sortKey = fs.value; sortAsc = !COLS.find(c => c.k === sortKey).num && sortKey !== 'updated'; renderTable(); });
   $('head').innerHTML = COLS.map(c => `<th data-k="${c.k}">${c.t}</th>`).join('');
   $('head').addEventListener('click', e => {
     const k = e.target.dataset.k; if (!k) return;
@@ -277,14 +321,16 @@ function renderTable() {
     else if (c.k === 'ai_adoption') v = r.ai_adoption == null ? '–' : `<span class="score s${r.ai_adoption}">${r.ai_adoption}</span>`;
     else if (c.k === 'trustee') v = r.trustee ? esc(r.trustee.name || '') : '–';
     else if (c.k === 'bid_deadline') v = r.bid_deadline ? `<span class="days ${daysTo(r.bid_deadline) <= 7 ? 'urgent' : daysTo(r.bid_deadline) <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)}</span>` : '–';
-    else if (c.k === 'notes' && r.analysis) v = fmt(v) + ` ${link(r, '→ analys')}`;
+    else if (c.k === 'notes') v = `<div class="clamp">${fmt(v)}</div>` + (r.analysis ? ` ${link(r, '→ analys')}` : '');
     else if (c.k === 'ai_potential') v = r.ai_potential == null ? '–' : `<span class="score p">${r.ai_potential}</span>`;
     else v = fmt(v);
-    return `<td class="${c.wrap ? 'wrap' : ''}${c.num ? ' num' : ''}">${v}</td>`;
+    const blank = r[c.k] == null || r[c.k] === '' ? ' empty-cell' : '';
+    return `<td data-k="${c.k}" data-l="${c.t}" class="${c.wrap ? 'wrap' : ''}${c.num ? ' num' : ''}${c.k === 'name' || c.k === 'priority' ? '' : blank}">${v}</td>`;
   }).join('') + '</tr>').join('');
 }
 
 Promise.all([load('companies.json'), load('reports.json')]).then(([rows, reports]) => {
+  document.addEventListener('click', e => { const c = e.target.closest('.clamp'); if (c) c.classList.toggle('open'); });
   data = prep(Array.isArray(rows) ? rows : []);
   renderStatic(); renderPanels(Array.isArray(reports) ? reports : []); renderTable();
   ['q', 'fStatus', 'fPerson', 'fIndustry'].forEach(id => $(id).addEventListener('input', renderTable));
