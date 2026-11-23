@@ -683,14 +683,14 @@
     },
     "bid_deadline": null,
     "analysis": "docs/companies/5564333416.md",
-    "status": "kontaktad",
-    "outcome": null,
+    "status": "avslutad",
+    "outcome": "avfört",
     "found_by": "screening",
-    "assigned_to": "OI",
+    "assigned_to": null,
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "OI",
-    "notes": "Speditör i Malmö/Arlöv sedan 1991, trafik till Central- och Östeuropa och Turkiet. Bokslut (Allabolag/UC, https://www.allabolag.se/5564333416/bokslut, hämtad 2026-11-23): 2024 oms 118 326 tkr, rörelseresultat −4 020 (−3,4 %), 14 anst; 2022/23 (14 mån) 158 762/3 285; 2021/22 144 408/11 840 (8,2 %). Årsredovisnings-PDF:er ej lästa. Ägare Rhenus Beteiligungen International GmbH sedan dec 2022. Konkurs 2026-11-05 vid Malmö tingsrätt, samma dag och förvaltare som Rhenus Logistics AB; verksamheten avvecklas (nu.se 2026-11-06). Inget annat aktivt svenskt Rhenus-bolag hittat; Rhenus har sålt DK (2024) och NO Air & Ocean (2025); om kunderna förts över är okänt. AEO, tullager och trafiktillstånd följer inte med. Fordonen (44 enligt konkurslistan.se) troligen leasade. Adoption 3 (koncernens EDI/spårning), potential 4 (personalens arbete är informationsarbete, men ca 90 % av kostnaden är inköpt transport). Uppsida 5,8 Mkr = 30 % av omsättningen kvar × 5,5 % marginal efter AI × 4 − köppris 2 Mkr; estimated: true. Ingen buddeadline (tragardh.se/arende, 2026-11-23). Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, samlad förfrågan med Rhenus Logistics. Se docs/companies/5564333416.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
+    "notes": "Avfört 2026-11-23 (beslut OI): förvaltaren svarade samma dag på OI:s förfrågan att verksamhetens mjuka delar (IP- och namnrättigheter, kunddata m.m.) redan är överlåtna till en extern köpare. Kvar att sälja är ett 40-tal trailers och någon enstaka dragbil, vilket inte passar tesen. Källa: mejl från förvaltaren 2026-11-23 (one.com). Speditör i Malmö/Arlöv sedan 1991, trafik till Central- och Östeuropa och Turkiet. Bokslut (Allabolag/UC, https://www.allabolag.se/5564333416/bokslut, hämtad 2026-11-23): 2024 oms 118 326 tkr, rörelseresultat −4 020 (−3,4 %), 14 anst; 2022/23 (14 mån) 158 762/3 285; 2021/22 144 408/11 840 (8,2 %). Årsredovisnings-PDF:er ej lästa. Ägare Rhenus Beteiligungen International GmbH sedan dec 2022. Konkurs 2026-11-05 vid Malmö tingsrätt, samma dag och förvaltare som Rhenus Logistics AB; verksamheten avvecklas (nu.se 2026-11-06). Inget annat aktivt svenskt Rhenus-bolag hittat; Rhenus har sålt DK (2024) och NO Air & Ocean (2025); om kunderna förts över är okänt. AEO, tullager och trafiktillstånd följer inte med. Fordonen (44 enligt konkurslistan.se) troligen leasade. Adoption 3 (koncernens EDI/spårning), potential 4 (personalens arbete är informationsarbete, men ca 90 % av kostnaden är inköpt transport). Uppsida 5,8 Mkr = 30 % av omsättningen kvar × 5,5 % marginal efter AI × 4 − köppris 2 Mkr; estimated: true. Ingen buddeadline (tragardh.se/arende, 2026-11-23). Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, samlad förfrågan med Rhenus Logistics. Se docs/companies/5564333416.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
   },
   {
     "id": "5564297322",
@@ -722,14 +722,14 @@
     },
     "bid_deadline": null,
     "analysis": "docs/companies/5564297322.md",
-    "status": "kontaktad",
-    "outcome": null,
+    "status": "avslutad",
+    "outcome": "avfört",
     "found_by": "screening",
-    "assigned_to": "OI",
+    "assigned_to": null,
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "OI",
-    "notes": "Speditör för europeiska landtransporter (tidigare Swedlink), främst Sverige–Tyskland/Italien. Bokslut (Allabolag/UC, https://www.allabolag.se/5564297322/bokslut, hämtad 2026-11-23): nettoomsättning 102 873/102 931/69 841 tkr och rörelseresultat 770/1 212/−9 148 tkr för 2022/2023/2024; 16 anställda 2024. Årsredovisnings-PDF:er ej lästa. Ingen årsredovisning för 2025 inlämnad (Carup.se 2026-11-06). Konkurs Malmö tingsrätt 2026-11-05, samma dag och förvaltare som MTS (nu.se 2026-11-06). Pressen anger prispress och olönsamma uppdrag. Hypotes: Rhenus drar sig ur Norden. Ingen annonserad försäljning (tragardh.se/arende, konkurslistan.se, 2026-11-23). Inga fordon eller varumärken registrerade. Adoption 3 (koncernens TMS och EDI, som inte följer med), potential 4 (tillgångslätt spedition). Röda flaggor: Rhenus nätverk och varumärke följer inte med, omsättningen föll 32 %, kunderna har sannolikt flyttat. Uppsida 3 Mkr = 35 % av omsättningen kvar × 4 % marginal efter AI × 4 − köppris 1 Mkr; estimated: true. Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, låg prioritet. Se docs/companies/5564297322.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
+    "notes": "Avfört 2026-11-23 (beslut OI): förvaltaren svarade samma dag på OI:s förfrågan att verksamhetens mjuka delar (IP- och namnrättigheter, kunddata m.m.) redan är överlåtna till en extern köpare. Kvar att sälja är ett 40-tal trailers och någon enstaka dragbil, vilket inte passar tesen. Källa: mejl från förvaltaren 2026-11-23 (one.com). Speditör för europeiska landtransporter (tidigare Swedlink), främst Sverige–Tyskland/Italien. Bokslut (Allabolag/UC, https://www.allabolag.se/5564297322/bokslut, hämtad 2026-11-23): nettoomsättning 102 873/102 931/69 841 tkr och rörelseresultat 770/1 212/−9 148 tkr för 2022/2023/2024; 16 anställda 2024. Årsredovisnings-PDF:er ej lästa. Ingen årsredovisning för 2025 inlämnad (Carup.se 2026-11-06). Konkurs Malmö tingsrätt 2026-11-05, samma dag och förvaltare som MTS (nu.se 2026-11-06). Pressen anger prispress och olönsamma uppdrag. Hypotes: Rhenus drar sig ur Norden. Ingen annonserad försäljning (tragardh.se/arende, konkurslistan.se, 2026-11-23). Inga fordon eller varumärken registrerade. Adoption 3 (koncernens TMS och EDI, som inte följer med), potential 4 (tillgångslätt spedition). Röda flaggor: Rhenus nätverk och varumärke följer inte med, omsättningen föll 32 %, kunderna har sannolikt flyttat. Uppsida 3 Mkr = 35 % av omsättningen kvar × 4 % marginal efter AI × 4 − köppris 1 Mkr; estimated: true. Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, låg prioritet. Se docs/companies/5564297322.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
   },
   {
     "id": "5563462315",
