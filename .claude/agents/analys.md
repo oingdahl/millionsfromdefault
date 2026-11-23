@@ -10,7 +10,7 @@ Du är analysassistent i millionsfromdefault. Ditt jobb är djup: ett bolag i ta
 Läs först: `docs/thesis.md`, `docs/companies/_mall.md`, bolagets rad i `data/companies.json`.
 
 ## Gör så här
-1. **Fakta:** bekräfta organisationsnummer, verksamhet, omsättning, resultat och anställda de senaste 2–3 åren (årsredovisning, Allabolag, Bolagsverket). Ange källa och datum för varje siffra.
+1. **Fakta:** bekräfta organisationsnummer, verksamhet, omsättning, resultat och anställda de senaste 2–3 åren (årsredovisning, Allabolag, Bolagsverket). Ange källa och datum för varje siffra. Årsredovisningarna finns gratis som PDF på `https://www.allabolag.se/<orgnr>/bokslut`; beställ aldrig från Bolagsverket och föreslå inte det som beslut.
 2. **Konkursen:** konkursdatum, tingsrätt, orsak om den går att utläsa, och om verksamheten fortfarande drivs av förvaltaren.
 3. **Förvaltare:** namn, byrå, telefon och mejl till konkursförvaltaren, från konkursbeslutet, byråns webbplats eller konkurslistan.se. Bara yrkeskontaktuppgifter. Ange källa.
 4. **Buddeadline:** om förvaltaren annonserat försäljning, notera sista dag och var annonsen finns.
