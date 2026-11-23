@@ -168,33 +168,35 @@
     "source_url": "https://www.konkurslistan.se/konkurser/5592293988",
     "ai_adoption": 3,
     "ai_efficiency": 3,
-    "ai_revenue": 4,
-    "ai_speed": 3,
-    "buyability": 3,
+    "ai_revenue": 3,
+    "ai_speed": 2,
+    "buyability": 2,
     "ai_levers": [
-      "Offert- och orderhantering",
-      "Supportärenden",
-      "Tidrapportering"
+      "AI-receptionist/röstagent som tillägg till kundernas växel",
+      "Orderläggning, nummerflytt och utköpsbevakning",
+      "AI-kundtjänst efter försäljning",
+      "Granskning av säljsamtal mot avtalslöften",
+      "Provisionsavstämning"
     ],
-    "upside_msek": null,
-    "est_price_msek": null,
+    "upside_msek": 0.5,
+    "est_price_msek": 0.1,
     "trustee": {
       "name": "Karin Strandberg",
       "firm": "Advokatbyrån Gulliksson AB",
-      "phone": null,
-      "email": null,
-      "source": "https://www.konkurslistan.se/konkurser/5592293988"
+      "phone": "040-664 44 81",
+      "email": "karin.strandberg@gulliksson.se",
+      "source": "https://www.gulliksson.se/en/team/karin-strandberg/ (hämtad 2026-11-23); uppdraget enligt https://www.konkurslistan.se/konkurser/5592293988"
     },
     "bid_deadline": null,
-    "analysis": null,
-    "status": "ny",
+    "analysis": "docs/companies/5592293988.md",
+    "status": "granskas",
     "outcome": null,
     "found_by": "screening",
     "assigned_to": null,
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "researchchef",
-    "notes": "AI-poäng 11,8/20 (ny modell 2026-11-23): eff 3, adoption 3, Preliminärt: rev 4: kundbas av småföretag med telefoni/växel och egen säljkår kan bära AI-receptionist, röstagenter och AI-kundtjänst; snabbhet 3; köpbarhet 3: oklart om kundavtalen ägs av GR8 eller operatörerna (analys pågår). Granskat av researchchef: redan digital bransch (adoption 3) med normala administrativa delar (potential 3, estimated: true). Resultat efter fin. poster 54 tkr, bokförda tillgångar 3 794 tkr, varumärket GR8 SOLUTIONS registrerat. Verksamhetsbeskrivningen nämner även värdepappershandel; oklart hur stor del som är rörelse. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5592293988"
+    "updated_by": "analys",
+    "notes": "AI-poäng 8,8/20 efter analys 2026-11-23 (docs/companies/5592293988.md); preliminärt 11,8. Rekommendation från analys: avför, men bevaka om förvaltaren säljer kundregistret separat till symboliskt pris (högst ca 0,1 Mkr). Beslut OI/FW. Återförsäljare av företagstelefoni; kunderna tecknar ramavtal hos Tele2 och Tre via GR8 (Trustpilot), så kundavtal och provisionsrätt följer inte med vid inkråm. Omsättning 2024 20 220 tkr, res. e. fin. 54 tkr, EBITDA 315 tkr, soliditet 4,8 % (Allabolag); 2020–2023 från Ratsit. Årsredovisningen ej läst; intäktsmix (cirka 60–80 % operatörsprovision) är en hypotes, estimated: true. Adoption 3: vanliga säljsystem, ingen AI. Effektivisering 3: order, utköp och kundtjänst, men kostnaden är mest genomflöde och säljlön. Nya intäkter 3: kundbasen passar för AI-receptionist men förtroendet är svagt (Trustpilot 2,6, klagomål om utebliven cashback och vilseledande försäljning) och kanalen följer inte med. Snabbhet 2: telefoni väljs på pris och erbjudande. Köpbarhet 2: bara kundregister (GDPR-villkor), varumärke GR8 SOLUTIONS och domän; personalen borta. Uppsida 0,5 Mkr (realistiskt fall; teoretiskt 2,9 Mkr), estimated: true. Säte Vellinge, verksamhetsadress Malmö. Ingen försäljning annonserad per 2026-11-23."
   },
   {
     "id": "5592443559",
