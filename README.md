@@ -26,7 +26,7 @@ Se [`docs/thesis.md`](docs/thesis.md) för kriterier och bedömningsmodell.
 
 ## Dashboard
 
-Live: https://oingdahl.github.io/millionsfromdefault/
+Live: https://oingdahl.github.io/millionsfromdefault/ (skickar vidare till `site/`)
 
 Dashboarden i `site/index.html` läser `data/*.json` och visar nyckeltal, VD:ns senaste rapport och beslut, kommande buddeadlines, störst uppsida, förvaltarkontakter och en sorterbar tabell.
 
