@@ -135,6 +135,22 @@
   .report-body::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 60px; background: linear-gradient(transparent, var(--card-solid)); }
   .report-body.open { max-height: none; } .report-body.open::after { display: none; }
   .more { margin-top: 8px; background: none; border: 1px solid var(--line); color: var(--accent); font: 12px var(--mono); padding: 6px 12px; border-radius: 8px; cursor: pointer; }
+  .scrollbox { height: 175px; overflow-y: auto; padding-right: 6px; overscroll-behavior: contain; }
+  .scrollbox::-webkit-scrollbar { width: 5px; }
+  .toplist { margin-bottom: 22px; }
+  .top-row { display: grid; grid-template-columns: 34px minmax(0, 1.4fr) minmax(0, 1fr) 84px 90px 110px; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .top-row:last-child { border-bottom: 0; }
+  .top-row .nm { font-weight: 600; overflow-wrap: anywhere; }
+  .top-row .ind { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .top-row .r { font-family: var(--mono); text-align: right; color: var(--muted); }
+  .top-row .go { text-align: right; font: 600 12px var(--mono); }
+  .top-row .go .none { color: var(--muted); font-weight: 400; }
+  @media (max-width: 700px) {
+    .top-row { grid-template-columns: 34px minmax(0, 1fr) auto; row-gap: 2px; }
+    .top-row .ind { grid-column: 2 / 4; grid-row: 2; }
+    .top-row .r.rev, .top-row .r.up { display: none; }
+    .top-row .go { grid-column: 3; grid-row: 1; }
+  }
   .sortbar { display: none; gap: 8px; align-items: center; margin-bottom: 10px; font: 12px var(--mono); color: var(--muted); }
   ::-webkit-scrollbar { height: 8px; width: 8px; } ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 8px; }
 </style>
@@ -150,10 +166,11 @@
 <main>
   <div class="tiles" id="tiles"></div>
   <div class="grid2">
-    <div class="card"><h2>Pipeline per status</h2><div id="byStatus"></div></div>
-    <div class="card"><h2>Bolag per person (hittade)</h2><div id="byPerson"></div></div>
-    <div class="card"><h2>Bolag per bransch</h2><div id="byIndustry"></div></div>
+    <div class="card"><h2>Pipeline per status</h2><div class="scrollbox" id="byStatus"></div></div>
+    <div class="card"><h2>Bolag per person (hittade)</h2><div class="scrollbox" id="byPerson"></div></div>
+    <div class="card"><h2>Bolag per bransch</h2><div class="scrollbox" id="byIndustry"></div></div>
   </div>
+  <div class="card toplist"><h2>Högst prioritet</h2><div id="toplist"></div></div>
   <div class="grid2">
     <div class="card report"><h2>VD-rapport</h2><div id="report"></div></div>
     <div class="card"><h2>Kommande buddeadlines</h2><div id="deadlines"></div></div>
@@ -280,7 +297,17 @@ function renderStatic() {
   $('tiles').innerHTML = tiles.map(([n, l]) => `<div class="tile"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
   bars($('byStatus'), STATUSES.map(s => [s, data.filter(r => r.status === s).length]));
   bars($('byPerson'), count(data, 'found_by'));
-  bars($('byIndustry'), count(data, 'industry').slice(0, 8));
+  bars($('byIndustry'), count(data, 'industry'));
+  const topList = data.filter(r => r.status !== 'avslutad' && r.priority != null)
+    .sort((a, b) => (b.priority - a.priority) || (!!b.analysis - !!a.analysis) || ((b.revenue_ksek || 0) - (a.revenue_ksek || 0))).slice(0, 8);
+  $('toplist').innerHTML = topList.length ? topList.map(r => `<div class="top-row">
+      <span class="prio${r.priority >= 3 ? ' hi' : ''}">${r.priority > 0 ? '+' : ''}${r.priority}</span>
+      <span class="nm">${esc(r.name)}</span>
+      <span class="ind">${esc(r.industry || '')}</span>
+      <span class="r rev">${r.revenue_ksek != null ? (r.revenue_ksek / 1000).toLocaleString('sv-SE', { maximumFractionDigits: 1 }) + ' Mkr' : '–'}</span>
+      <span class="r up">${r.upside_msek != null ? '↑ ' + r.upside_msek.toLocaleString('sv-SE') + ' Mkr' : ''}</span>
+      <span class="go">${r.analysis ? link(r, 'Analys →') : '<span class="none">ej analyserad</span>'}</span>
+    </div>`).join('') : '<span class="muted">Inga bedömda bolag än</span>';
   const dates = data.map(r => r.updated).filter(Boolean).sort();
   $('stamp').textContent = dates.length ? dates[dates.length - 1] : '–';
   const opts = (id, vals) => { const s = $(id); [...new Set(vals.filter(Boolean))].sort().forEach(v => s.add(new Option(v, v))); };
