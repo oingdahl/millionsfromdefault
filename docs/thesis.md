@@ -5,7 +5,7 @@ Köp upp livskraftiga verksamheter som hamnat i konkurs eller är nära det, och
 
 ## Sållningskriterier (måste uppfyllas)
 - **Befintlig verksamhet:** Bolaget har levererat till kunder nyligen. Inte ett tomt skal.
-- **God omsättning:** Riktvärde senaste bokslut över 5 Mkr. Justeras när vi lär oss mer.
+- **God omsättning:** Riktvärde senaste bokslut över 5 Mkr. Justeras när vi lär oss mer. Inget övre tak: större bon (t.ex. Rhenus-bolagen, 70–118 Mkr) prövas också (beslut 2026-11-23).
 - **Köpbar struktur:** Tillgångar eller rörelse går att överta via konkursförvaltaren (inkråmsförvärv).
 - **Hanterbar skuldbild:** Vi tar inte över skulder i inkråmsförvärv, men annan problematik (kunder, avtal, personal) ska vara överblickbar.
 

@@ -457,14 +457,14 @@
     },
     "bid_deadline": null,
     "analysis": "docs/companies/5569792830.md",
-    "status": "granskas",
-    "outcome": null,
+    "status": "avslutad",
+    "outcome": "avfört",
     "found_by": "screening",
-    "assigned_to": "analys",
+    "assigned_to": null,
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "researchchef",
-    "notes": "Omsättning 2022/23–2024/25 (räkenskapsår maj–april): 2 274 / 1 707 / 611 tEUR (≈24,9 / 18,7 / 6,7 Mkr), anställda 30/23/8, resultat före skatt 144/24/−17 tEUR (källa largestcompanies.com och konkurslistan.se, hämtade 2026-11-23; SEK för 22/23 och 23/24 omräknade, estimated: true). Konkursorsak inte angiven; hypotes: efterfrågan försvann i takt med regionernas hyrstopp (SVT 2024-02-22, SKR Bemanningstrend). Ramavtal och konsulter följer inte med automatiskt (LOU 17:17 kräver myndighetens godkännande; LAS 6 b § gäller inte vid konkurs). Adoption 2: standardsystem och manuell matchning. Potential 4: matchning, screening, tidrapport och fakturering är informationsarbete. Uppsida ≈1,0 Mkr = 6,7 Mkr × 6 % × 3 − 0,2 Mkr, estimated: true. Röda flaggor: kundbasen försvann före konkursen och efterfrågan krymper strukturellt. Analys rekommenderar avför. konkurslistan.se har motstridiga uppgifter om konkursbeslut och bevakningsdag – kontrolleras. Se docs/companies/5569792830.md."
+    "updated_by": "Oscar",
+    "notes": "Omsättning 2022/23–2024/25 (räkenskapsår maj–april): 2 274 / 1 707 / 611 tEUR (≈24,9 / 18,7 / 6,7 Mkr), anställda 30/23/8, resultat före skatt 144/24/−17 tEUR (källa largestcompanies.com och konkurslistan.se, hämtade 2026-11-23; SEK för 22/23 och 23/24 omräknade, estimated: true). Konkursorsak inte angiven; hypotes: efterfrågan försvann i takt med regionernas hyrstopp (SVT 2024-02-22, SKR Bemanningstrend). Ramavtal och konsulter följer inte med automatiskt (LOU 17:17 kräver myndighetens godkännande; LAS 6 b § gäller inte vid konkurs). Adoption 2: standardsystem och manuell matchning. Potential 4: matchning, screening, tidrapport och fakturering är informationsarbete. Uppsida ≈1,0 Mkr = 6,7 Mkr × 6 % × 3 − 0,2 Mkr, estimated: true. Röda flaggor: kundbasen försvann före konkursen och efterfrågan krymper strukturellt. Analys rekommenderar avför. konkurslistan.se har motstridiga uppgifter om konkursbeslut och bevakningsdag – kontrolleras. Se docs/companies/5569792830.md. Avförd 2026-11-23 efter ägarbeslut (Oscar): kundbasen borta, uppsida ~1 Mkr."
   },
   {
     "id": "5594145764",
@@ -686,8 +686,8 @@
     "assigned_to": null,
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "researchchef",
-    "notes": "Preliminärt: spedition är till stor del informationsarbete (bokning, matchning av last, dokument, prissättning) – potential 4; bolaget ingår i Rhenus-koncernen och har sannolikt koncernens TMS (adoption 3). Förvärvat av Rhenus Group, se https://rhenus.group/news-media/detail/the-rhenus-groups-portfolio-grows-in-northern-europe-through-mts-malmoe-transport-spedition-ab . Konkurs samma dag och med samma förvaltare som Rhenus Logistics AB (5564297322), vilket tyder på en koncernavveckling i Sverige. Röd flagga: kundavtal kan ligga kvar hos koncernen; kundbas och system följer kanske inte med. Omkring 48 fordon/släp registrerade i boet enligt konkurslistan.se. Vinst efter finansiella poster −3 850 tkr. Konkurs Malmö tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
+    "updated_by": "Oscar",
+    "notes": "Preliminärt: spedition är till stor del informationsarbete (bokning, matchning av last, dokument, prissättning) – potential 4; bolaget ingår i Rhenus-koncernen och har sannolikt koncernens TMS (adoption 3). Förvärvat av Rhenus Group, se https://rhenus.group/news-media/detail/the-rhenus-groups-portfolio-grows-in-northern-europe-through-mts-malmoe-transport-spedition-ab . Konkurs samma dag och med samma förvaltare som Rhenus Logistics AB (5564297322), vilket tyder på en koncernavveckling i Sverige. Röd flagga: kundavtal kan ligga kvar hos koncernen; kundbas och system följer kanske inte med. Omkring 48 fordon/släp registrerade i boet enligt konkurslistan.se. Vinst efter finansiella poster −3 850 tkr. Konkurs Malmö tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket). Ägarbeslut 2026-11-23 (Oscar): behåll i pipelinen, större bon än 30 Mkr är aktuella."
   },
   {
     "id": "5564297322",
@@ -723,8 +723,8 @@
     "assigned_to": null,
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "researchchef",
-    "notes": "Preliminärt: samma bedömning som MTS Malmö Transport & Spedition AB (5564333416): speditionens kärna är informationsarbete (potential 4), koncernsystem finns sannolikt (adoption 3). Svenska Rhenus-bolaget, tidigare Swedlink, se https://rhenus.group/news-media/swedish-company-swedlink-becomes-rhenus . Samma konkursdag och förvaltare som MTS. Röd flagga: varumärket Rhenus följer inte med, och kundrelationer kan flyttas till andra koncernbolag. Vinst efter finansiella poster −9 098 tkr. Konkurs Malmö tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
+    "updated_by": "Oscar",
+    "notes": "Preliminärt: samma bedömning som MTS Malmö Transport & Spedition AB (5564333416): speditionens kärna är informationsarbete (potential 4), koncernsystem finns sannolikt (adoption 3). Svenska Rhenus-bolaget, tidigare Swedlink, se https://rhenus.group/news-media/swedish-company-swedlink-becomes-rhenus . Samma konkursdag och förvaltare som MTS. Röd flagga: varumärket Rhenus följer inte med, och kundrelationer kan flyttas till andra koncernbolag. Vinst efter finansiella poster −9 098 tkr. Konkurs Malmö tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket). Ägarbeslut 2026-11-23 (Oscar): behåll i pipelinen, större bon än 30 Mkr är aktuella."
   },
   {
     "id": "5563462315",
