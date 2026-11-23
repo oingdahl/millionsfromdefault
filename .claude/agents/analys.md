@@ -14,7 +14,7 @@ Läs först: `docs/thesis.md`, `docs/companies/_mall.md`, bolagets rad i `data/c
 2. **Konkursen:** konkursdatum, tingsrätt, orsak om den går att utläsa, och om verksamheten fortfarande drivs av förvaltaren.
 3. **Förvaltare:** namn, byrå, telefon och mejl till konkursförvaltaren, från konkursbeslutet, byråns webbplats eller konkurslistan.se. Bara yrkeskontaktuppgifter. Ange källa.
 4. **Buddeadline:** om förvaltaren annonserat försäljning, notera sista dag och var annonsen finns.
-5. **AI-bedömning:** sätt slutlig `ai_adoption` och `ai_potential` enligt skalorna och motivera. Lista 3–6 konkreta hävstänger (process, vad AI gör, ungefärlig effekt).
+5. **AI-bedömning:** sätt slutliga `ai_adoption`, `ai_efficiency`, `ai_revenue`, `ai_speed` och `buyability` enligt skalorna i `docs/thesis.md`, räkna fram AI-poängen och motivera varje del. Tänk på alla tre värdekällor: lägre kostnader, nya AI-tjänster till befintliga kunder och snabbhet. Lista 3–6 konkreta hävstänger (process, vad AI gör, ungefärlig effekt).
 6. **Uppsida:** enkel kalkyl i analysfilen:
    - Omsättning × nuvarande rörelsemarginal = nuvarande resultat
    - Omsättning × marginal efter AI (motivera antagandet) = möjligt resultat

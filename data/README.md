@@ -4,7 +4,7 @@ Två JSON-filer. Dashboarden i `site/` läser dem direkt, och den publiceras om 
 
 ## companies.json
 
-Lista (JSON-array) med ett objekt per bolag.
+Lista (JSON-array) med ett objekt per bolag. AI-poängen (0–20) räknas fram av dashboarden från de fyra dimensionerna och `ai_adoption`, se `docs/thesis.md`; den lagras inte.
 
 | Fält | Typ | Beskrivning |
 |---|---|---|
@@ -16,8 +16,11 @@ Lista (JSON-array) med ett objekt per bolag.
 | `employees` | tal/null | Antal anställda senaste bokslut |
 | `bankruptcy_date` | sträng/null | Konkursdatum, `YYYY-MM-DD` |
 | `source_url` | sträng/null | Länk, normalt konkurslistan.se |
-| `ai_adoption` | tal/null | 1–5, se `docs/thesis.md` (lågt är bra) |
-| `ai_potential` | tal/null | 1–5, se `docs/thesis.md` |
+| `ai_adoption` | tal/null | 1–5, hur långt bolaget/branschen kommit med AI (lågt förstärker effektiviseringen) |
+| `ai_efficiency` | tal/null | 1–5, effektivisering |
+| `ai_revenue` | tal/null | 1–5, nya intäkter från AI-produkter/tjänster |
+| `ai_speed` | tal/null | 1–5, snabbhet som konkurrensfördel |
+| `buyability` | tal/null | 1–5, köpbarhet ur boet |
 | `ai_levers` | lista | Korta AI-hävstänger, t.ex. `["Offertautomation", "Schemaläggning"]` |
 | `upside_msek` | tal/null | Grovt uppskattad uppsida, Mkr (se analysfilen) |
 | `est_price_msek` | tal/null | Uppskattat köppris för inkråmet, Mkr |
@@ -46,7 +49,10 @@ Exempel:
   "bankruptcy_date": "2026-11-10",
   "source_url": "https://www.konkurslistan.se/",
   "ai_adoption": 1,
-  "ai_potential": 4,
+  "ai_efficiency": 4,
+  "ai_revenue": 2,
+  "ai_speed": 4,
+  "buyability": 3,
   "ai_levers": ["Schemaläggning", "Offertautomation", "Kundtjänst"],
   "upside_msek": 6.5,
   "est_price_msek": 1.2,

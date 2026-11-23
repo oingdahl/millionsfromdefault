@@ -13,9 +13,9 @@ Läs först: `docs/thesis.md` (sållningskriterier och poängskalor) och `data/c
 1. Hämta listan över de senaste konkurserna på https://www.konkurslistan.se/. Läs **högst 20 sidor per körning** och vänta några sekunder mellan sidorna. Ingen bulk-hämtning.
 2. För varje konkurs: notera namn, organisationsnummer, ort, bransch, konkursdatum och, om sidan visar det, omsättning och anställda.
 3. Sålla:
-   - Omsättning under 5 Mkr (eller okänd och uppenbart liten) → hoppa över.
+   - Omsättning under 5 Mkr (eller okänd och uppenbart liten) → hoppa över. Vill du ändå flagga ett sådant bolag, returnera det med `status: "avslutad"`, `outcome: "avfört"` och skälet i `notes`.
    - Holdingbolag, vilande bolag, enskilda konsulter utan anställda → hoppa över.
-4. För de som går vidare: sätt en preliminär `ai_adoption` och `ai_potential` utifrån bransch enligt skalorna, och skriv en mening om varför i `notes` med prefixet "Preliminärt:".
+4. För de som går vidare: sätt preliminära `ai_adoption`, `ai_efficiency`, `ai_revenue`, `ai_speed` och `buyability` enligt skalorna. Glöm inte nya intäkter och snabbhet: ett bolag i en digital bransch kan ha stor uppsida i nya AI-tjänster till sina kunder. Saknar du underlag för köpbarhet, sätt 3 och skriv en mening om varför i `notes` med prefixet "Preliminärt:".
 5. Returnera en JSON-array med objekt enligt schemat i `data/README.md` (`status: "ny"`, `found_by: "screening"`, `assigned_to: null`). Fält du inte vet sätts till `null`.
 
 ## Regler

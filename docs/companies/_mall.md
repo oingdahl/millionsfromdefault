@@ -30,7 +30,11 @@ Källor:
 
 ## AI-bedömning
 - AI-adoption (1–5): , motivering:
-- AI-potential (1–5): , motivering:
+- Effektivisering (1–5): , motivering:
+- Nya intäkter (1–5): , motivering:
+- Snabbhet (1–5): , motivering:
+- Köpbarhet (1–5): , motivering:
+- **AI-poäng (0–20):**
 
 | Process | Vad AI gör | Ungefärlig effekt |
 |---|---|---|

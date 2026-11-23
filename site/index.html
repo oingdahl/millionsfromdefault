@@ -138,15 +138,16 @@
   .scrollbox { height: 175px; overflow-y: auto; padding-right: 6px; overscroll-behavior: contain; }
   .scrollbox::-webkit-scrollbar { width: 5px; }
   .toplist { margin-bottom: 22px; }
-  .top-row { display: grid; grid-template-columns: 34px minmax(0, 1.4fr) minmax(0, 1fr) 84px 90px 110px; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .top-row { display: grid; grid-template-columns: 44px minmax(0, 1.4fr) minmax(0, 1fr) 84px 90px 110px; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
   .top-row:last-child { border-bottom: 0; }
   .top-row .nm { font-weight: 600; overflow-wrap: anywhere; }
+  .top-row .parts { display: block; font: 400 11px var(--mono); color: var(--muted); margin-top: 2px; }
   .top-row .ind { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .top-row .r { font-family: var(--mono); text-align: right; color: var(--muted); }
   .top-row .go { text-align: right; font: 600 12px var(--mono); }
   .top-row .go .none { color: var(--muted); font-weight: 400; }
   @media (max-width: 700px) {
-    .top-row { grid-template-columns: 34px minmax(0, 1fr) auto; row-gap: 2px; }
+    .top-row { grid-template-columns: 44px minmax(0, 1fr) auto; row-gap: 2px; }
     .top-row .ind { grid-column: 2 / 4; grid-row: 2; }
     .top-row .r.rev, .top-row .r.up { display: none; }
     .top-row .go { grid-column: 3; grid-row: 1; }
@@ -192,7 +193,7 @@
     <div class="empty" id="empty" hidden>Inga bolag att visa än. Lägg till rader i <code>data/companies.json</code>.</div>
   </div>
 </main>
-<footer>Källdata: <code>data/companies.json</code> och <code>data/reports.json</code>. Prioritet = AI-potential − AI-adoption (högre är bättre). Uppdaterad: <span id="stamp">–</span></footer>
+<footer>Källdata: <code>data/companies.json</code> och <code>data/reports.json</code>. AI-poäng 0–20 = effektivisering × (6 − adoption)/5 + nya intäkter + snabbhet + köpbarhet; hög prioritet ≥ 12. Uppdaterad: <span id="stamp">–</span></footer>
 
 <script>
 const COLS = [
@@ -201,9 +202,12 @@ const COLS = [
   { k: 'city', t: 'Ort' },
   { k: 'revenue_ksek', t: 'Omsättning (tkr)', num: true },
   { k: 'employees', t: 'Anst.', num: true },
-  { k: 'ai_adoption', t: 'AI-adoption', num: true },
-  { k: 'ai_potential', t: 'AI-potential', num: true },
-  { k: 'priority', t: 'Prioritet', num: true },
+  { k: 'priority', t: 'AI-poäng', num: true },
+  { k: 'ai_adoption', t: 'Adoption', num: true },
+  { k: 'ai_efficiency', t: 'Effektiv.', num: true },
+  { k: 'ai_revenue', t: 'Intäkter', num: true },
+  { k: 'ai_speed', t: 'Snabbhet', num: true },
+  { k: 'buyability', t: 'Köpbarhet', num: true },
   { k: 'upside_msek', t: 'Uppsida (Mkr)', num: true },
   { k: 'bid_deadline', t: 'Buddeadline' },
   { k: 'status', t: 'Status' },
@@ -215,6 +219,9 @@ const COLS = [
 ];
 const STATUSES = ['ny', 'granskas', 'kontaktad', 'bud', 'avslutad'];
 let data = [], sortKey = 'priority', sortAsc = false;
+const HIGH = 12;
+const fmtScore = v => v == null ? '–' : v.toLocaleString('sv-SE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt = v => v == null ? '–' : (typeof v === 'number' ? v.toLocaleString('sv-SE') : esc(v));
@@ -231,7 +238,8 @@ async function load(file = 'companies.json') {
 
 function prep(rows) {
   return rows.map(r => ({ ...r,
-    priority: (r.ai_potential != null && r.ai_adoption != null) ? r.ai_potential - r.ai_adoption : null }));
+    priority: [r.ai_adoption, r.ai_efficiency, r.ai_revenue, r.ai_speed, r.buyability].some(v => v == null) ? null
+      : Math.round((r.ai_efficiency * (6 - r.ai_adoption) / 5 + r.ai_revenue + r.ai_speed + r.buyability) * 10) / 10 }));
 }
 
 function count(rows, key) {
@@ -289,10 +297,10 @@ function renderPanels(reports) {
 function renderStatic() {
   const active = data.filter(r => r.status !== 'avslutad');
   const bought = data.filter(r => r.outcome === 'köpt').length;
-  const top = data.filter(r => (r.priority ?? -9) >= 3 && r.status !== 'avslutad').length;
+  const top = data.filter(r => (r.priority ?? -9) >= HIGH && r.status !== 'avslutad').length;
   const tiles = [
     [data.length, 'Bolag totalt'], [active.length, 'Aktiva i pipeline'],
-    [top, 'Hög prioritet (≥3)'], [data.filter(r => r.status === 'bud').length, 'I budfas'], [bought, 'Köpta']
+    [top, 'Hög prioritet (≥12)'], [data.filter(r => r.status === 'bud').length, 'I budfas'], [bought, 'Köpta']
   ];
   $('tiles').innerHTML = tiles.map(([n, l]) => `<div class="tile"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
   bars($('byStatus'), STATUSES.map(s => [s, data.filter(r => r.status === s).length]));
@@ -301,8 +309,8 @@ function renderStatic() {
   const topList = data.filter(r => r.status !== 'avslutad' && r.priority != null)
     .sort((a, b) => (b.priority - a.priority) || (!!b.analysis - !!a.analysis) || ((b.revenue_ksek || 0) - (a.revenue_ksek || 0))).slice(0, 8);
   $('toplist').innerHTML = topList.length ? topList.map(r => `<div class="top-row">
-      <span class="prio${r.priority >= 3 ? ' hi' : ''}">${r.priority > 0 ? '+' : ''}${r.priority}</span>
-      <span class="nm">${esc(r.name)}</span>
+      <span class="prio${r.priority >= HIGH ? ' hi' : ''}">${fmtScore(r.priority)}</span>
+      <span class="nm">${esc(r.name)}<span class="parts" title="Effektivisering (viktad med adoption) · Nya intäkter · Snabbhet · Köpbarhet">E ${fmtScore(r.ai_efficiency * (6 - r.ai_adoption) / 5)} · I ${r.ai_revenue} · S ${r.ai_speed} · K ${r.buyability}</span></span>
       <span class="ind">${esc(r.industry || '')}</span>
       <span class="r rev">${r.revenue_ksek != null ? (r.revenue_ksek / 1000).toLocaleString('sv-SE', { maximumFractionDigits: 1 }) + ' Mkr' : '–'}</span>
       <span class="r up">${r.upside_msek != null ? '↑ ' + r.upside_msek.toLocaleString('sv-SE') + ' Mkr' : ''}</span>
@@ -344,12 +352,12 @@ function renderTable() {
     let v = r[c.k];
     if (c.k === 'name') v = r.source_url ? `<a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.name)}</a>` : esc(r.name);
     else if (c.k === 'status') v = `<span class="pill ${esc(r.status)}">${esc(r.status)}${r.outcome ? ' · ' + esc(r.outcome) : ''}</span>`;
-    else if (c.k === 'priority') v = `<span class="prio${v != null && v >= 3 ? ' hi' : ''}">${v == null ? '–' : (v > 0 ? '+' : '') + v}</span>`;
+    else if (c.k === 'priority') v = `<span class="prio${v != null && v >= HIGH ? ' hi' : ''}">${fmtScore(v)}</span>`;
     else if (c.k === 'ai_adoption') v = r.ai_adoption == null ? '–' : `<span class="score s${r.ai_adoption}">${r.ai_adoption}</span>`;
     else if (c.k === 'trustee') v = r.trustee ? esc(r.trustee.name || '') : '–';
     else if (c.k === 'bid_deadline') v = r.bid_deadline ? `<span class="days ${daysTo(r.bid_deadline) <= 7 ? 'urgent' : daysTo(r.bid_deadline) <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)}</span>` : '–';
     else if (c.k === 'notes') v = `<div class="clamp">${fmt(v)}</div>` + (r.analysis ? ` ${link(r, '→ analys')}` : '');
-    else if (c.k === 'ai_potential') v = r.ai_potential == null ? '–' : `<span class="score p">${r.ai_potential}</span>`;
+    else if (['ai_efficiency', 'ai_revenue', 'ai_speed', 'buyability'].includes(c.k)) v = r[c.k] == null ? '–' : `<span class="score p">${r[c.k]}</span>`;
     else v = fmt(v);
     const blank = r[c.k] == null || r[c.k] === '' ? ' empty-cell' : '';
     return `<td data-k="${c.k}" data-l="${c.t}" class="${c.wrap ? 'wrap' : ''}${c.num ? ' num' : ''}${c.k === 'name' || c.k === 'priority' ? '' : blank}">${v}</td>`;

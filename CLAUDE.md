@@ -11,7 +11,7 @@ Svenska i all text. Kod, filnamn och JSON-nycklar på engelska eller som de reda
 ## Regler
 - **Data:** `data/companies.json` är sanningskällan för dashboarden. Följ schemat i `data/README.md`. Ändra aldrig befintliga `id` och behåll fältordningen.
 - **Källor:** Varje påstående om ett bolag ska gå att spåra (länk eller dokument). Skriv `null` hellre än att gissa. Markera uppskattningar med `"estimated": true` i bolagets `notes`.
-- **Poäng:** Sätt `ai_adoption` och `ai_potential` enligt skalorna i `docs/thesis.md`, och motivera kort i `notes`.
+- **Poäng:** Sätt `ai_adoption`, `ai_efficiency`, `ai_revenue`, `ai_speed` och `buyability` enligt skalorna i `docs/thesis.md` (AI-poäng 0–20), och motivera kort i `notes`.
 - **Personuppgifter:** Håll dem minimala. Skriv bolagsuppgifter, inte privatpersoner (undantag: namngiven konkursförvaltare och VD som de står i offentliga register).
 - **Skrapa inte** konkurslistan.se i bulk. Hämta enstaka sidor manuellt eller med måttlig takt och respektera deras villkor.
 - **Commits:** Små, en sak per commit, svenska eller engelska meddelanden i imperativ. Pusha till `main` så länge vi är två; öppna PR om något är riskabelt.

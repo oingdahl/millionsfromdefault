@@ -9,7 +9,10 @@
     "bankruptcy_date": "2026-11-19",
     "source_url": "https://www.konkurslistan.se/konkurser/5590267349",
     "ai_adoption": 2,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 2,
+    "ai_speed": 3,
+    "buyability": 2,
     "ai_levers": [
       "Schemaläggning av förare",
       "Kundtjänst",
@@ -34,7 +37,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Granskat av researchchef: potential sänkt 4→3 eftersom dispatch i taxi oftast sköts av anslutna beställningscentraler; administration (förarplanering, fakturering, kundärenden) kvarstår. Adoption 2 (estimated: true). Bolaget hyr även ut taxiförare. Resultat efter fin. poster -1 034 tkr, bokförda tillgångar 1 657 tkr, två registrerade fordon. Röda flaggor: taxitrafiktillstånd följer inte med vid inkråmsförvärv; kontrollera om kundavtal finns kvar. Ingen försäljning pågår enligt sidan. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5590267349"
+    "notes": "AI-poäng 9,4/20 (ny modell 2026-11-23): eff 3, adoption 2, rev 2: få AI-tjänster att sälja till åkande/företagskunder; snabbhet 3: bokning/svarstid spelar roll men dispatch sköts ofta av beställningscentral; köpbarhet 2: taxitrafiktillstånd följer inte med. Granskat av researchchef: potential sänkt 4→3 eftersom dispatch i taxi oftast sköts av anslutna beställningscentraler; administration (förarplanering, fakturering, kundärenden) kvarstår. Adoption 2 (estimated: true). Bolaget hyr även ut taxiförare. Resultat efter fin. poster -1 034 tkr, bokförda tillgångar 1 657 tkr, två registrerade fordon. Röda flaggor: taxitrafiktillstånd följer inte med vid inkråmsförvärv; kontrollera om kundavtal finns kvar. Ingen försäljning pågår enligt sidan. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5590267349"
   },
   {
     "id": "5568917891",
@@ -46,7 +49,10 @@
     "bankruptcy_date": "2026-11-20",
     "source_url": "https://www.konkurslistan.se/konkurser/5568917891",
     "ai_adoption": 2,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 2,
+    "ai_speed": 2,
+    "buyability": 2,
     "ai_levers": [
       "Personalplanering",
       "Dokumentation och rapportering",
@@ -70,7 +76,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Granskat av researchchef: hemtjänst med planering, dokumentation och fakturering som tydliga AI-delar (adoption 2, potential 3, estimated: true). Resultat efter fin. poster 1 190 tkr (marginal 17 %), bokförda tillgångar 2 790 tkr. Namnet antyder holding men verksamhetsbeskrivningen anger operativ hemtjänst. Röda flaggor: IVO-tillstånd och kommunala avtal följer sannolikt inte med; sidan innehåller platshållartext, verifiera uppgifterna. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5568917891"
+    "notes": "AI-poäng 8,4/20 (ny modell 2026-11-23): eff 3, adoption 2, rev 2: möjligen digital tillsyn/anhöriginfo; snabbhet 2; köpbarhet 2: IVO-tillstånd och kommunala avtal följer sannolikt inte med. Granskat av researchchef: hemtjänst med planering, dokumentation och fakturering som tydliga AI-delar (adoption 2, potential 3, estimated: true). Resultat efter fin. poster 1 190 tkr (marginal 17 %), bokförda tillgångar 2 790 tkr. Namnet antyder holding men verksamhetsbeskrivningen anger operativ hemtjänst. Röda flaggor: IVO-tillstånd och kommunala avtal följer sannolikt inte med; sidan innehåller platshållartext, verifiera uppgifterna. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5568917891"
   },
   {
     "id": "5569358137",
@@ -82,7 +88,10 @@
     "bankruptcy_date": "2026-11-18",
     "source_url": "https://www.konkurslistan.se/konkurser/5569358137",
     "ai_adoption": 2,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 2,
+    "ai_speed": 3,
+    "buyability": 2,
     "ai_levers": [
       "Bokningshantering",
       "Kundtjänst",
@@ -107,7 +116,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Granskat av researchchef: bokningar, prissättning och gästkommunikation kan automatiseras (adoption 2, potential 3, estimated: true). Resultat efter fin. poster 248 tkr, bokförda tillgångar 2 942 tkr. OBS: sidan är motsägelsefull om konkursbeslutet (rubrik säger konkurs 2026-11-18, annan text säger endast ansökan). Verifiera beslutet. Serveringstillstånd följer inte med. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5569358137"
+    "notes": "AI-poäng 9,4/20 (ny modell 2026-11-23): eff 3, adoption 2, rev 2: direktbokning och merförsäljning; snabbhet 3: svar på bokningar och eventförfrågningar; köpbarhet 2: serveringstillstånd följer inte med, konkursbeslutet ej verifierat. Granskat av researchchef: bokningar, prissättning och gästkommunikation kan automatiseras (adoption 2, potential 3, estimated: true). Resultat efter fin. poster 248 tkr, bokförda tillgångar 2 942 tkr. OBS: sidan är motsägelsefull om konkursbeslutet (rubrik säger konkurs 2026-11-18, annan text säger endast ansökan). Verifiera beslutet. Serveringstillstånd följer inte med. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5569358137"
   },
   {
     "id": "5590268420",
@@ -119,7 +128,10 @@
     "bankruptcy_date": "2026-11-17",
     "source_url": "https://www.konkurslistan.se/konkurser/5590268420",
     "ai_adoption": 2,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 2,
+    "ai_speed": 3,
+    "buyability": 2,
     "ai_levers": [
       "Ruttplanering",
       "Orderhantering",
@@ -143,7 +155,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Granskat av researchchef: transport plus däckhotell med planering och bokning som AI-delar (adoption 2, potential 3, estimated: true). Resultat efter fin. poster -1 173 tkr, bokförda tillgångar 1 154 tkr, antal anställda ej angivet, endast ett registrerat fordon (släp 1999). Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5590268420"
+    "notes": "AI-poäng 9,4/20 (ny modell 2026-11-23): eff 3, adoption 2, rev 2: bokningstjänst för däckhotell; snabbhet 3; köpbarhet 2: ett registrerat fordon, anställda okänt. Granskat av researchchef: transport plus däckhotell med planering och bokning som AI-delar (adoption 2, potential 3, estimated: true). Resultat efter fin. poster -1 173 tkr, bokförda tillgångar 1 154 tkr, antal anställda ej angivet, endast ett registrerat fordon (släp 1999). Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5590268420"
   },
   {
     "id": "5592293988",
@@ -155,7 +167,10 @@
     "bankruptcy_date": "2026-11-17",
     "source_url": "https://www.konkurslistan.se/konkurser/5592293988",
     "ai_adoption": 3,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 4,
+    "ai_speed": 3,
+    "buyability": 3,
     "ai_levers": [
       "Offert- och orderhantering",
       "Supportärenden",
@@ -179,7 +194,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Granskat av researchchef: redan digital bransch (adoption 3) med normala administrativa delar (potential 3, estimated: true). Resultat efter fin. poster 54 tkr, bokförda tillgångar 3 794 tkr, varumärket GR8 SOLUTIONS registrerat. Verksamhetsbeskrivningen nämner även värdepappershandel; oklart hur stor del som är rörelse. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5592293988"
+    "notes": "AI-poäng 11,8/20 (ny modell 2026-11-23): eff 3, adoption 3, Preliminärt: rev 4: kundbas av småföretag med telefoni/växel och egen säljkår kan bära AI-receptionist, röstagenter och AI-kundtjänst; snabbhet 3; köpbarhet 3: oklart om kundavtalen ägs av GR8 eller operatörerna (analys pågår). Granskat av researchchef: redan digital bransch (adoption 3) med normala administrativa delar (potential 3, estimated: true). Resultat efter fin. poster 54 tkr, bokförda tillgångar 3 794 tkr, varumärket GR8 SOLUTIONS registrerat. Verksamhetsbeskrivningen nämner även värdepappershandel; oklart hur stor del som är rörelse. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5592293988"
   },
   {
     "id": "5592443559",
@@ -191,7 +206,10 @@
     "bankruptcy_date": "2026-11-19",
     "source_url": "https://www.konkurslistan.se/konkurser/5592443559",
     "ai_adoption": 1,
-    "ai_potential": 2,
+    "ai_efficiency": 2,
+    "ai_revenue": 1,
+    "ai_speed": 4,
+    "buyability": 2,
     "ai_levers": [
       "Offertautomation",
       "Projektplanering",
@@ -215,7 +233,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Granskat av researchchef: fysiskt hantverk med viss offert- och planeringsadministration (adoption 1, potential 2, estimated: true). Resultat efter fin. poster -946 tkr, bokförda tillgångar 2 446 tkr. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5592443559"
+    "notes": "AI-poäng 9,0/20 (ny modell 2026-11-23): eff 2, adoption 1, rev 1; snabbhet 4: den som lämnar offert först vinner ofta jobbet; köpbarhet 2: förlustbringande, rörelse i huvudsak personal. Granskat av researchchef: fysiskt hantverk med viss offert- och planeringsadministration (adoption 1, potential 2, estimated: true). Resultat efter fin. poster -946 tkr, bokförda tillgångar 2 446 tkr. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5592443559"
   },
   {
     "id": "5594351156",
@@ -227,7 +245,10 @@
     "bankruptcy_date": "2026-11-18",
     "source_url": "https://www.konkurslistan.se/konkurser/5594351156",
     "ai_adoption": 1,
-    "ai_potential": 2,
+    "ai_efficiency": 2,
+    "ai_revenue": 1,
+    "ai_speed": 4,
+    "buyability": 2,
     "ai_levers": [
       "Offertautomation",
       "Uppdragsplanering"
@@ -250,7 +271,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Granskat av researchchef: fysiskt hantverk (adoption 1, potential 2, estimated: true). Omsättning strax över riktvärdet. Bokförda tillgångar 2 561 tkr, ett registrerat fordon (2024). Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5594351156"
+    "notes": "AI-poäng 9,0/20 (ny modell 2026-11-23): eff 2, adoption 1, rev 1; snabbhet 4: offertdrivet; köpbarhet 2: liten rörelse, 4 anställda. Granskat av researchchef: fysiskt hantverk (adoption 1, potential 2, estimated: true). Omsättning strax över riktvärdet. Bokförda tillgångar 2 561 tkr, ett registrerat fordon (2024). Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5594351156"
   },
   {
     "id": "5593269870",
@@ -262,7 +283,10 @@
     "bankruptcy_date": "2026-11-18",
     "source_url": "https://www.konkurslistan.se/konkurser/5593269870",
     "ai_adoption": 2,
-    "ai_potential": 2,
+    "ai_efficiency": 2,
+    "ai_revenue": 1,
+    "ai_speed": 2,
+    "buyability": 2,
     "ai_levers": [
       "Bemanningsplanering",
       "Inköp och lager",
@@ -286,7 +310,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Granskat av researchchef: mest fysisk verksamhet (adoption 2, potential 2, estimated: true). Resultat efter fin. poster -21 tkr, bokförda tillgångar 1 755 tkr. Sidan anger Sundsvalls tingsrätt medan listan anger Sandviken; oklart. Serveringstillstånd följer inte med. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5593269870"
+    "notes": "AI-poäng 6,6/20 (ny modell 2026-11-23): eff 2, adoption 2, rev 1; snabbhet 2; köpbarhet 2: serveringstillstånd följer inte med. Granskat av researchchef: mest fysisk verksamhet (adoption 2, potential 2, estimated: true). Resultat efter fin. poster -21 tkr, bokförda tillgångar 1 755 tkr. Sidan anger Sundsvalls tingsrätt medan listan anger Sandviken; oklart. Serveringstillstånd följer inte med. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5593269870"
   },
   {
     "id": "5593989022",
@@ -298,7 +322,10 @@
     "bankruptcy_date": "2026-11-17",
     "source_url": "https://www.konkurslistan.se/konkurser/5593989022",
     "ai_adoption": 2,
-    "ai_potential": 2,
+    "ai_efficiency": 2,
+    "ai_revenue": 1,
+    "ai_speed": 2,
+    "buyability": 1,
     "ai_levers": [
       "Ruttplanering",
       "Fakturering"
@@ -321,7 +348,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Avfört av researchchef: 1 anställd och inga registrerade fordon, troligen förmedling via underentreprenörer; ingen överlåtbar rörelse att tala om. Resultat efter fin. poster 251 tkr, bokförda tillgångar 3 079 tkr. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5593989022"
+    "notes": "AI-poäng 5,6/20 (ny modell 2026-11-23): eff 2, adoption 2, köpbarhet 1: ingen överlåtbar rörelse. Avfört av researchchef: 1 anställd och inga registrerade fordon, troligen förmedling via underentreprenörer; ingen överlåtbar rörelse att tala om. Resultat efter fin. poster 251 tkr, bokförda tillgångar 3 079 tkr. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5593989022"
   },
   {
     "id": "5569472847",
@@ -333,7 +360,10 @@
     "bankruptcy_date": "2026-11-18",
     "source_url": "https://www.konkurslistan.se/konkurser/5569472847",
     "ai_adoption": 1,
-    "ai_potential": 2,
+    "ai_efficiency": 2,
+    "ai_revenue": 1,
+    "ai_speed": 4,
+    "buyability": 1,
     "ai_levers": [
       "Offertautomation",
       "Projektplanering"
@@ -356,7 +386,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Avfört av researchchef: 1 anställd, fysiskt hantverk utan nämnvärd rörelse att överta. Bokförda tillgångar 741 tkr. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5569472847"
+    "notes": "AI-poäng 8,0/20 (ny modell 2026-11-23): eff 2, adoption 1, köpbarhet 1: 1 anställd, ingen rörelse att överta. Avfört av researchchef: 1 anställd, fysiskt hantverk utan nämnvärd rörelse att överta. Bokförda tillgångar 741 tkr. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5569472847"
   },
   {
     "id": "5593504631",
@@ -368,7 +398,10 @@
     "bankruptcy_date": null,
     "source_url": "https://www.konkurslistan.se/konkurser/5593504631",
     "ai_adoption": null,
-    "ai_potential": null,
+    "ai_efficiency": null,
+    "ai_revenue": null,
+    "ai_speed": null,
+    "buyability": null,
     "ai_levers": [],
     "upside_msek": null,
     "est_price_msek": null,
@@ -400,7 +433,10 @@
     "bankruptcy_date": "2026-11-03",
     "source_url": "https://www.konkurslistan.se/konkurser/5569922502",
     "ai_adoption": 1,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 2,
+    "ai_speed": 4,
+    "buyability": 3,
     "ai_levers": [
       "Schemaläggning och vikarier",
       "Offert- och anbudsautomation",
@@ -426,7 +462,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Lokalvård i Örebro, bokslut 2024 (Allabolag, hämtad 2026-11-23): omsättning 22 290 tkr, resultat efter finansnetto 902 tkr, årets resultat 475 tkr, eget kapital 574 tkr, tillgångar 12 407 tkr. Bolaget var vilande 2021–2022 och omsatte 315 tkr 2023 (Allabolag bokslut). Soliditeten föll 32,5 → 6,5 % för att balansräkningen växte med skulder, inte för att eget kapital minskade; ingen utdelning. Snabb tillväxt tyder på övertagen verksamhet (hypotes). Konkurs 2026-11-03, Örebro tingsrätt. Orsaken är okänd och det är okänt om rörelsen drivs vidare eller är såld; ingen annons hittad. Konkurslistan.se har motstridiga uppgifter om konkursbeslutet. Adoption 1 (manuell administration i branschen, ej verifierat i bolaget), potential 3 (kärnan är fysisk men schema, RUT, offert och kundtjänst är tydliga AI-delar). Uppsida och köppris uppskattade: 22,3 Mkr × 7 % marginal efter AI ≈ 1,6 Mkr × 3 − 0,5 Mkr = 4,2 Mkr (≈2,3 Mkr med 60 % av omsättningen kvar). estimated: true. Se docs/companies/5569922502.md."
+    "notes": "AI-poäng 12,0/20 (ny modell 2026-11-23): eff 3, adoption 1, rev 2: viss merförsäljning (kvalitetsuppföljning, tilläggstjänster) till företagskunder; snabbhet 4: snabba offerter och svar vinner städkunder; köpbarhet 3: kunder säger upp avtal snabbt efter konkurs, tidskritiskt. Lokalvård i Örebro, bokslut 2024 (Allabolag, hämtad 2026-11-23): omsättning 22 290 tkr, resultat efter finansnetto 902 tkr, årets resultat 475 tkr, eget kapital 574 tkr, tillgångar 12 407 tkr. Bolaget var vilande 2021–2022 och omsatte 315 tkr 2023 (Allabolag bokslut). Soliditeten föll 32,5 → 6,5 % för att balansräkningen växte med skulder, inte för att eget kapital minskade; ingen utdelning. Snabb tillväxt tyder på övertagen verksamhet (hypotes). Konkurs 2026-11-03, Örebro tingsrätt. Orsaken är okänd och det är okänt om rörelsen drivs vidare eller är såld; ingen annons hittad. Konkurslistan.se har motstridiga uppgifter om konkursbeslutet. Adoption 1 (manuell administration i branschen, ej verifierat i bolaget), potential 3 (kärnan är fysisk men schema, RUT, offert och kundtjänst är tydliga AI-delar). Uppsida och köppris uppskattade: 22,3 Mkr × 7 % marginal efter AI ≈ 1,6 Mkr × 3 − 0,5 Mkr = 4,2 Mkr (≈2,3 Mkr med 60 % av omsättningen kvar). estimated: true. Se docs/companies/5569922502.md."
   },
   {
     "id": "5569792830",
@@ -438,7 +474,10 @@
     "bankruptcy_date": "2026-11-16",
     "source_url": "https://www.konkurslistan.se/konkurser/5569792830",
     "ai_adoption": 2,
-    "ai_potential": 4,
+    "ai_efficiency": 4,
+    "ai_revenue": 2,
+    "ai_speed": 4,
+    "buyability": 1,
     "ai_levers": [
       "Matchning av konsulter mot uppdrag",
       "Rekryteringsscreening och legitimationskontroll",
@@ -464,7 +503,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "OI",
-    "notes": "Omsättning 2022/23–2024/25 (räkenskapsår maj–april): 2 274 / 1 707 / 611 tEUR (≈24,9 / 18,7 / 6,7 Mkr), anställda 30/23/8, resultat före skatt 144/24/−17 tEUR (källa largestcompanies.com och konkurslistan.se, hämtade 2026-11-23; SEK för 22/23 och 23/24 omräknade, estimated: true). Konkursorsak inte angiven; hypotes: efterfrågan försvann i takt med regionernas hyrstopp (SVT 2024-02-22, SKR Bemanningstrend). Ramavtal och konsulter följer inte med automatiskt (LOU 17:17 kräver myndighetens godkännande; LAS 6 b § gäller inte vid konkurs). Adoption 2: standardsystem och manuell matchning. Potential 4: matchning, screening, tidrapport och fakturering är informationsarbete. Uppsida ≈1,0 Mkr = 6,7 Mkr × 6 % × 3 − 0,2 Mkr, estimated: true. Röda flaggor: kundbasen försvann före konkursen och efterfrågan krymper strukturellt. Analys rekommenderar avför. konkurslistan.se har motstridiga uppgifter om konkursbeslut och bevakningsdag – kontrolleras. Se docs/companies/5569792830.md. Avförd 2026-11-23 efter ägarbeslut (OI): kundbasen borta, uppsida ~1 Mkr."
+    "notes": "AI-poäng 10,2/20 (ny modell 2026-11-23): eff 4, adoption 2, köpbarhet 1: ramavtal och konsulter följer inte med. Omsättning 2022/23–2024/25 (räkenskapsår maj–april): 2 274 / 1 707 / 611 tEUR (≈24,9 / 18,7 / 6,7 Mkr), anställda 30/23/8, resultat före skatt 144/24/−17 tEUR (källa largestcompanies.com och konkurslistan.se, hämtade 2026-11-23; SEK för 22/23 och 23/24 omräknade, estimated: true). Konkursorsak inte angiven; hypotes: efterfrågan försvann i takt med regionernas hyrstopp (SVT 2024-02-22, SKR Bemanningstrend). Ramavtal och konsulter följer inte med automatiskt (LOU 17:17 kräver myndighetens godkännande; LAS 6 b § gäller inte vid konkurs). Adoption 2: standardsystem och manuell matchning. Potential 4: matchning, screening, tidrapport och fakturering är informationsarbete. Uppsida ≈1,0 Mkr = 6,7 Mkr × 6 % × 3 − 0,2 Mkr, estimated: true. Röda flaggor: kundbasen försvann före konkursen och efterfrågan krymper strukturellt. Analys rekommenderar avför. konkurslistan.se har motstridiga uppgifter om konkursbeslut och bevakningsdag – kontrolleras. Se docs/companies/5569792830.md. Avförd 2026-11-23 efter ägarbeslut (OI): kundbasen borta, uppsida ~1 Mkr."
   },
   {
     "id": "5594145764",
@@ -476,7 +515,10 @@
     "bankruptcy_date": "2026-11-09",
     "source_url": "https://www.konkurslistan.se/konkurser/5594145764",
     "ai_adoption": 2,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 2,
+    "ai_speed": 5,
+    "buyability": 3,
     "ai_levers": [
       "Offert/volymbedömning från bilder",
       "Bemannings- och ruttplanering",
@@ -503,7 +545,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Reg. 2022-12-22. Omsättning 908 tkr (2022/23), 2 708 (2024), 9 088 (2025); resultat efter finansnetto 136/813/395 tkr; anställda 0/2/7. Källor: årsredovisning 2024 via Risika, Allabolag (2025), konkurslistan.se, hämtade 2026-11-23. Konkursorsak okänd, trolig likviditetskris efter snabb expansion (hypotes). Adoption 2 (sänkt från preliminär 1): webbformulär, flyttkalkylator och RUT på faktura, ingen AI. Potential 3: offert, planering, kundtjänst och reklamationer, men kärnan är fysiskt arbete. Inget registrerat varumärke; 13 fordon (11 släp, Iveco 2021, Citan 2019), ägarförhållanden okända. Yrkestrafiktillstånd och RUT följer inte med. Reco 4,1/320, Trustpilot 2,1/9. Ingen buddeadline annonserad. Uppsida och köppris grova uppskattningar, estimated: true. Se docs/companies/5594145764.md."
+    "notes": "AI-poäng 12,4/20 (ny modell 2026-11-23): eff 3, adoption 2, rev 2: självbetjäning och flyttkalkylator; snabbhet 5: första offerten vinner ofta flytten; köpbarhet 3: domän, 010-nummer och fordon kan köpas, rykte blandat. Reg. 2022-12-22. Omsättning 908 tkr (2022/23), 2 708 (2024), 9 088 (2025); resultat efter finansnetto 136/813/395 tkr; anställda 0/2/7. Källor: årsredovisning 2024 via Risika, Allabolag (2025), konkurslistan.se, hämtade 2026-11-23. Konkursorsak okänd, trolig likviditetskris efter snabb expansion (hypotes). Adoption 2 (sänkt från preliminär 1): webbformulär, flyttkalkylator och RUT på faktura, ingen AI. Potential 3: offert, planering, kundtjänst och reklamationer, men kärnan är fysiskt arbete. Inget registrerat varumärke; 13 fordon (11 släp, Iveco 2021, Citan 2019), ägarförhållanden okända. Yrkestrafiktillstånd och RUT följer inte med. Reco 4,1/320, Trustpilot 2,1/9. Ingen buddeadline annonserad. Uppsida och köppris grova uppskattningar, estimated: true. Se docs/companies/5594145764.md."
   },
   {
     "id": "5564268521",
@@ -515,7 +557,10 @@
     "bankruptcy_date": "2026-11-13",
     "source_url": "https://www.konkurslistan.se/konkurser/5564268521",
     "ai_adoption": 2,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 3,
+    "ai_speed": 3,
+    "buyability": 2,
     "ai_levers": [
       "Schemaläggning av väktare",
       "Automatiska rapporter/incidentloggar",
@@ -540,7 +585,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Preliminärt: schemaläggning, rapportering och offerter är tydliga AI-delar, men kärnan är fysisk bevakning (potential 3); branschen använder vanligen standardsystem för pass och rapporter (adoption 2). Lönsamt senaste bokslut (+816 tkr). Röd flagga: auktorisation för bevakningsföretag (länsstyrelsen) är knuten till bolaget och följer inte med vid inkråmsförvärv – köparen behöver egen. Konkurs Helsingborgs tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
+    "notes": "AI-poäng 10,4/20 (ny modell 2026-11-23): eff 3, adoption 2, rev 3: fjärrövervakning och AI-videoanalys som tilläggstjänst till befintliga kunder; snabbhet 3; köpbarhet 2: auktorisation för bevakning följer inte med. Preliminärt: schemaläggning, rapportering och offerter är tydliga AI-delar, men kärnan är fysisk bevakning (potential 3); branschen använder vanligen standardsystem för pass och rapporter (adoption 2). Lönsamt senaste bokslut (+816 tkr). Röd flagga: auktorisation för bevakningsföretag (länsstyrelsen) är knuten till bolaget och följer inte med vid inkråmsförvärv – köparen behöver egen. Konkurs Helsingborgs tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
   },
   {
     "id": "5593070567",
@@ -552,7 +597,10 @@
     "bankruptcy_date": "2026-11-13",
     "source_url": "https://www.konkurslistan.se/konkurser/5593070567",
     "ai_adoption": 2,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 3,
+    "ai_speed": 4,
+    "buyability": 2,
     "ai_levers": [
       "Offertautomation",
       "Projekt- och resursplanering",
@@ -577,7 +625,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Preliminärt: elfirmor har ofta branschsystem för arbetsorder men offerter, egenkontroller och planering görs till stor del manuellt (adoption 2); tydliga administrativa delar, kärnan fysiskt hantverk (potential 3). Vinst efter finansiella poster −3 944 tkr senaste bokslut, dvs. kostnadsproblem snarare än bara intäktsbortfall. Röd flagga: elinstallatörsauktorisation/registrering hos Elsäkerhetsverket följer inte med inkråmet. Konkurs Sundsvalls tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
+    "notes": "AI-poäng 11,4/20 (ny modell 2026-11-23): eff 3, adoption 2, rev 3: energioptimering, laddlösningar och serviceavtal till befintliga kunder; snabbhet 4: offert- och servicedrivet; köpbarhet 2: auktorisation hos Elsäkerhetsverket följer inte med, stora förluster. Preliminärt: elfirmor har ofta branschsystem för arbetsorder men offerter, egenkontroller och planering görs till stor del manuellt (adoption 2); tydliga administrativa delar, kärnan fysiskt hantverk (potential 3). Vinst efter finansiella poster −3 944 tkr senaste bokslut, dvs. kostnadsproblem snarare än bara intäktsbortfall. Röd flagga: elinstallatörsauktorisation/registrering hos Elsäkerhetsverket följer inte med inkråmet. Konkurs Sundsvalls tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
   },
   {
     "id": "5561076257",
@@ -589,7 +637,10 @@
     "bankruptcy_date": "2026-11-11",
     "source_url": "https://www.konkurslistan.se/konkurser/5561076257",
     "ai_adoption": 3,
-    "ai_potential": 3,
+    "ai_efficiency": 3,
+    "ai_revenue": 1,
+    "ai_speed": 3,
+    "buyability": 2,
     "ai_levers": [
       "Rutt- och lastplanering per temperaturzon",
       "Automatiskt orderintag till TMS",
@@ -616,7 +667,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Livsmedelsåkeri i Gävle (kyl, frys, torrt), grundat 1966. Nettoomsättning 82 922/76 806/78 078 tkr och rörelseresultat 982/−1 795/−4 845 tkr för 2023/2024/2025 (Allabolag bokslut, hämtad 2026-11-23); 47 anställda (konkurslistan.se). Årsredovisnings-PDF:er ej lästa (automatisk nedladdning blockerad). Konkurs 2026-11-11, Sundsvalls tingsrätt, egen ansökan; orsak: förlorat stort Frigoscandia-uppdrag och flera års förluster (Carup.se och Ekonomibladet 2026-11-12, med GD som källa). Anmärkning 2024: skatter/avgifter ej korrekt skötta (Allabolag). 36–40 fordon, bokfört 30 Mkr, troligen belånade (ej verifierat). Trafiktillstånd följer inte med. Systerbolaget Metab inte i konkurs. Ingen annonserad försäljning per 2026-11-23 (abersten.com, konkurslistan.se). Adoption 3: Opter TMS infört 2024 (opter.com). Potential 3: planering, order och fakturering, men kostnaderna är främst förare, diesel och fordon. Uppsida −5 Mkr = 4 % EBIT på 60 Mkr bas × 4 − köppris 15 Mkr (spann −5 till +9 Mkr); estimated: true. Rekommendation: avvakta, lutar åt avför. Se docs/companies/5561076257.md."
+    "notes": "AI-poäng 7,8/20 (ny modell 2026-11-23): eff 3, adoption 3, rev 1; snabbhet 3; köpbarhet 2: huvudkunden förlorad, trafiktillstånd följer inte med, fordon kan vara pantsatta. Livsmedelsåkeri i Gävle (kyl, frys, torrt), grundat 1966. Nettoomsättning 82 922/76 806/78 078 tkr och rörelseresultat 982/−1 795/−4 845 tkr för 2023/2024/2025 (Allabolag bokslut, hämtad 2026-11-23); 47 anställda (konkurslistan.se). Årsredovisnings-PDF:er ej lästa (automatisk nedladdning blockerad). Konkurs 2026-11-11, Sundsvalls tingsrätt, egen ansökan; orsak: förlorat stort Frigoscandia-uppdrag och flera års förluster (Carup.se och Ekonomibladet 2026-11-12, med GD som källa). Anmärkning 2024: skatter/avgifter ej korrekt skötta (Allabolag). 36–40 fordon, bokfört 30 Mkr, troligen belånade (ej verifierat). Trafiktillstånd följer inte med. Systerbolaget Metab inte i konkurs. Ingen annonserad försäljning per 2026-11-23 (abersten.com, konkurslistan.se). Adoption 3: Opter TMS infört 2024 (opter.com). Potential 3: planering, order och fakturering, men kostnaderna är främst förare, diesel och fordon. Uppsida −5 Mkr = 4 % EBIT på 60 Mkr bas × 4 − köppris 15 Mkr (spann −5 till +9 Mkr); estimated: true. Rekommendation: avvakta, lutar åt avför. Se docs/companies/5561076257.md."
   },
   {
     "id": "5565815346",
@@ -628,7 +679,10 @@
     "bankruptcy_date": "2026-11-09",
     "source_url": "https://www.konkurslistan.se/konkurser/5565815346",
     "ai_adoption": 3,
-    "ai_potential": 4,
+    "ai_efficiency": 4,
+    "ai_revenue": 4,
+    "ai_speed": 3,
+    "buyability": 3,
     "ai_levers": [
       "Generativ konceptframtagning och rendering",
       "Automatiserad teknisk dokumentation",
@@ -652,7 +706,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Preliminärt: kärnan är kunskaps- och informationsarbete där generativ AI påverkar koncept, visualisering och dokumentation (potential 4); designbyråer arbetar redan digitalt med CAD/3D och tar tidigt in AI-verktyg (adoption 3). Etablerad byrå med varumärke ('zenit.' registrerat enligt konkurslistan.se) och omnämnanden, t.ex. https://formdesigncenter.com/en/company/zenit-design och iF Design https://ifdesign.com/en/brands-creatives/company/zenit-design/6949. Vinst efter finansiella poster −1 384 tkr. Risk: värdet sitter i nyckelpersoner och kundrelationer. Konkurs Malmö tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
+    "notes": "AI-poäng 12,4/20 (ny modell 2026-11-23): eff 4, adoption 3, rev 4: AI-rendering, konceptgenerering och snabbare designiterationer som ny tjänst till industrikunder; snabbhet 3; köpbarhet 3: varumärket kan köpas men värdet sitter i designers. Preliminärt: kärnan är kunskaps- och informationsarbete där generativ AI påverkar koncept, visualisering och dokumentation (potential 4); designbyråer arbetar redan digitalt med CAD/3D och tar tidigt in AI-verktyg (adoption 3). Etablerad byrå med varumärke ('zenit.' registrerat enligt konkurslistan.se) och omnämnanden, t.ex. https://formdesigncenter.com/en/company/zenit-design och iF Design https://ifdesign.com/en/brands-creatives/company/zenit-design/6949. Vinst efter finansiella poster −1 384 tkr. Risk: värdet sitter i nyckelpersoner och kundrelationer. Konkurs Malmö tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
   },
   {
     "id": "5564333416",
@@ -664,7 +718,10 @@
     "bankruptcy_date": "2026-11-05",
     "source_url": "https://www.konkurslistan.se/konkurser/5564333416",
     "ai_adoption": 3,
-    "ai_potential": 4,
+    "ai_efficiency": 4,
+    "ai_revenue": 2,
+    "ai_speed": 4,
+    "buyability": 1,
     "ai_levers": [
       "AI-offert och prissättning",
       "Lastmatchning mot åkerier och samlastning",
@@ -690,7 +747,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "OI",
-    "notes": "Avfört 2026-11-23 (beslut OI): förvaltaren svarade samma dag på OI:s förfrågan att verksamhetens mjuka delar (IP- och namnrättigheter, kunddata m.m.) redan är överlåtna till en extern köpare. Kvar att sälja är ett 40-tal trailers och någon enstaka dragbil, vilket inte passar tesen. Källa: mejl från förvaltaren 2026-11-23 (one.com). Speditör i Malmö/Arlöv sedan 1991, trafik till Central- och Östeuropa och Turkiet. Bokslut (Allabolag/UC, https://www.allabolag.se/5564333416/bokslut, hämtad 2026-11-23): 2024 oms 118 326 tkr, rörelseresultat −4 020 (−3,4 %), 14 anst; 2022/23 (14 mån) 158 762/3 285; 2021/22 144 408/11 840 (8,2 %). Årsredovisnings-PDF:er ej lästa. Ägare Rhenus Beteiligungen International GmbH sedan dec 2022. Konkurs 2026-11-05 vid Malmö tingsrätt, samma dag och förvaltare som Rhenus Logistics AB; verksamheten avvecklas (nu.se 2026-11-06). Inget annat aktivt svenskt Rhenus-bolag hittat; Rhenus har sålt DK (2024) och NO Air & Ocean (2025); om kunderna förts över är okänt. AEO, tullager och trafiktillstånd följer inte med. Fordonen (44 enligt konkurslistan.se) troligen leasade. Adoption 3 (koncernens EDI/spårning), potential 4 (personalens arbete är informationsarbete, men ca 90 % av kostnaden är inköpt transport). Uppsida 5,8 Mkr = 30 % av omsättningen kvar × 5,5 % marginal efter AI × 4 − köppris 2 Mkr; estimated: true. Ingen buddeadline (tragardh.se/arende, 2026-11-23). Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, samlad förfrågan med Rhenus Logistics. Se docs/companies/5564333416.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
+    "notes": "AI-poäng 9,4/20 (ny modell 2026-11-23): eff 4, adoption 3, köpbarhet 1: mjuka delar redan sålda. Avfört 2026-11-23 (beslut OI): förvaltaren svarade samma dag på OI:s förfrågan att verksamhetens mjuka delar (IP- och namnrättigheter, kunddata m.m.) redan är överlåtna till en extern köpare. Kvar att sälja är ett 40-tal trailers och någon enstaka dragbil, vilket inte passar tesen. Källa: mejl från förvaltaren 2026-11-23 (one.com). Speditör i Malmö/Arlöv sedan 1991, trafik till Central- och Östeuropa och Turkiet. Bokslut (Allabolag/UC, https://www.allabolag.se/5564333416/bokslut, hämtad 2026-11-23): 2024 oms 118 326 tkr, rörelseresultat −4 020 (−3,4 %), 14 anst; 2022/23 (14 mån) 158 762/3 285; 2021/22 144 408/11 840 (8,2 %). Årsredovisnings-PDF:er ej lästa. Ägare Rhenus Beteiligungen International GmbH sedan dec 2022. Konkurs 2026-11-05 vid Malmö tingsrätt, samma dag och förvaltare som Rhenus Logistics AB; verksamheten avvecklas (nu.se 2026-11-06). Inget annat aktivt svenskt Rhenus-bolag hittat; Rhenus har sålt DK (2024) och NO Air & Ocean (2025); om kunderna förts över är okänt. AEO, tullager och trafiktillstånd följer inte med. Fordonen (44 enligt konkurslistan.se) troligen leasade. Adoption 3 (koncernens EDI/spårning), potential 4 (personalens arbete är informationsarbete, men ca 90 % av kostnaden är inköpt transport). Uppsida 5,8 Mkr = 30 % av omsättningen kvar × 5,5 % marginal efter AI × 4 − köppris 2 Mkr; estimated: true. Ingen buddeadline (tragardh.se/arende, 2026-11-23). Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, samlad förfrågan med Rhenus Logistics. Se docs/companies/5564333416.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
   },
   {
     "id": "5564297322",
@@ -702,7 +759,10 @@
     "bankruptcy_date": "2026-11-05",
     "source_url": "https://www.konkurslistan.se/konkurser/5564297322",
     "ai_adoption": 3,
-    "ai_potential": 4,
+    "ai_efficiency": 4,
+    "ai_revenue": 2,
+    "ai_speed": 4,
+    "buyability": 1,
     "ai_levers": [
       "Offert och prissättning",
       "Orderintag och bokning från mejl, PDF och EDI",
@@ -729,7 +789,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "OI",
-    "notes": "Avfört 2026-11-23 (beslut OI): förvaltaren svarade samma dag på OI:s förfrågan att verksamhetens mjuka delar (IP- och namnrättigheter, kunddata m.m.) redan är överlåtna till en extern köpare. Kvar att sälja är ett 40-tal trailers och någon enstaka dragbil, vilket inte passar tesen. Källa: mejl från förvaltaren 2026-11-23 (one.com). Speditör för europeiska landtransporter (tidigare Swedlink), främst Sverige–Tyskland/Italien. Bokslut (Allabolag/UC, https://www.allabolag.se/5564297322/bokslut, hämtad 2026-11-23): nettoomsättning 102 873/102 931/69 841 tkr och rörelseresultat 770/1 212/−9 148 tkr för 2022/2023/2024; 16 anställda 2024. Årsredovisnings-PDF:er ej lästa. Ingen årsredovisning för 2025 inlämnad (Carup.se 2026-11-06). Konkurs Malmö tingsrätt 2026-11-05, samma dag och förvaltare som MTS (nu.se 2026-11-06). Pressen anger prispress och olönsamma uppdrag. Hypotes: Rhenus drar sig ur Norden. Ingen annonserad försäljning (tragardh.se/arende, konkurslistan.se, 2026-11-23). Inga fordon eller varumärken registrerade. Adoption 3 (koncernens TMS och EDI, som inte följer med), potential 4 (tillgångslätt spedition). Röda flaggor: Rhenus nätverk och varumärke följer inte med, omsättningen föll 32 %, kunderna har sannolikt flyttat. Uppsida 3 Mkr = 35 % av omsättningen kvar × 4 % marginal efter AI × 4 − köppris 1 Mkr; estimated: true. Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, låg prioritet. Se docs/companies/5564297322.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
+    "notes": "AI-poäng 9,4/20 (ny modell 2026-11-23): eff 4, adoption 3, köpbarhet 1: mjuka delar redan sålda. Avfört 2026-11-23 (beslut OI): förvaltaren svarade samma dag på OI:s förfrågan att verksamhetens mjuka delar (IP- och namnrättigheter, kunddata m.m.) redan är överlåtna till en extern köpare. Kvar att sälja är ett 40-tal trailers och någon enstaka dragbil, vilket inte passar tesen. Källa: mejl från förvaltaren 2026-11-23 (one.com). Speditör för europeiska landtransporter (tidigare Swedlink), främst Sverige–Tyskland/Italien. Bokslut (Allabolag/UC, https://www.allabolag.se/5564297322/bokslut, hämtad 2026-11-23): nettoomsättning 102 873/102 931/69 841 tkr och rörelseresultat 770/1 212/−9 148 tkr för 2022/2023/2024; 16 anställda 2024. Årsredovisnings-PDF:er ej lästa. Ingen årsredovisning för 2025 inlämnad (Carup.se 2026-11-06). Konkurs Malmö tingsrätt 2026-11-05, samma dag och förvaltare som MTS (nu.se 2026-11-06). Pressen anger prispress och olönsamma uppdrag. Hypotes: Rhenus drar sig ur Norden. Ingen annonserad försäljning (tragardh.se/arende, konkurslistan.se, 2026-11-23). Inga fordon eller varumärken registrerade. Adoption 3 (koncernens TMS och EDI, som inte följer med), potential 4 (tillgångslätt spedition). Röda flaggor: Rhenus nätverk och varumärke följer inte med, omsättningen föll 32 %, kunderna har sannolikt flyttat. Uppsida 3 Mkr = 35 % av omsättningen kvar × 4 % marginal efter AI × 4 − köppris 1 Mkr; estimated: true. Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, låg prioritet. Se docs/companies/5564297322.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
   },
   {
     "id": "5563462315",
@@ -741,7 +801,10 @@
     "bankruptcy_date": "2026-11-12",
     "source_url": "https://www.konkurslistan.se/konkurser/5563462315",
     "ai_adoption": 2,
-    "ai_potential": 5,
+    "ai_efficiency": 5,
+    "ai_revenue": 3,
+    "ai_speed": 2,
+    "buyability": 1,
     "ai_levers": [
       "Automatisk bokföring och avstämning",
       "Bokslut och deklarationsunderlag",
@@ -765,6 +828,6 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Preliminärt: redovisning är nästan helt informationsarbete (potential 5); liten lokal byrå med vanliga redovisningsprogram (adoption 2). Under riktvärdet 5 Mkr (4 317 tkr) och bara 2 anställda. Lönsamt senaste bokslut (+317 tkr). Röda flaggor: beroende av nyckelpersoner, revisorsuppdrag är knutna till godkänd/auktoriserad revisor och följer inte med automatiskt, och kunderna kan lämna snabbt. Kan vara intressant som kundstock att lägga i en AI-driven redovisningsplattform. Konkurs Uppsala tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
+    "notes": "AI-poäng 10,0/20 (ny modell 2026-11-23): eff 5, adoption 2, rev 3: AI-driven redovisning som tjänst; snabbhet 2; köpbarhet 1: revisorsuppdrag är personliga och följer inte med, 2 anställda. Preliminärt: redovisning är nästan helt informationsarbete (potential 5); liten lokal byrå med vanliga redovisningsprogram (adoption 2). Under riktvärdet 5 Mkr (4 317 tkr) och bara 2 anställda. Lönsamt senaste bokslut (+317 tkr). Röda flaggor: beroende av nyckelpersoner, revisorsuppdrag är knutna till godkänd/auktoriserad revisor och följer inte med automatiskt, och kunderna kan lämna snabbt. Kan vara intressant som kundstock att lägga i en AI-driven redovisningsplattform. Konkurs Uppsala tingsrätt. Källa: konkurslistan.se (hämtad 2026-11-23): konkursdatum, tingsrätt, förvaltare, SNI, syfte samt omsättning/anställda 'ur årsredovisningen' (räkenskapsår anges inte på sidan; ej kontrollerat mot årsredovisning/Bolagsverket)."
   }
 ]

@@ -14,10 +14,10 @@ Läs först: `CLAUDE.md`, `docs/thesis.md`, `data/README.md`, `data/companies.js
 2. **Granska varje kandidat:**
    - Finns `id` redan? Uppdatera i så fall raden i stället för att lägga till.
    - Har varje uppgift en källa (`source_url` eller länk i `notes`)? Annars `null`.
-   - Följer `ai_adoption`/`ai_potential` skalorna i `docs/thesis.md`? Jämför med liknande bolag i filen så att poängen är konsekventa.
+   - Följer `ai_adoption`, `ai_efficiency`, `ai_revenue`, `ai_speed` och `buyability` skalorna i `docs/thesis.md`? Jämför med liknande bolag i filen så att poängen är konsekventa.
    - Klarar bolaget sållningskriterierna? Om inte: lägg in ändå med `status: "avslutad"`, `outcome: "avfört"` och skälet i `notes`, så att vi inte tittar på det igen.
 3. **Analys:** när VD valt ett bolag, be `analys` göra fördjupningen. Granska att analysfilen har källor, att uppsidan är märkt som uppskattning och att förvaltarens kontaktuppgifter kommer från konkursbeslut, förvaltarens byrå eller Bolagsverket.
 4. **Skriv** godkända ändringar, sätt `updated` till dagens datum och `updated_by` till `researchchef`. Validera JSON och committa.
 
 ## Kalibrering
-Om du ser att poängen glider (t.ex. att alla får potential 4), skriv ett förslag på skärpning i `docs/thesis.md` under "Att utveckla" och ta upp det med VD.
+Om du ser att poängen glider (t.ex. att alla får 4 i nya intäkter), skriv ett förslag på skärpning i `docs/thesis.md` under "Att utveckla" och ta upp det med VD.
