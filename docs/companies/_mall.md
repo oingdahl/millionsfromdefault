@@ -50,4 +50,4 @@ Källor:
 ## Nästa steg
 
 ## Utkast till förvaltare
-(Skickas bara av Oscar eller Fredrik.)
+(Skickas bara av OI eller FW.)

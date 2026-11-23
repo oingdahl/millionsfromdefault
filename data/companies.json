@@ -388,7 +388,7 @@
     "added": "2026-11-23",
     "updated": "2026-11-23",
     "updated_by": "researchchef",
-    "notes": "Avfört av researchchef: omsättning 3 037 tkr, under riktvärdet 5 Mkr. Enda ärendet i dagens screening med pågående inkråmsförsäljning (kundregister, varumärken och domäner) med bud senast 2026-11-25 enligt sidan. Kan tas upp av Oscar/Fredrik om de vill göra undantag. Konkursdatum och ort ej verifierade. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5593504631"
+    "notes": "Avfört av researchchef: omsättning 3 037 tkr, under riktvärdet 5 Mkr. Enda ärendet i dagens screening med pågående inkråmsförsäljning (kundregister, varumärken och domäner) med bud senast 2026-11-25 enligt sidan. Kan tas upp av OI/FW om de vill göra undantag. Konkursdatum och ort ej verifierade. Siffror från konkurslistan.se (omsättning i tkr enligt listans format; bokslutsår ej angivet på sidan). Ort från https://www.konkurslistan.se/alla-konkurser. Källa: https://www.konkurslistan.se/konkurser/5593504631"
   },
   {
     "id": "5569922502",
@@ -463,8 +463,8 @@
     "assigned_to": null,
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "Oscar",
-    "notes": "Omsättning 2022/23–2024/25 (räkenskapsår maj–april): 2 274 / 1 707 / 611 tEUR (≈24,9 / 18,7 / 6,7 Mkr), anställda 30/23/8, resultat före skatt 144/24/−17 tEUR (källa largestcompanies.com och konkurslistan.se, hämtade 2026-11-23; SEK för 22/23 och 23/24 omräknade, estimated: true). Konkursorsak inte angiven; hypotes: efterfrågan försvann i takt med regionernas hyrstopp (SVT 2024-02-22, SKR Bemanningstrend). Ramavtal och konsulter följer inte med automatiskt (LOU 17:17 kräver myndighetens godkännande; LAS 6 b § gäller inte vid konkurs). Adoption 2: standardsystem och manuell matchning. Potential 4: matchning, screening, tidrapport och fakturering är informationsarbete. Uppsida ≈1,0 Mkr = 6,7 Mkr × 6 % × 3 − 0,2 Mkr, estimated: true. Röda flaggor: kundbasen försvann före konkursen och efterfrågan krymper strukturellt. Analys rekommenderar avför. konkurslistan.se har motstridiga uppgifter om konkursbeslut och bevakningsdag – kontrolleras. Se docs/companies/5569792830.md. Avförd 2026-11-23 efter ägarbeslut (Oscar): kundbasen borta, uppsida ~1 Mkr."
+    "updated_by": "OI",
+    "notes": "Omsättning 2022/23–2024/25 (räkenskapsår maj–april): 2 274 / 1 707 / 611 tEUR (≈24,9 / 18,7 / 6,7 Mkr), anställda 30/23/8, resultat före skatt 144/24/−17 tEUR (källa largestcompanies.com och konkurslistan.se, hämtade 2026-11-23; SEK för 22/23 och 23/24 omräknade, estimated: true). Konkursorsak inte angiven; hypotes: efterfrågan försvann i takt med regionernas hyrstopp (SVT 2024-02-22, SKR Bemanningstrend). Ramavtal och konsulter följer inte med automatiskt (LOU 17:17 kräver myndighetens godkännande; LAS 6 b § gäller inte vid konkurs). Adoption 2: standardsystem och manuell matchning. Potential 4: matchning, screening, tidrapport och fakturering är informationsarbete. Uppsida ≈1,0 Mkr = 6,7 Mkr × 6 % × 3 − 0,2 Mkr, estimated: true. Röda flaggor: kundbasen försvann före konkursen och efterfrågan krymper strukturellt. Analys rekommenderar avför. konkurslistan.se har motstridiga uppgifter om konkursbeslut och bevakningsdag – kontrolleras. Se docs/companies/5569792830.md. Avförd 2026-11-23 efter ägarbeslut (OI): kundbasen borta, uppsida ~1 Mkr."
   },
   {
     "id": "5594145764",
@@ -686,11 +686,11 @@
     "status": "kontaktad",
     "outcome": null,
     "found_by": "screening",
-    "assigned_to": "Oscar",
+    "assigned_to": "OI",
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "Oscar",
-    "notes": "Speditör i Malmö/Arlöv sedan 1991, trafik till Central- och Östeuropa och Turkiet. Bokslut (Allabolag/UC, https://www.allabolag.se/5564333416/bokslut, hämtad 2026-11-23): 2024 oms 118 326 tkr, rörelseresultat −4 020 (−3,4 %), 14 anst; 2022/23 (14 mån) 158 762/3 285; 2021/22 144 408/11 840 (8,2 %). Årsredovisnings-PDF:er ej lästa. Ägare Rhenus Beteiligungen International GmbH sedan dec 2022. Konkurs 2026-11-05 vid Malmö tingsrätt, samma dag och förvaltare som Rhenus Logistics AB; verksamheten avvecklas (nu.se 2026-11-06). Inget annat aktivt svenskt Rhenus-bolag hittat; Rhenus har sålt DK (2024) och NO Air & Ocean (2025); om kunderna förts över är okänt. AEO, tullager och trafiktillstånd följer inte med. Fordonen (44 enligt konkurslistan.se) troligen leasade. Adoption 3 (koncernens EDI/spårning), potential 4 (personalens arbete är informationsarbete, men ca 90 % av kostnaden är inköpt transport). Uppsida 5,8 Mkr = 30 % av omsättningen kvar × 5,5 % marginal efter AI × 4 − köppris 2 Mkr; estimated: true. Ingen buddeadline (tragardh.se/arende, 2026-11-23). Ägarbeslut 2026-11-23 (Oscar): behåll i pipelinen. Rekommendation: avvakta, samlad förfrågan med Rhenus Logistics. Se docs/companies/5564333416.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt Oscar (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
+    "updated_by": "OI",
+    "notes": "Speditör i Malmö/Arlöv sedan 1991, trafik till Central- och Östeuropa och Turkiet. Bokslut (Allabolag/UC, https://www.allabolag.se/5564333416/bokslut, hämtad 2026-11-23): 2024 oms 118 326 tkr, rörelseresultat −4 020 (−3,4 %), 14 anst; 2022/23 (14 mån) 158 762/3 285; 2021/22 144 408/11 840 (8,2 %). Årsredovisnings-PDF:er ej lästa. Ägare Rhenus Beteiligungen International GmbH sedan dec 2022. Konkurs 2026-11-05 vid Malmö tingsrätt, samma dag och förvaltare som Rhenus Logistics AB; verksamheten avvecklas (nu.se 2026-11-06). Inget annat aktivt svenskt Rhenus-bolag hittat; Rhenus har sålt DK (2024) och NO Air & Ocean (2025); om kunderna förts över är okänt. AEO, tullager och trafiktillstånd följer inte med. Fordonen (44 enligt konkurslistan.se) troligen leasade. Adoption 3 (koncernens EDI/spårning), potential 4 (personalens arbete är informationsarbete, men ca 90 % av kostnaden är inköpt transport). Uppsida 5,8 Mkr = 30 % av omsättningen kvar × 5,5 % marginal efter AI × 4 − köppris 2 Mkr; estimated: true. Ingen buddeadline (tragardh.se/arende, 2026-11-23). Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, samlad förfrågan med Rhenus Logistics. Se docs/companies/5564333416.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
   },
   {
     "id": "5564297322",
@@ -725,11 +725,11 @@
     "status": "kontaktad",
     "outcome": null,
     "found_by": "screening",
-    "assigned_to": "Oscar",
+    "assigned_to": "OI",
     "added": "2026-11-23",
     "updated": "2026-11-23",
-    "updated_by": "Oscar",
-    "notes": "Speditör för europeiska landtransporter (tidigare Swedlink), främst Sverige–Tyskland/Italien. Bokslut (Allabolag/UC, https://www.allabolag.se/5564297322/bokslut, hämtad 2026-11-23): nettoomsättning 102 873/102 931/69 841 tkr och rörelseresultat 770/1 212/−9 148 tkr för 2022/2023/2024; 16 anställda 2024. Årsredovisnings-PDF:er ej lästa. Ingen årsredovisning för 2025 inlämnad (Carup.se 2026-11-06). Konkurs Malmö tingsrätt 2026-11-05, samma dag och förvaltare som MTS (nu.se 2026-11-06). Pressen anger prispress och olönsamma uppdrag. Hypotes: Rhenus drar sig ur Norden. Ingen annonserad försäljning (tragardh.se/arende, konkurslistan.se, 2026-11-23). Inga fordon eller varumärken registrerade. Adoption 3 (koncernens TMS och EDI, som inte följer med), potential 4 (tillgångslätt spedition). Röda flaggor: Rhenus nätverk och varumärke följer inte med, omsättningen föll 32 %, kunderna har sannolikt flyttat. Uppsida 3 Mkr = 35 % av omsättningen kvar × 4 % marginal efter AI × 4 − köppris 1 Mkr; estimated: true. Ägarbeslut 2026-11-23 (Oscar): behåll i pipelinen. Rekommendation: avvakta, låg prioritet. Se docs/companies/5564297322.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt Oscar (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
+    "updated_by": "OI",
+    "notes": "Speditör för europeiska landtransporter (tidigare Swedlink), främst Sverige–Tyskland/Italien. Bokslut (Allabolag/UC, https://www.allabolag.se/5564297322/bokslut, hämtad 2026-11-23): nettoomsättning 102 873/102 931/69 841 tkr och rörelseresultat 770/1 212/−9 148 tkr för 2022/2023/2024; 16 anställda 2024. Årsredovisnings-PDF:er ej lästa. Ingen årsredovisning för 2025 inlämnad (Carup.se 2026-11-06). Konkurs Malmö tingsrätt 2026-11-05, samma dag och förvaltare som MTS (nu.se 2026-11-06). Pressen anger prispress och olönsamma uppdrag. Hypotes: Rhenus drar sig ur Norden. Ingen annonserad försäljning (tragardh.se/arende, konkurslistan.se, 2026-11-23). Inga fordon eller varumärken registrerade. Adoption 3 (koncernens TMS och EDI, som inte följer med), potential 4 (tillgångslätt spedition). Röda flaggor: Rhenus nätverk och varumärke följer inte med, omsättningen föll 32 %, kunderna har sannolikt flyttat. Uppsida 3 Mkr = 35 % av omsättningen kvar × 4 % marginal efter AI × 4 − köppris 1 Mkr; estimated: true. Ägarbeslut 2026-11-23 (OI): behåll i pipelinen. Rekommendation: avvakta, låg prioritet. Se docs/companies/5564297322.md. Kontaktad: mejl till förvaltaren skickat 2026-11-22 enligt OI (one.com-inkorgen, ej verifierat av Claude). Inväntar svar."
   },
   {
     "id": "5563462315",

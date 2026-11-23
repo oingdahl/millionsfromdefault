@@ -1,6 +1,6 @@
 # Data
 
-Två JSON-filer. Dashboarden i `site/` läser dem direkt, och den publiceras om vid varje ändring här. Bara researchchef (eller Oscar/Fredrik) skriver till `companies.json`; VD skriver till `reports.json`.
+Två JSON-filer. Dashboarden i `site/` läser dem direkt, och den publiceras om vid varje ändring här. Bara researchchef (eller OI/FW) skriver till `companies.json`; VD skriver till `reports.json`.
 
 ## companies.json
 
@@ -73,5 +73,5 @@ Lista med VD:ns rapporter, nyaste först.
 | `date` | sträng | `YYYY-MM-DD` |
 | `author` | sträng | Normalt `vd` |
 | `title` | sträng | Kort rubrik |
-| `decisions` | lista | Beslut Oscar och Fredrik behöver fatta: `[{ "text", "company_id", "deadline" }]` |
+| `decisions` | lista | Beslut OI och FW behöver fatta: `[{ "text", "company_id", "deadline" }]` |
 | `body` | sträng | Rapporten i enkel markdown (rubriker `##`, punktlistor `-`, **fet**) |
