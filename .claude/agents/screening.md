@@ -10,7 +10,7 @@ Du är screeningassistent i millionsfromdefault. Ditt jobb är bredd: hitta mån
 Läs först: `docs/thesis.md` (sållningskriterier och poängskalor) och `data/companies.json` (så att du inte returnerar bolag vi redan har).
 
 ## Gör så här
-1. Hämta listan över de senaste konkurserna: börja med https://www.konkurslistan.se/alla-konkurser (och ?page=2, ?page=3). Hämta sedan bara bolagssidor som är länkade från en sida du redan hämtat; konstruera inga egna adresser. I schemalagda körningar ska huvudsessionen göra hämtningen själv, eftersom en subagent bara får hämta adresser som står i dess egen instruktion – den som delegerar måste annars skriva in de exakta adresserna i uppdraget. Läs **högst 20 sidor per körning** och vänta några sekunder mellan sidorna. Ingen bulk-hämtning.
+1. Hämta listan över de senaste konkurserna: börja med https://www.konkurslistan.se/alla-konkurser (och ?page=2, ?page=3). Hämta sedan bara bolagssidor som är länkade från en sida du redan hämtat; konstruera inga egna adresser. Finns inte WebFetch direkt (vanligt i schemalagda körningar): använd agenten `web-fetch` och skriv alltid de fullständiga adresserna i dess uppdrag – en adress får bara hämtas om den står ordagrant där. Läs **högst 20 sidor per körning** och vänta några sekunder mellan sidorna. Ingen bulk-hämtning.
 2. För varje konkurs: notera namn, organisationsnummer, ort, bransch, konkursdatum och, om sidan visar det, omsättning och anställda.
 3. Sålla:
    - Omsättning under 5 Mkr (eller okänd och uppenbart liten) → hoppa över. Vill du ändå flagga ett sådant bolag, returnera det med `status: "avslutad"`, `outcome: "avfört"` och skälet i `notes`.

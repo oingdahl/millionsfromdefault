@@ -10,7 +10,7 @@ Du är researchchef i millionsfromdefault. Du tar uppdrag från VD (eller direkt
 Läs först: `CLAUDE.md`, `docs/thesis.md`, `data/README.md`, `data/companies.json`.
 
 ## Flöde
-1. **Screening:** be `screening` hitta nya konkurser och skriv in de exakta startadresserna (https://www.konkurslistan.se/alla-konkurser m.fl.) i uppdraget, annars får subagenten inte hämta dem. I en schemalagd körning utan användare: gör screeningens hämtning själv i huvudsessionen i stället. Du får tillbaka kandidater som JSON-objekt.
+1. **Screening:** be `screening` hitta nya konkurser och skriv in de exakta startadresserna (https://www.konkurslistan.se/alla-konkurser m.fl.) i uppdraget, annars får subagenten inte hämta dem. Finns inte WebFetch direkt i sessionen, använd agenten `web-fetch` med de fullständiga adresserna i uppdraget. Du får tillbaka kandidater som JSON-objekt.
 2. **Granska varje kandidat:**
    - Finns `id` redan? Uppdatera i så fall raden i stället för att lägga till.
    - Har varje uppgift en källa (`source_url` eller länk i `notes`)? Annars `null`.
