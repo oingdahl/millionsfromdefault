@@ -151,10 +151,16 @@
     .top-row .ind { grid-column: 2 / 4; grid-row: 2; }
     .top-row .r.rev, .top-row .r.up { display: none; }
     .top-row .go { grid-column: 3; grid-row: 1; }
+    .top-head .ind { display: none; }
   }
   .run { font: 600 11px var(--mono); padding: 1px 7px; border-radius: 99px; border: 1px solid currentColor; }
   .run.ok { color: var(--good); } .run.delvis { color: var(--warn); } .run.fel { color: var(--bad); }
   .list-row .parts { display: block; font: 400 12px system-ui, sans-serif; color: var(--muted); margin-top: 3px; }
+  .hint { color: var(--muted); font-size: 12px; margin: -6px 0 6px; }
+  .list-head, .top-head { font: 600 10px var(--mono) !important; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .list-head { display: flex; justify-content: space-between; gap: 12px; padding: 0 0 6px; border-bottom: 1px solid var(--line-strong); margin-bottom: 4px; }
+  .top-head { padding: 0 0 8px !important; border-bottom: 1px solid var(--line-strong) !important; }
+  .top-head .r, .top-head .go { color: var(--muted); }
   .sortbar { display: none; gap: 8px; align-items: center; margin-bottom: 10px; font: 12px var(--mono); color: var(--muted); }
   ::-webkit-scrollbar { height: 8px; width: 8px; } ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 8px; }
 </style>
@@ -170,17 +176,17 @@
 <main>
   <div class="tiles" id="tiles"></div>
   <div class="grid2">
-    <div class="card"><h2>Pipeline per status</h2><div class="scrollbox" id="byStatus"></div></div>
-    <div class="card"><h2>Bolag per person (hittade)</h2><div class="scrollbox" id="byPerson"></div></div>
-    <div class="card"><h2>Bolag per bransch</h2><div class="scrollbox" id="byIndustry"></div></div>
+    <div class="card"><h2>Pipeline per status</h2><div class="list-head"><span>Status</span><span>Antal bolag</span></div><div class="scrollbox" id="byStatus"></div></div>
+    <div class="card"><h2>Bolag per person (hittade)</h2><div class="list-head"><span>Hittad av</span><span>Antal bolag</span></div><div class="scrollbox" id="byPerson"></div></div>
+    <div class="card"><h2>Bolag per bransch</h2><div class="list-head"><span>Bransch</span><span>Antal bolag</span></div><div class="scrollbox" id="byIndustry"></div></div>
   </div>
-  <div class="card toplist"><h2>Högst prioritet</h2><div id="toplist"></div></div>
+  <div class="card toplist"><h2>Prioriterade case</h2><p class="hint">Aktiva bolag sorterade på AI-poäng (0–20, hög prioritet ≥ 12). E/I/S/K = effektivisering (viktad med AI-adoption), nya intäkter, snabbhet, köpbarhet.</p><div class="top-row top-head"><span>Poäng</span><span>Bolag · delpoäng</span><span>Bransch</span><span class="r rev">Omsättning</span><span class="r up">Uppsida</span><span class="go">Analys</span></div><div id="toplist"></div></div>
   <div class="grid2">
     <div class="card report"><h2>VD-rapport</h2><div id="report"></div></div>
-    <div class="card"><h2>Kommande buddeadlines</h2><div id="deadlines"></div></div>
-    <div class="card"><h2>Störst uppsida</h2><div id="upside"></div></div>
-    <div class="card"><h2>Konkursförvaltare</h2><div id="trustees"></div></div>
-    <div class="card"><h2>Senaste körningar</h2><div class="scrollbox" id="runs"></div></div>
+    <div class="card"><h2>Kommande buddeadlines</h2><div class="list-head"><span>Bolag</span><span>Sista budag · dagar kvar</span></div><div id="deadlines"></div></div>
+    <div class="card"><h2>Störst uppsida</h2><div class="list-head"><span>Bolag</span><span>Uppsida · köppris (Mkr, uppskattat)</span></div><div id="upside"></div></div>
+    <div class="card"><h2>Konkursförvaltare</h2><div class="list-head"><span>Förvaltare · byrå · kontakt</span><span>Bolag</span></div><div id="trustees"></div></div>
+    <div class="card"><h2>Senaste körningar</h2><div class="list-head"><span>Resultat · uppgift · nya bolag</span><span>Starttid</span></div><div class="scrollbox" id="runs"></div></div>
   </div>
   <div class="filters">
     <input type="search" id="q" placeholder="Sök bolag, bransch, ort, notering…">
@@ -288,10 +294,10 @@ function renderPanels(reports) {
   const live = data.filter(r => r.status !== 'avslutad');
   const dl = live.filter(r => r.bid_deadline).sort((a, b) => a.bid_deadline.localeCompare(b.bid_deadline)).slice(0, 8);
   $('deadlines').innerHTML = dl.length ? dl.map(r => { const n = daysTo(r.bid_deadline);
-    return `<div class="list-row"><span>${link(r, r.name)}</span><span class="r days ${n <= 7 ? 'urgent' : n <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)} · ${n < 0 ? 'passerad' : n + ' d'}</span></div>`; }).join('')
+    return `<div class="list-row"><span>${link(r, r.name)}</span><span class="r days ${n <= 7 ? 'urgent' : n <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)} · ${n < 0 ? 'passerad' : n + ' dagar'}</span></div>`; }).join('')
     : '<span class="muted">Inga deadlines registrerade</span>';
   const up = live.filter(r => r.upside_msek != null).sort((a, b) => b.upside_msek - a.upside_msek).slice(0, 8);
-  $('upside').innerHTML = up.length ? up.map(r => `<div class="list-row"><span>${link(r, r.name)}</span><span class="r">${r.upside_msek.toLocaleString('sv-SE')} Mkr${r.est_price_msek != null ? ' · pris ' + r.est_price_msek.toLocaleString('sv-SE') : ''}</span></div>`).join('')
+  $('upside').innerHTML = up.length ? up.map(r => `<div class="list-row"><span>${link(r, r.name)}</span><span class="r">${r.upside_msek.toLocaleString('sv-SE')} · ${r.est_price_msek != null ? r.est_price_msek.toLocaleString('sv-SE') : '–'}</span></div>`).join('')
     : '<span class="muted">Inga uppsidekalkyler än</span>';
   const tr = live.filter(r => r.trustee && r.trustee.name);
   $('trustees').innerHTML = tr.length ? tr.map(r => `<div class="list-row"><span>${trusteeHtml(r.trustee)}</span><span class="r">${esc(r.name)}</span></div>`).join('')
