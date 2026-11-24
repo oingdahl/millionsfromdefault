@@ -81,3 +81,17 @@ Lista med VD:ns rapporter, nyaste först.
 | `title` | sträng | Kort rubrik |
 | `decisions` | lista | Beslut OI och FW behöver fatta: `[{ "text", "company_id", "deadline" }]` |
 | `body` | sträng | Rapporten i enkel markdown (rubriker `##`, punktlistor `-`, **fet**) |
+
+## runs.json
+
+Körlogg för de schemalagda uppgifterna, nyaste först. Varje körning lägger till en rad **även när inget nytt hittades eller när något gick fel**, och committar den.
+
+| Fält | Typ | Beskrivning |
+|---|---|---|
+| `at` | sträng | Starttid, `YYYY-MM-DD HH:MM` (svensk tid) |
+| `task` | sträng | `screening` eller `vd-rapport` |
+| `result` | sträng | `ok`, `delvis` (något nekades men annat gick) eller `fel` |
+| `new_companies` | tal | Antal nya bolag i `companies.json` |
+| `pages_read` | tal | Antal sidor som hämtades |
+| `denied` | lista | Adresser som nekades, med felkod: `[{ "url", "error" }]` |
+| `note` | sträng | En–två meningar om vad som hände |

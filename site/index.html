@@ -152,6 +152,9 @@
     .top-row .r.rev, .top-row .r.up { display: none; }
     .top-row .go { grid-column: 3; grid-row: 1; }
   }
+  .run { font: 600 11px var(--mono); padding: 1px 7px; border-radius: 99px; border: 1px solid currentColor; }
+  .run.ok { color: var(--good); } .run.delvis { color: var(--warn); } .run.fel { color: var(--bad); }
+  .list-row .parts { display: block; font: 400 12px system-ui, sans-serif; color: var(--muted); margin-top: 3px; }
   .sortbar { display: none; gap: 8px; align-items: center; margin-bottom: 10px; font: 12px var(--mono); color: var(--muted); }
   ::-webkit-scrollbar { height: 8px; width: 8px; } ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 8px; }
 </style>
@@ -177,6 +180,7 @@
     <div class="card"><h2>Kommande buddeadlines</h2><div id="deadlines"></div></div>
     <div class="card"><h2>Störst uppsida</h2><div id="upside"></div></div>
     <div class="card"><h2>Konkursförvaltare</h2><div id="trustees"></div></div>
+    <div class="card"><h2>Senaste körningar</h2><div class="scrollbox" id="runs"></div></div>
   </div>
   <div class="filters">
     <input type="search" id="q" placeholder="Sök bolag, bransch, ort, notering…">
@@ -364,10 +368,13 @@ function renderTable() {
   }).join('') + '</tr>').join('');
 }
 
-Promise.all([load('companies.json'), load('reports.json')]).then(([rows, reports]) => {
+Promise.all([load('companies.json'), load('reports.json'), load('runs.json')]).then(([rows, reports, runs]) => {
   document.addEventListener('click', e => { const c = e.target.closest('.clamp'); if (c) c.classList.toggle('open'); });
   data = prep(Array.isArray(rows) ? rows : []);
   renderStatic(); renderPanels(Array.isArray(reports) ? reports : []); renderTable();
+  const rl = Array.isArray(runs) ? runs.slice(0, 20) : [];
+  $('runs').innerHTML = rl.length ? rl.map(r => `<div class="list-row"><span><span class="run ${esc(r.result)}">${esc(r.result)}</span> ${esc(r.task)} · ${r.new_companies ?? 0} nya${(r.denied || []).length ? ` · <span class="days urgent">${r.denied.length} nekade</span>` : ''}<span class="parts">${esc(r.note || '')}</span></span><span class="r">${esc(r.at)}</span></div>`).join('')
+    : '<span class="muted">Ingen körning loggad än</span>';
   ['q', 'fStatus', 'fPerson', 'fIndustry'].forEach(id => $(id).addEventListener('input', renderTable));
 });
 </script>
