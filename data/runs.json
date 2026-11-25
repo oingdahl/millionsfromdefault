@@ -1,5 +1,19 @@
 [
   {
+    "at": "2026-11-25 07:12",
+    "task": "screening",
+    "result": "fel",
+    "new_companies": 0,
+    "pages_read": 0,
+    "denied": [
+      {
+        "url": "https://www.konkurslistan.se/alla-konkurser",
+        "error": "PROVENANCE_REQUIRED (behörighetsfrågan besvarades inte i tid)"
+      }
+    ],
+    "note": "Verktyg: web-fetch-agent (ingen egen WebFetch), två uppdrag (post 1–50 och 51–100). Båda nekades med PROVENANCE_REQUIRED; ingen lista hämtades, så inga bolag kunde screenas. Försökte inte runt nekandet."
+  },
+  {
     "at": "2026-11-24 08:00",
     "task": "screening",
     "result": "delvis",
