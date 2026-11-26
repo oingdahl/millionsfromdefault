@@ -1,5 +1,14 @@
 [
   {
+    "at": "2026-11-26 07:13",
+    "task": "screening",
+    "result": "ok",
+    "new_companies": 20,
+    "pages_read": 2,
+    "denied": [],
+    "note": "Verktyg: WebSearch ja, WebFetch direkt nej, web-fetch-agent ja. Väg: WebSearch 'konkurslistan.se konkurser' gav exakt https://www.konkurslistan.se/ och i en andra sökning exakt https://www.konkurslistan.se/alla-konkurser; båda hämtades via web-fetch-agenten (HTTP 200, inga nekanden). Listan klipptes efter ~73 poster och sida 2 var identisk med sida 1, så poster 74–100 saknas. Bolagssidor hämtades inte; bolag utan omsättningsuppgift lades inte in. 5 aktiva (preliminära poäng) och 15 avförda (<5 Mkr). Enhet antagen SEK. Repot fanns redan klonat; add_repo-verktyget hittades inte."
+  },
+  {
     "at": "2026-11-25 09:20",
     "task": "screening",
     "result": "ok",
