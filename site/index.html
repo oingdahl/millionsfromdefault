@@ -161,11 +161,36 @@
   .list-head { display: flex; justify-content: space-between; gap: 12px; padding: 0 0 6px; border-bottom: 1px solid var(--line-strong); margin-bottom: 4px; }
   .top-head { padding: 0 0 8px !important; border-bottom: 1px solid var(--line-strong) !important; }
   .top-head .r, .top-head .go { color: var(--muted); }
+  .section { margin-bottom: 22px; }
+  .section-title { font: 600 11px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .14em; margin: 30px 0 12px; }
+  .sortlabel { display: flex; align-items: center; gap: 8px; font: 12px var(--mono); color: var(--muted); }
+  .co-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr)); gap: 14px; margin-bottom: 22px; }
+  .co { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; scroll-margin-top: 16px; display: flex; flex-direction: column; gap: 12px; transition: border-color .3s, box-shadow .3s; }
+  .co.flash { animation: flash 2.2s ease-out; }
+  @keyframes flash { 0%, 30% { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,224,184,.25), 0 0 30px rgba(0,224,184,.25); } 100% { border-color: var(--line); box-shadow: none; } }
+  .co-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+  .co h3 { margin: 0; font-size: 17px; }
+  .co .sub2 { color: var(--muted); font-size: 12px; margin-top: 3px; }
+  .co-score { text-align: right; flex-shrink: 0; } .co-score .prio { font-size: 26px; display: block; line-height: 1; } .co-score small { font: 10px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  .co-status { display: flex; gap: 10px; align-items: center; font-size: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 8px; padding: 3px 4px 3px 8px; }
+  .chip em { font: normal 10px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 14px; margin: 0; }
+  .facts .wide { grid-column: 1 / -1; }
+  .facts dt { font: 600 9px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
+  .facts dd { margin: 2px 0 0; font-size: 13px; overflow-wrap: anywhere; }
+  .levers { display: flex; flex-wrap: wrap; gap: 6px; } .levers span { font-size: 11px; padding: 3px 8px; border-radius: 99px; background: rgba(124,92,255,.12); color: #c3b5ff; }
+  .co .notes { color: var(--muted); font-size: 13px; }
+  .co-foot { display: flex; gap: 16px; flex-wrap: wrap; margin-top: auto; padding: 10px 0 0; border-top: 1px solid var(--line); font: 12px var(--mono); }
+  .co-foot .totop { margin-left: auto; color: var(--muted); }
+  .bottom { margin-top: 8px; }
+  @media (max-width: 700px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .sortbar { display: none; gap: 8px; align-items: center; margin-bottom: 10px; font: 12px var(--mono); color: var(--muted); }
   ::-webkit-scrollbar { height: 8px; width: 8px; } ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 8px; }
 </style>
 </head>
-<body>
+<body id="top">
 <header>
   <div>
     <h1><span>millionsfromdefault</span></h1>
@@ -175,32 +200,26 @@
 </header>
 <main>
   <div class="tiles" id="tiles"></div>
+  <div class="card toplist"><h2>Prioriterade case</h2><p class="hint">Aktiva bolag med minst 50 Mkr i omsättning, sorterade på AI-poäng (0–20, hög prioritet ≥ 12). E/I/S/K = effektivisering (viktad med AI-adoption), nya intäkter, snabbhet, köpbarhet. Klicka på ett bolag för att gå till dess bolagskort.</p><div class="top-row top-head"><span>Poäng</span><span>Bolag · delpoäng</span><span>Bransch</span><span class="r rev">Omsättning</span><span class="r up">Uppsida</span><span class="go">Analys</span></div><div id="toplist"></div></div>
+  <div class="card report section"><h2>VD-rapport</h2><div id="report"></div></div>
   <div class="grid2">
-    <div class="card"><h2>Pipeline per status</h2><div class="list-head"><span>Status</span><span>Antal bolag</span></div><div class="scrollbox" id="byStatus"></div></div>
-    <div class="card"><h2>Bolag per person (hittade)</h2><div class="list-head"><span>Hittad av</span><span>Antal bolag</span></div><div class="scrollbox" id="byPerson"></div></div>
-    <div class="card"><h2>Bolag per bransch</h2><div class="list-head"><span>Bransch</span><span>Antal bolag</span></div><div class="scrollbox" id="byIndustry"></div></div>
-  </div>
-  <div class="card toplist"><h2>Prioriterade case</h2><p class="hint">Aktiva bolag med minst 50 Mkr i omsättning, sorterade på AI-poäng (0–20, hög prioritet ≥ 12). E/I/S/K = effektivisering (viktad med AI-adoption), nya intäkter, snabbhet, köpbarhet.</p><div class="top-row top-head"><span>Poäng</span><span>Bolag · delpoäng</span><span>Bransch</span><span class="r rev">Omsättning</span><span class="r up">Uppsida</span><span class="go">Analys</span></div><div id="toplist"></div></div>
-  <div class="grid2">
-    <div class="card report"><h2>VD-rapport</h2><div id="report"></div></div>
     <div class="card"><h2>Kommande buddeadlines</h2><div class="list-head"><span>Bolag</span><span>Sista budag · dagar kvar</span></div><div id="deadlines"></div></div>
     <div class="card"><h2>Störst uppsida</h2><div class="list-head"><span>Bolag</span><span>Uppsida · köppris (Mkr, uppskattat)</span></div><div id="upside"></div></div>
     <div class="card"><h2>Konkursförvaltare</h2><div class="list-head"><span>Förvaltare · byrå · kontakt</span><span>Bolag</span></div><div id="trustees"></div></div>
-    <div class="card"><h2>Senaste körningar</h2><div class="list-head"><span>Resultat · uppgift · nya bolag</span><span>Starttid</span></div><div class="scrollbox" id="runs"></div></div>
   </div>
+  <h2 class="section-title" id="bolagskort">Bolagskort</h2>
   <div class="filters">
     <input type="search" id="q" placeholder="Sök bolag, bransch, ort, notering…">
     <select id="fStatus"><option value="">Alla statusar</option></select>
     <select id="fPerson"><option value="">Alla personer</option></select>
     <select id="fIndustry"><option value="">Alla branscher</option></select>
+    <label class="sortlabel">Sortera <select id="fSort"></select></label>
   </div>
-  <div class="sortbar">Sortera <select id="fSort"></select></div>
-  <div class="tablewrap">
-    <table>
-      <thead><tr id="head"></tr></thead>
-      <tbody id="body"></tbody>
-    </table>
-    <div class="empty" id="empty" hidden>Inga bolag att visa än. Lägg till rader i <code>data/companies.json</code>.</div>
+  <div class="co-grid" id="cards"></div>
+  <div class="empty" id="empty" hidden>Inga bolag att visa.</div>
+  <div class="grid2 bottom">
+    <div class="card"><h2>Bolag per bransch</h2><div class="list-head"><span>Bransch</span><span>Antal bolag</span></div><div class="scrollbox" id="byIndustry"></div></div>
+    <div class="card"><h2>Senaste körningar</h2><div class="list-head"><span>Resultat · uppgift · nya bolag</span><span>Starttid</span></div><div class="scrollbox" id="runs"></div></div>
   </div>
 </main>
 <footer>Källdata: <code>data/companies.json</code> och <code>data/reports.json</code>. AI-poäng 0–20 = effektivisering × (6 − adoption)/5 + nya intäkter + snabbhet + köpbarhet; hög prioritet ≥ 12. Uppdaterad: <span id="stamp">–</span></footer>
@@ -268,6 +287,7 @@ function bars(el, entries) {
 
 const today = new Date(new Date().toISOString().slice(0, 10));
 const daysTo = d => Math.round((new Date(d) - today) / 864e5);
+const jump = (r, txt) => `<a href="#bolag-${esc(r.id)}" class="jump" data-id="${esc(r.id)}">${esc(txt ?? r.name)}</a>`;
 const link = (r, txt) => r.analysis ? `<a href="https://github.com/oingdahl/millionsfromdefault/blob/main/${esc(r.analysis)}" target="_blank" rel="noopener">${esc(txt)}</a>` : esc(txt);
 const trusteeHtml = t => !t ? '–' : `${esc(t.name || '')}${t.firm ? ' <span class="muted">· ' + esc(t.firm) + '</span>' : ''}` +
   (t.email ? ` <a href="mailto:${esc(t.email)}">mejl</a>` : '') + (t.phone ? ` <a href="tel:${esc(t.phone.replace(/\s/g, ''))}">${esc(t.phone)}</a>` : '');
@@ -295,13 +315,13 @@ function renderPanels(reports) {
   const live = data.filter(r => r.status !== 'avslutad');
   const dl = live.filter(r => r.bid_deadline).sort((a, b) => a.bid_deadline.localeCompare(b.bid_deadline)).slice(0, 8);
   $('deadlines').innerHTML = dl.length ? dl.map(r => { const n = daysTo(r.bid_deadline);
-    return `<div class="list-row"><span>${link(r, r.name)}</span><span class="r days ${n <= 7 ? 'urgent' : n <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)} · ${n < 0 ? 'passerad' : n + ' dagar'}</span></div>`; }).join('')
+    return `<div class="list-row"><span>${jump(r)}</span><span class="r days ${n <= 7 ? 'urgent' : n <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)} · ${n < 0 ? 'passerad' : n + ' dagar'}</span></div>`; }).join('')
     : '<span class="muted">Inga deadlines registrerade</span>';
   const up = live.filter(r => r.upside_msek != null).sort((a, b) => b.upside_msek - a.upside_msek).slice(0, 8);
-  $('upside').innerHTML = up.length ? up.map(r => `<div class="list-row"><span>${link(r, r.name)}</span><span class="r">${r.upside_msek.toLocaleString('sv-SE')} · ${r.est_price_msek != null ? r.est_price_msek.toLocaleString('sv-SE') : '–'}</span></div>`).join('')
+  $('upside').innerHTML = up.length ? up.map(r => `<div class="list-row"><span>${jump(r)}</span><span class="r">${r.upside_msek.toLocaleString('sv-SE')} · ${r.est_price_msek != null ? r.est_price_msek.toLocaleString('sv-SE') : '–'}</span></div>`).join('')
     : '<span class="muted">Inga uppsidekalkyler än</span>';
   const tr = live.filter(r => r.trustee && r.trustee.name);
-  $('trustees').innerHTML = tr.length ? tr.map(r => `<div class="list-row"><span>${trusteeHtml(r.trustee)}</span><span class="r">${esc(r.name)}</span></div>`).join('')
+  $('trustees').innerHTML = tr.length ? tr.map(r => `<div class="list-row"><span>${trusteeHtml(r.trustee)}</span><span class="r">${jump(r)}</span></div>`).join('')
     : '<span class="muted">Inga förvaltare registrerade</span>';
 }
 
@@ -314,14 +334,12 @@ function renderStatic() {
     [top, 'Hög prioritet (≥12)'], [data.filter(r => r.status === 'bud').length, 'I budfas'], [bought, 'Köpta']
   ];
   $('tiles').innerHTML = tiles.map(([n, l]) => `<div class="tile"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
-  bars($('byStatus'), STATUSES.map(s => [s, data.filter(r => r.status === s).length]));
-  bars($('byPerson'), count(data, 'found_by'));
   bars($('byIndustry'), count(data, 'industry'));
   const topList = data.filter(r => r.status !== 'avslutad' && r.priority != null)
     .sort((a, b) => (b.priority - a.priority) || (!!b.analysis - !!a.analysis) || ((b.revenue_ksek || 0) - (a.revenue_ksek || 0))).slice(0, 8);
   $('toplist').innerHTML = topList.length ? topList.map(r => `<div class="top-row">
       <span class="prio${r.priority >= HIGH ? ' hi' : ''}">${fmtScore(r.priority)}</span>
-      <span class="nm">${esc(r.name)}<span class="parts" title="Effektivisering (viktad med adoption) · Nya intäkter · Snabbhet · Köpbarhet">E ${fmtScore(r.ai_efficiency * (6 - r.ai_adoption) / 5)} · I ${r.ai_revenue} · S ${r.ai_speed} · K ${r.buyability}</span></span>
+      <span class="nm"><a href="#bolag-${esc(r.id)}" class="jump" data-id="${esc(r.id)}">${esc(r.name)}</a><span class="parts" title="Effektivisering (viktad med adoption) · Nya intäkter · Snabbhet · Köpbarhet">E ${fmtScore(r.ai_efficiency * (6 - r.ai_adoption) / 5)} · I ${r.ai_revenue} · S ${r.ai_speed} · K ${r.buyability}</span></span>
       <span class="ind">${esc(r.industry || '')}</span>
       <span class="r rev">${r.revenue_ksek != null ? (r.revenue_ksek / 1000).toLocaleString('sv-SE', { maximumFractionDigits: 1 }) + ' Mkr' : '–'}</span>
       <span class="r up">${r.upside_msek != null ? '↑ ' + r.upside_msek.toLocaleString('sv-SE') + ' Mkr' : ''}</span>
@@ -337,11 +355,6 @@ function renderStatic() {
   COLS.filter(c => c.k !== 'notes').forEach(c => fs.add(new Option(c.t, c.k)));
   fs.value = sortKey;
   fs.addEventListener('input', () => { sortKey = fs.value; sortAsc = !COLS.find(c => c.k === sortKey).num && sortKey !== 'updated'; renderTable(); });
-  $('head').innerHTML = COLS.map(c => `<th data-k="${c.k}">${c.t}</th>`).join('');
-  $('head').addEventListener('click', e => {
-    const k = e.target.dataset.k; if (!k) return;
-    sortAsc = (sortKey === k) ? !sortAsc : false; sortKey = k; renderTable();
-  });
 }
 
 function renderTable() {
@@ -355,34 +368,53 @@ function renderTable() {
     const c = typeof x === 'number' ? x - y : String(x).localeCompare(String(y), 'sv');
     return sortAsc ? c : -c;
   });
-  document.querySelectorAll('#head th').forEach(th => {
-    th.className = th.dataset.k === sortKey ? 'sorted' + (sortAsc ? ' asc' : '') : '';
-  });
   $('empty').hidden = rows.length > 0;
-  $('body').innerHTML = rows.map(r => '<tr>' + COLS.map(c => {
-    let v = r[c.k];
-    if (c.k === 'name') v = r.source_url ? `<a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.name)}</a>` : esc(r.name);
-    else if (c.k === 'status') v = `<span class="pill ${esc(r.status)}">${esc(r.status)}${r.outcome ? ' · ' + esc(r.outcome) : ''}</span>`;
-    else if (c.k === 'priority') v = `<span class="prio${v != null && v >= HIGH ? ' hi' : ''}">${fmtScore(v)}</span>`;
-    else if (c.k === 'ai_adoption') v = r.ai_adoption == null ? '–' : `<span class="score s${r.ai_adoption}">${r.ai_adoption}</span>`;
-    else if (c.k === 'trustee') v = r.trustee ? esc(r.trustee.name || '') : '–';
-    else if (c.k === 'bid_deadline') v = r.bid_deadline ? `<span class="days ${daysTo(r.bid_deadline) <= 7 ? 'urgent' : daysTo(r.bid_deadline) <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)}</span>` : '–';
-    else if (c.k === 'notes') v = `<div class="clamp">${fmt(v)}</div>` + (r.analysis ? ` ${link(r, '→ analys')}` : '');
-    else if (['ai_efficiency', 'ai_revenue', 'ai_speed', 'buyability'].includes(c.k)) v = r[c.k] == null ? '–' : `<span class="score p">${r[c.k]}</span>`;
-    else v = fmt(v);
-    const blank = r[c.k] == null || r[c.k] === '' ? ' empty-cell' : '';
-    return `<td data-k="${c.k}" data-l="${c.t}" class="${c.wrap ? 'wrap' : ''}${c.num ? ' num' : ''}${c.k === 'name' || c.k === 'priority' ? '' : blank}">${v}</td>`;
-  }).join('') + '</tr>').join('');
+  const chip = (label, v, cls) => `<span class="chip"><em>${label}</em><b class="score ${cls}">${v == null ? '–' : v}</b></span>`;
+  const fact = (label, v, wide) => v == null || v === '' ? '' : `<div${wide ? ' class="wide"' : ''}><dt>${label}</dt><dd>${v}</dd></div>`;
+  const mkr = v => v == null ? null : (v / 1000).toLocaleString('sv-SE', { maximumFractionDigits: 1 }) + ' Mkr';
+  $('cards').innerHTML = rows.map(r => {
+    const t = r.trustee;
+    const dl = r.bid_deadline ? `<span class="days ${daysTo(r.bid_deadline) <= 7 ? 'urgent' : daysTo(r.bid_deadline) <= 14 ? 'soon' : ''}">${esc(r.bid_deadline)}</span>` : null;
+    return `<article class="co" id="bolag-${esc(r.id)}">
+      <div class="co-head">
+        <div><h3>${esc(r.name)}</h3><div class="sub2">${esc(r.industry || '')}${r.city ? ' · ' + esc(r.city) : ''} · orgnr ${esc(r.id)}</div></div>
+        <div class="co-score"><span class="prio${r.priority != null && r.priority >= HIGH ? ' hi' : ''}">${fmtScore(r.priority)}</span><small>AI-poäng</small></div>
+      </div>
+      <div class="co-status"><span class="pill ${esc(r.status)}">${esc(r.status)}${r.outcome ? ' · ' + esc(r.outcome) : ''}</span>${r.assigned_to ? `<span class="muted">ansvarig: ${esc(r.assigned_to)}</span>` : ''}</div>
+      <div class="chips">${chip('Adoption', r.ai_adoption, 's' + r.ai_adoption)}${chip('Effektiv.', r.ai_efficiency, 'p')}${chip('Intäkter', r.ai_revenue, 'p')}${chip('Snabbhet', r.ai_speed, 'p')}${chip('Köpbarhet', r.buyability, 'p')}</div>
+      <dl class="facts">
+        ${fact('Omsättning', mkr(r.revenue_ksek))}${fact('Anställda', r.employees)}${fact('Konkursdatum', esc(r.bankruptcy_date || ''))}
+        ${fact('Uppsida', r.upside_msek != null ? r.upside_msek.toLocaleString('sv-SE') + ' Mkr' : null)}${fact('Köppris', r.est_price_msek != null ? r.est_price_msek.toLocaleString('sv-SE') + ' Mkr' : null)}${fact('Buddeadline', dl)}
+        ${fact('Förvaltare', t ? trusteeHtml(t) : null, true)}${fact('Hittad av', esc(r.found_by || ''))}${fact('Uppdaterad', esc(r.updated || ''))}
+      </dl>
+      ${(r.ai_levers || []).length ? `<div class="levers">${r.ai_levers.map(l => `<span>${esc(l)}</span>`).join('')}</div>` : ''}
+      ${r.notes ? `<div class="clamp notes">${esc(r.notes)}</div>` : ''}
+      <div class="co-foot">${r.analysis ? link(r, 'Läs analysen →') : '<span class="muted">Ingen analys än</span>'}${r.source_url ? `<a href="${esc(r.source_url)}" target="_blank" rel="noopener">Konkurslistan ↗</a>` : ''}<a href="#top" class="totop">↑ Till toppen</a></div>
+    </article>`;
+  }).join('');
+}
+
+function goToCard(id) {
+  let el = document.getElementById('bolag-' + id);
+  if (!el) { ['q', 'fStatus', 'fPerson', 'fIndustry'].forEach(k => $(k).value = ''); renderTable(); el = document.getElementById('bolag-' + id); }
+  if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+  history.replaceState(null, '', '#bolag-' + id);
 }
 
 Promise.all([load('companies.json'), load('reports.json'), load('runs.json')]).then(([rows, reports, runs]) => {
-  document.addEventListener('click', e => { const c = e.target.closest('.clamp'); if (c) c.classList.toggle('open'); });
+  document.addEventListener('click', e => {
+    const j = e.target.closest('a.jump'); if (j) { e.preventDefault(); goToCard(j.dataset.id); return; }
+    const c = e.target.closest('.clamp'); if (c) c.classList.toggle('open');
+  });
   data = prep((Array.isArray(rows) ? rows : []).filter(r => (r.revenue_ksek || 0) >= MIN_REVENUE_KSEK));
   renderStatic(); renderPanels(Array.isArray(reports) ? reports : []); renderTable();
   const rl = Array.isArray(runs) ? runs.slice(0, 20) : [];
   $('runs').innerHTML = rl.length ? rl.map(r => `<div class="list-row"><span><span class="run ${esc(r.result)}">${esc(r.result)}</span> ${esc(r.task)} · ${r.new_companies ?? 0} nya${(r.denied || []).length ? ` · <span class="days urgent">${r.denied.length} nekade</span>` : ''}<span class="parts">${esc(r.note || '')}</span></span><span class="r">${esc(r.at)}</span></div>`).join('')
     : '<span class="muted">Ingen körning loggad än</span>';
   ['q', 'fStatus', 'fPerson', 'fIndustry'].forEach(id => $(id).addEventListener('input', renderTable));
+  if (location.hash.startsWith('#bolag-')) setTimeout(() => goToCard(location.hash.slice(7)), 50);
 });
 </script>
 </body>
