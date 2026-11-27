@@ -1,5 +1,35 @@
 [
   {
+    "at": "2026-11-27 07:12",
+    "task": "screening",
+    "result": "delvis",
+    "new_companies": 43,
+    "pages_read": 13,
+    "denied": [
+      {
+        "url": "https://www.konkurslistan.se/konkurser/5590772884",
+        "error": "PROVENANCE_REQUIRED (web-fetch; adressen kom från hämtad lista, inte från sökning; WebSearch 'konkurslistan <orgnr>' gav ingen exakt adress)"
+      },
+      {
+        "url": "https://www.konkurslistan.se/konkurser/5566034152",
+        "error": "PROVENANCE_REQUIRED (web-fetch; adressen kom från hämtad lista, inte från sökning; WebSearch 'konkurslistan <orgnr>' gav ingen exakt adress)"
+      },
+      {
+        "url": "https://www.konkurslistan.se/konkurser/5594711425",
+        "error": "PROVENANCE_REQUIRED (web-fetch; adressen kom från hämtad lista, inte från sökning; WebSearch 'konkurslistan <orgnr>' gav ingen exakt adress)"
+      },
+      {
+        "url": "https://www.konkurslistan.se/konkurser/9698028637",
+        "error": "PROVENANCE_REQUIRED (web-fetch; adressen kom från hämtad lista, inte från sökning; WebSearch 'konkurslistan <orgnr>' gav ingen exakt adress)"
+      },
+      {
+        "url": "https://www.konkurslistan.se/konkurser/5594395559",
+        "error": "PROVENANCE_REQUIRED (web-fetch; adressen kom från hämtad lista, inte från sökning; WebSearch 'konkurslistan <orgnr>' gav ingen exakt adress)"
+      }
+    ],
+    "note": "Verktyg: WebSearch ja, WebFetch direkt nej, web-fetch-agent ja. Väg: två WebSearch gav exakt https://www.konkurslistan.se/ och https://www.konkurslistan.se/alla-konkurser (båda hämtades, HTTP 200; alla-konkurser klipptes vid ~40 000 av 58 000 tecken, 30 poster kommer från en modellsammanfattning och är markerade i notes). 11 bolagssidor hämtades (länkade från listan), 5 nekades. 3 aktiva med verifierad omsättning (Leif Grimsrud 12,0 p, Hälsö Murtjänst 10,0, Dahlton safety 6,6), 2 aktiva med omsättning null (Carowa Bygg 11,4, Markforged Sweden 7,2; sidor nekade), 38 avförda (<5 Mkr eller fastighetsbolag). Bolag utan omsättning på listan som inte kunde hämtas lades inte in. Enhet antagen SEK. Repot fanns redan klonat; add_repo behövdes inte."
+  },
+  {
     "at": "2026-11-26 07:13",
     "task": "screening",
     "result": "ok",
