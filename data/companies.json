@@ -156,14 +156,14 @@
     },
     "bid_deadline": "2026-11-19",
     "analysis": "docs/companies/5562659911.md",
-    "status": "granskas",
-    "outcome": null,
+    "status": "avslutad",
+    "outcome": "avfört",
     "found_by": "screening",
     "assigned_to": null,
     "added": "2026-11-24",
     "updated": "2026-11-27",
-    "updated_by": "analys",
-    "notes": "AI-poäng 8,6/20 efter analys 2026-11-27 (preliminärt 11,4). Rekommendation från analys: avför – värdet ligger i entreprenadavtal och läggarlag som inte följer med, budtiden 2026-11-19 har passerat och rörelsen kan redan vara såld. Beslut OI/FW. Omsättning rättad till bokslut 2025: 75 324 tkr (109 278 gällde 2024), rörelseresultat −6 293 tkr, medelantal anställda 44; jan–aug 2026 intäkter 32,7 Mkr (ca 49 Mkr i årstakt), rörelseresultat −1,85 Mkr. Eff 2 (material 40–60 % och läggarlöner), adoption 2 (Hogia ByggEkonomi, manuell kalkyl), nya intäkter 2 (kunderna är byggentreprenörer), snabbhet 3, köpbarhet 2 (boet går inte in i entreprenadavtalen, driften stängd, 26 anställda kvar av ca 48, auktorisation och ISO följer inte med). Ca 99 % av intäkterna är byggförsäljning med omvänd moms; ingen butik; lager 7,0 Mkr bokfört. Orsak: bostadsbyggandet föll och likviditeten sviktade. Konkurs 2026-10-30, Södertörns tingsrätt. Uppsida och köppris grova uppskattningar, estimated: true; rörelsekapitalbehov 8–15 Mkr ej inräknat. Källor: anbudsunderlag lmlaw.se 2026-11-09 (årsredovisning 2025, delårsrapport 2026), infrastrukturnyheter.se, allabolag.se, ollelindgolv.se (hämtade 2026-11-27)."
+    "updated_by": "OI",
+    "notes": "Avfört 2026-11-27 (beslut OI): budtiden 2026-11-19 har passerat och rörelsen kan vara såld; entreprenadavtal och läggarlag följer inte med, driften är stängd och en nystart kräver 8–15 Mkr i rörelsekapital (uppskattning). AI-poäng 8,6/20 efter analys 2026-11-27 (preliminärt 11,4). Rekommendation från analys: avför – värdet ligger i entreprenadavtal och läggarlag som inte följer med, budtiden 2026-11-19 har passerat och rörelsen kan redan vara såld. Omsättning rättad till bokslut 2025: 75 324 tkr (109 278 gällde 2024), rörelseresultat −6 293 tkr, medelantal anställda 44; jan–aug 2026 intäkter 32,7 Mkr (ca 49 Mkr i årstakt), rörelseresultat −1,85 Mkr. Eff 2 (material 40–60 % och läggarlöner), adoption 2 (Hogia ByggEkonomi, manuell kalkyl), nya intäkter 2 (kunderna är byggentreprenörer), snabbhet 3, köpbarhet 2 (boet går inte in i entreprenadavtalen, driften stängd, 26 anställda kvar av ca 48, auktorisation och ISO följer inte med). Ca 99 % av intäkterna är byggförsäljning med omvänd moms; ingen butik; lager 7,0 Mkr bokfört. Orsak: bostadsbyggandet föll och likviditeten sviktade. Konkurs 2026-10-30, Södertörns tingsrätt. Uppsida och köppris grova uppskattningar, estimated: true; rörelsekapitalbehov 8–15 Mkr ej inräknat. Källor: anbudsunderlag lmlaw.se 2026-11-09 (årsredovisning 2025, delårsrapport 2026), infrastrukturnyheter.se, allabolag.se, ollelindgolv.se (hämtade 2026-11-27)."
   },
   {
     "id": "5566208012",
@@ -228,13 +228,13 @@
     },
     "bid_deadline": null,
     "analysis": "docs/companies/5563726065.md",
-    "status": "granskas",
-    "outcome": null,
+    "status": "avslutad",
+    "outcome": "avfört",
     "found_by": "screening",
     "assigned_to": null,
     "added": "2026-11-27",
     "updated": "2026-11-27",
-    "updated_by": "analys",
-    "notes": "AI-poäng 7,6/20 efter analys 2026-11-27 (preliminärt 12,0). Rekommendation från analys: avför – en markentreprenör som behöver en vanlig turnaround, inte ett AI-case; ta upp igen bara om rörelsen säljs som helhet nära maskinernas marknadsvärde. Beslut OI/FW. Nettoomsättning 82 230 tkr (2025), 36 681 (2024), 75 107 (2023); rörelseresultat −5 617 / −8 248 / 168 tkr; eget kapital 598 tkr 2025 (allabolag.se/5563726065/bokslut). 19 anställda (Syna). Kunder: privata bostadsutvecklare (BoKlok m.fl.) och enstaka kommunala VA-projekt (grimsrud.se/projekt); inget ramavtal hittat. Adoption 2, effektivisering 2 (kostnaden är maskiner, material och yrkesarbetare), nya intäkter 1 (kunderna köper fysiskt arbete), snabbhet 3 (pris avgör upphandlingar), köpbarhet 2 (avtal, personal, F-skatt och ISO följer inte med; maskiner troligen belånade). Konkursorsak enligt bokslut: volymras och förlustprojekt (slutsats). Oklart om boet äger andel i Kålviks vindkraftshamn AB. Ingen buddeadline per 2026-11-27. Uppsida och köppris är grova uppskattningar, estimated: true."
+    "updated_by": "OI",
+    "notes": "Avfört 2026-11-27 (beslut OI): turnaround-fall utan AI-uppsida – förluster tre av fyra år, eget kapital 0,6 Mkr, och personal, beställarrelationer, orderstock och certifikat följer inte med vid inkråmsförvärv. AI-poäng 7,6/20 efter analys 2026-11-27 (preliminärt 12,0). Rekommendation från analys: avför – en markentreprenör som behöver en vanlig turnaround, inte ett AI-case; ta upp igen bara om rörelsen säljs som helhet nära maskinernas marknadsvärde. Nettoomsättning 82 230 tkr (2025), 36 681 (2024), 75 107 (2023); rörelseresultat −5 617 / −8 248 / 168 tkr; eget kapital 598 tkr 2025 (allabolag.se/5563726065/bokslut). 19 anställda (Syna). Kunder: privata bostadsutvecklare (BoKlok m.fl.) och enstaka kommunala VA-projekt (grimsrud.se/projekt); inget ramavtal hittat. Adoption 2, effektivisering 2 (kostnaden är maskiner, material och yrkesarbetare), nya intäkter 1 (kunderna köper fysiskt arbete), snabbhet 3 (pris avgör upphandlingar), köpbarhet 2 (avtal, personal, F-skatt och ISO följer inte med; maskiner troligen belånade). Konkursorsak enligt bokslut: volymras och förlustprojekt (slutsats). Oklart om boet äger andel i Kålviks vindkraftshamn AB. Ingen buddeadline per 2026-11-27. Uppsida och köppris är grova uppskattningar, estimated: true."
   }
 ]
