@@ -169,7 +169,7 @@
 <header>
   <div>
     <h1><span>millionsfromdefault</span></h1>
-    <p class="sub">Konkursbon med AI-transformationspotential – pipeline och vad vi har tagit fram</p>
+    <p class="sub">Konkursbon med AI-transformationspotential och minst 50 Mkr i omsättning – pipeline och vad vi har tagit fram</p>
   </div>
   <div class="live" id="live">pipeline online</div>
 </header>
@@ -180,7 +180,7 @@
     <div class="card"><h2>Bolag per person (hittade)</h2><div class="list-head"><span>Hittad av</span><span>Antal bolag</span></div><div class="scrollbox" id="byPerson"></div></div>
     <div class="card"><h2>Bolag per bransch</h2><div class="list-head"><span>Bransch</span><span>Antal bolag</span></div><div class="scrollbox" id="byIndustry"></div></div>
   </div>
-  <div class="card toplist"><h2>Prioriterade case</h2><p class="hint">Aktiva bolag sorterade på AI-poäng (0–20, hög prioritet ≥ 12). E/I/S/K = effektivisering (viktad med AI-adoption), nya intäkter, snabbhet, köpbarhet.</p><div class="top-row top-head"><span>Poäng</span><span>Bolag · delpoäng</span><span>Bransch</span><span class="r rev">Omsättning</span><span class="r up">Uppsida</span><span class="go">Analys</span></div><div id="toplist"></div></div>
+  <div class="card toplist"><h2>Prioriterade case</h2><p class="hint">Aktiva bolag med minst 50 Mkr i omsättning, sorterade på AI-poäng (0–20, hög prioritet ≥ 12). E/I/S/K = effektivisering (viktad med AI-adoption), nya intäkter, snabbhet, köpbarhet.</p><div class="top-row top-head"><span>Poäng</span><span>Bolag · delpoäng</span><span>Bransch</span><span class="r rev">Omsättning</span><span class="r up">Uppsida</span><span class="go">Analys</span></div><div id="toplist"></div></div>
   <div class="grid2">
     <div class="card report"><h2>VD-rapport</h2><div id="report"></div></div>
     <div class="card"><h2>Kommande buddeadlines</h2><div class="list-head"><span>Bolag</span><span>Sista budag · dagar kvar</span></div><div id="deadlines"></div></div>
@@ -229,6 +229,7 @@ const COLS = [
 ];
 const STATUSES = ['ny', 'granskas', 'kontaktad', 'bud', 'avslutad'];
 let data = [], sortKey = 'priority', sortAsc = false;
+const MIN_REVENUE_KSEK = 50000; // beslut 2026-11-27: bara bolag med minst 50 Mkr
 const HIGH = 12;
 const fmtScore = v => v == null ? '–' : v.toLocaleString('sv-SE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
@@ -376,7 +377,7 @@ function renderTable() {
 
 Promise.all([load('companies.json'), load('reports.json'), load('runs.json')]).then(([rows, reports, runs]) => {
   document.addEventListener('click', e => { const c = e.target.closest('.clamp'); if (c) c.classList.toggle('open'); });
-  data = prep(Array.isArray(rows) ? rows : []);
+  data = prep((Array.isArray(rows) ? rows : []).filter(r => (r.revenue_ksek || 0) >= MIN_REVENUE_KSEK));
   renderStatic(); renderPanels(Array.isArray(reports) ? reports : []); renderTable();
   const rl = Array.isArray(runs) ? runs.slice(0, 20) : [];
   $('runs').innerHTML = rl.length ? rl.map(r => `<div class="list-row"><span><span class="run ${esc(r.result)}">${esc(r.result)}</span> ${esc(r.task)} · ${r.new_companies ?? 0} nya${(r.denied || []).length ? ` · <span class="days urgent">${r.denied.length} nekade</span>` : ''}<span class="parts">${esc(r.note || '')}</span></span><span class="r">${esc(r.at)}</span></div>`).join('')

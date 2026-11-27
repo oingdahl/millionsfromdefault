@@ -4,7 +4,7 @@ Delat arbetsrepo för att hitta och utvärdera konkursbon som kan köpas ut och 
 
 ## Idén
 
-Vi söker på [konkurslistan.se](https://www.konkurslistan.se/) efter bolag med **god omsättning och befintlig verksamhet**, i branscher eller bolag där **AI-adoptionen idag är låg**. Tesen är att en köpare kan ta över verksamheten billigt ur konkurs och skapa värde genom AI-transformation: automatiserade processer, lägre kostnadsbas och bättre kundflöden.
+Vi söker på [konkurslistan.se](https://www.konkurslistan.se/) efter bolag med **minst 50 Mkr i omsättning och befintlig verksamhet**, i branscher eller bolag där **AI-adoptionen idag är låg**. Tesen är att en köpare kan ta över verksamheten billigt ur konkurs och skapa värde genom AI-transformation: automatiserade processer, lägre kostnadsbas och bättre kundflöden.
 
 Se [`docs/thesis.md`](docs/thesis.md) för kriterier och bedömningsmodell.
 
@@ -17,7 +17,7 @@ Se [`docs/thesis.md`](docs/thesis.md) för kriterier och bedömningsmodell.
 | `data/README.md` | Fältbeskrivning för `companies.json` |
 | `docs/thesis.md` | Investeringstes, sållningskriterier, poängmodell |
 | `docs/sources.md` | Källor och hur vi använder dem |
-| `docs/companies/` | Fördjupade bolagsanalyser, en fil per bolag (mall: `_mall.md`) |
+| `docs/companies/` | Fördjupade bolagsanalyser, en fil per bolag (mall: `_mall.md`; borttagna bolag i `arkiv/`) |
 | `docs/org.md` | Agentorganisationen: roller, rytm, beslutsgränser |
 | `.claude/agents/` | Agenterna: `vd`, `researchchef`, `screening`, `analys` |
 | `site/` | Dashboarden (statisk sida, publiceras på GitHub Pages) |

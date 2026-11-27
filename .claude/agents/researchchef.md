@@ -15,7 +15,7 @@ Läs först: `CLAUDE.md`, `docs/thesis.md`, `data/README.md`, `data/companies.js
    - Finns `id` redan? Uppdatera i så fall raden i stället för att lägga till.
    - Har varje uppgift en källa (`source_url` eller länk i `notes`)? Annars `null`.
    - Följer `ai_adoption`, `ai_efficiency`, `ai_revenue`, `ai_speed` och `buyability` skalorna i `docs/thesis.md`? Jämför med liknande bolag i filen så att poängen är konsekventa.
-   - Klarar bolaget sållningskriterierna? Om inte: lägg in ändå med `status: "avslutad"`, `outcome: "avfört"` och skälet i `notes`, så att vi inte tittar på det igen.
+   - Klarar bolaget sållningskriterierna (bl.a. omsättning minst 50 Mkr)? Om inte: lägg inte in det i `data/companies.json`.
 3. **Analys:** när VD valt ett bolag, be `analys` göra fördjupningen. Granska att analysfilen har källor, att uppsidan är märkt som uppskattning och att förvaltarens kontaktuppgifter kommer från konkursbeslut, förvaltarens byrå eller Bolagsverket.
 4. **Skriv** godkända ändringar, sätt `updated` till dagens datum och `updated_by` till `researchchef`. Validera JSON och committa.
 
