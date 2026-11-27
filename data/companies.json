@@ -204,34 +204,36 @@
     "employees": 19,
     "bankruptcy_date": "2026-11-26",
     "source_url": "https://www.konkurslistan.se/konkurser/5563726065",
-    "ai_adoption": 1,
-    "ai_efficiency": 3,
-    "ai_revenue": 2,
-    "ai_speed": 4,
-    "buyability": 3,
+    "ai_adoption": 2,
+    "ai_efficiency": 2,
+    "ai_revenue": 1,
+    "ai_speed": 3,
+    "buyability": 2,
     "ai_levers": [
-      "Offertautomation",
-      "Kalkyl och projektplanering",
-      "Maskin- och resursplanering"
+      "Anbudskalkyl och mängdavtagning från förfrågningsunderlag",
+      "ÄTA-fångst och slutreglering",
+      "Maskin- och resursplanering",
+      "Egenkontroller, KMA och relationshandlingar",
+      "Veckovis projektprognos med tidig förlustvarning"
     ],
-    "upside_msek": null,
-    "est_price_msek": null,
+    "upside_msek": 8.2,
+    "est_price_msek": 5,
     "trustee": {
       "name": "Johan Sölveland",
       "firm": "Ackordscentralen Väst Aktiebolag",
-      "phone": null,
-      "email": null,
-      "source": "https://www.konkurslistan.se/konkurser/5563726065"
+      "phone": "+46 31 10 54 55",
+      "email": "johan.solveland@ackordscentralen.se",
+      "source": "https://www.konkurslistan.se/konkurser/5563726065 (förvaltare); https://ackordscentralen.se/en/about/team/johan-solveland (telefon, mejl), hämtad 2026-11-27"
     },
     "bid_deadline": null,
-    "analysis": null,
-    "status": "ny",
+    "analysis": "docs/companies/5563726065.md",
+    "status": "granskas",
     "outcome": null,
     "found_by": "screening",
     "assigned_to": null,
     "added": "2026-11-27",
     "updated": "2026-11-27",
-    "updated_by": "researchchef",
-    "notes": "Preliminärt: AI-poäng 12,0/20. Entreprenad inom mark, VA och fastighet; offertdrivet (snabbhet 4), manuell planering (adoption 1), effektivisering 3, nya intäkter 2. Köpbarhet 3: konkursboet har fyra fordon och fastigheten TANUM 1:128; avtal och personal oklara. Omsättning 82 230 tkr och 19 anställda enligt konkurslistan.se, bokslutsår ej angivet, valuta antagen SEK (estimated: true). Tillgångar 40 297 tkr enligt sidan. Hög prioritet."
+    "updated_by": "analys",
+    "notes": "AI-poäng 7,6/20 efter analys 2026-11-27 (preliminärt 12,0). Rekommendation från analys: avför – en markentreprenör som behöver en vanlig turnaround, inte ett AI-case; ta upp igen bara om rörelsen säljs som helhet nära maskinernas marknadsvärde. Beslut OI/FW. Nettoomsättning 82 230 tkr (2025), 36 681 (2024), 75 107 (2023); rörelseresultat −5 617 / −8 248 / 168 tkr; eget kapital 598 tkr 2025 (allabolag.se/5563726065/bokslut). 19 anställda (Syna). Kunder: privata bostadsutvecklare (BoKlok m.fl.) och enstaka kommunala VA-projekt (grimsrud.se/projekt); inget ramavtal hittat. Adoption 2, effektivisering 2 (kostnaden är maskiner, material och yrkesarbetare), nya intäkter 1 (kunderna köper fysiskt arbete), snabbhet 3 (pris avgör upphandlingar), köpbarhet 2 (avtal, personal, F-skatt och ISO följer inte med; maskiner troligen belånade). Konkursorsak enligt bokslut: volymras och förlustprojekt (slutsats). Oklart om boet äger andel i Kålviks vindkraftshamn AB. Ingen buddeadline per 2026-11-27. Uppsida och köppris är grova uppskattningar, estimated: true."
   }
 ]
