@@ -21,8 +21,8 @@ Projektet drivs av OI och FW med fyra Claude-agenter. Agenterna förbereder, äg
 | Analys | `.claude/agents/analys.md` | opus | Fördjupning: fakta, förvaltare, deadline, AI-hävstänger, uppsida, röda flaggor | `docs/companies/<orgnr>.md` |
 
 ## Rytm
-- **Varje vardag 07:12:** screening via researchchef (schemalagd uppgift).
-- **Måndagar 07:42:** VD-rapport (schemalagd uppgift).
+- **Varje vardag 07:12:** screening via researchchef (schemalagd uppgift). Nya bolag (minst 50 Mkr) med preliminär AI-poäng ≥ 11 analyseras direkt i samma körning, högst 3 per körning (beslut OI 2026-11-27).
+- **Måndagar 07:42:** VD-rapport (schemalagd uppgift). VD prioriterar och fördjupar de bolag som screeningen inte hann analysera.
 - **Vid behov:** be Claude "kör analys på <bolag>" eller "fråga VD om läget".
 
 ## Mänskliga beslut
